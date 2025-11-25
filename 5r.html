@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Program 5R – Dashboard</title>
+
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
+  <!-- Global & 5R Styles -->
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style-5r.css" />
+</head>
+<body>
+  <!-- ================= NAVBAR ================= -->
+  <nav class="navbar mini-nav" role="navigation" aria-label="Navigasi utama">
+    <button
+      class="logo"
+      type="button"
+      onclick="window.location.href='index.html'"
+      aria-label="Kembali ke Dashboard"
+    >
+      <i class="fa-solid fa-house" aria-hidden="true"></i>
+      <span>Dashboard</span>
+    </button>
+
+    <ul class="nav-links" id="mainNav">
+      <li>
+        <a href="index.html#kontak">
+          <i class="fa-solid fa-address-book" aria-hidden="true"></i>
+          Kontak
+        </a>
+      </li>
+    </ul>
+
+    <button
+      class="menu-toggle"
+      id="menuToggle"
+      type="button"
+      aria-label="Buka menu"
+      aria-controls="mainNav"
+      aria-expanded="false"
+    >
+      <i class="fa-solid fa-bars" aria-hidden="true"></i>
+    </button>
+  </nav>
+
+  <!-- ================= HERO KHUSUS 5R ================= -->
+  <section class="hero hero-5r" aria-labelledby="hero-title">
+    <h1 class="hero-title" id="hero-title">PROGRAM 5R</h1>
+  </section>
+
+  <main>
+    <!-- ========== LANGKAH IMPLEMENTASI 5R ========== -->
+    <section class="content" aria-labelledby="p5r-main-title">
+      <h2 id="p5r-main-title">Langkah Implementasi 5R</h2>
+
+      <div class="page-5r-grid">
+        <!-- LIST LANGKAH 5R -->
+        <div class="page-5r-text">
+          <ol>
+            <li><strong>Ringkas</strong> – Hanya yang diperlukan, tidak berlebihan.</li>
+            <li><strong>Rapi</strong> – Mudah mengidentifikasi, mudah mengembalikan.</li>
+            <li><strong>Resik</strong> – Tidak mengotori.</li>
+            <li><strong>Rawat</strong> – Bekerja dengan standar.</li>
+            <li><strong>Rajin</strong> – Upayakan terus menerus mencegah masalah pada sumbernya.</li>
+          </ol>
+        </div>
+
+        <!-- DOKUMENTASI 5R + SLIDER -->
+        <div class="page-5r-media" aria-labelledby="p5r-doc-title">
+          <h3 id="p5r-doc-title">Dokumentasi</h3>
+
+          <!-- GALERI 1: Aktivitas 5R -->
+          <h4 class="gallery-title">Kegiatan Aktivitas 5R</h4>
+          <div class="slider-container">
+            <div class="slider-wrapper">
+              <div class="slide"><img src="AKTIVITAS1.png" alt="Dokumentasi aktivitas 5R 1" /></div>
+              <div class="slide"><img src="AKTIVITAS2.png" alt="Dokumentasi aktivitas 5R 2" /></div>
+              <div class="slide"><img src="AKTIVITAS3.png" alt="Dokumentasi aktivitas 5R 3" /></div>
+              <div class="slide"><img src="AKTIVITAS4.png" alt="Dokumentasi aktivitas 5R 4" /></div>
+              <div class="slide"><img src="AKTIVITAS5.png" alt="Dokumentasi aktivitas 5R 5" /></div>
+            </div>
+            <button class="btn-prev" type="button" aria-label="Sebelumnya">❮</button>
+            <button class="btn-next" type="button" aria-label="Berikutnya">❯</button>
+          </div>
+
+          <!-- GALERI 2: Audit 5R -->
+          <h4 class="gallery-title">Kegiatan Audit 5R</h4>
+          <div class="slider-container">
+            <div class="slider-wrapper">
+              <div class="slide"><img src="AUDIT1.png" alt="Dokumentasi audit 5R 1" /></div>
+              <div class="slide"><img src="AUDIT2.png" alt="Dokumentasi audit 5R 2" /></div>
+              <div class="slide"><img src="AUDIT3.png" alt="Dokumentasi audit 5R 3" /></div>
+            </div>
+            <button class="btn-prev" type="button" aria-label="Sebelumnya">❮</button>
+            <button class="btn-next" type="button" aria-label="Berikutnya">❯</button>
+          </div>
+
+          <!-- GALERI 3: Apresiasi 5R -->
+          <h4 class="gallery-title">Kegiatan Apresiasi Audit 5R</h4>
+          <div class="slider-container">
+            <div class="slider-wrapper">
+              <div class="slide"><img src="APRESIASI1.png" alt="Dokumentasi apresiasi audit 5R 1" /></div>
+              <div class="slide"><img src="APRESIASI2.png" alt="Dokumentasi apresiasi audit 5R 2" /></div>
+              <div class="slide"><img src="APRESIASI3.png" alt="Dokumentasi apresiasi audit 5R 3" /></div>
+            </div>
+            <button class="btn-prev" type="button" aria-label="Sebelumnya">❮</button>
+            <button class="btn-next" type="button" aria-label="Berikutnya">❯</button>
+          </div>
+
+          <p><em>Kegiatan aktivitas 5R di beberapa area kerja.</em></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SUBMIT DOKUMENTASI 5R ========== -->
+    <section class="page-5r-submit content" aria-labelledby="p5r-submit-title">
+      <h2 id="p5r-submit-title" class="p5r-h2">Link Submit Dokumentasi 5R</h2>
+
+      <div class="p5r-form-grid" role="group" aria-label="Link cepat Google Form 5R">
+        <a class="p5r-btn"
+           href="https://docs.google.com/forms/d/e/1FAIpQLSdIV43Hr6rGqzMJ6kJGgWHNU7zQNi-BtxdRefx3vuzXdpMu-Q/viewform"
+           target="_self" rel="noopener">
+          <i class="fa-solid fa-building" aria-hidden="true"></i> Office
+        </a>
+
+        <a class="p5r-btn"
+           href="https://docs.google.com/forms/d/e/1FAIpQLScaZ9JuOPYVuIhT2jmDnFN0SLoPw161VEJXIm3Nbsq54QL3XA/viewform"
+           target="_self" rel="noopener">
+          <i class="fa-solid fa-screwdriver-wrench" aria-hidden="true"></i> Workshop
+        </a>
+
+        <a class="p5r-btn"
+           href="https://docs.google.com/forms/d/e/1FAIpQLScsGd-mK71RXBwtShG1NibPbvipwN2HnosTkVtYSRAXZxkaBw/viewform"
+           target="_self" rel="noopener">
+          <i class="fa-solid fa-city" aria-hidden="true"></i> Fasilitas Umum
+        </a>
+
+        <a class="p5r-btn"
+           href="https://docs.google.com/forms/d/e/1FAIpQLSeoaW4NsvZERvG7BdUOybPReNVF_pIE7vbprAkg1KsdTIWTbA/viewform"
+           target="_self" rel="noopener">
+          <i class="fa-solid fa-boxes-stacked" aria-hidden="true"></i> Gudang
+        </a>
+
+        <a class="p5r-btn"
+           href="https://docs.google.com/forms/d/e/1FAIpQLSdbqIH2IChmFVgbf8M0REpdaGDGFRCX_cLL4qipox0HLfVwUw/viewform"
+           target="_self" rel="noopener">
+          <i class="fa-solid fa-industry" aria-hidden="true"></i> Produksi
+        </a>
+
+        <a class="p5r-btn"
+           href="https://docs.google.com/forms/d/e/1FAIpQLSdEw9K2v4iw1ZIrZK8rtxroODayrCW4DfpRqusF5ATwAk6ukw/viewform"
+           target="_self" rel="noopener">
+          <i class="fa-solid fa-flask" aria-hidden="true"></i> Lab
+        </a>
+      </div>
+    </section>
+
+    <!-- ========== DASHBOARD JOURNEY 5R ========== -->
+    <section class="page-5r-submit content p5r-journey-section" aria-labelledby="p5r-journey-title">
+      <h2 id="p5r-journey-title" class="p5r-h2">Dashboard Journey 5R</h2>
+
+      <div class="p5r-form-grid p5r-journey-grid" role="group" aria-label="Link Dashboard Journey 5R">
+        <a class="p5r-btn p5r-btn-journey"
+           href="https://lookerstudio.google.com/reporting/e83d0bdf-aa35-4002-afb4-55cc4ffe0c1e"
+           target="_self" rel="noopener">
+          <i class="fa-solid fa-building"></i> Office
+        </a>
+
+        <a class="p5r-btn p5r-btn-journey"
+           href="https://lookerstudio.google.com/reporting/e61b7bcb-88f7-4feb-bac4-a905f3325c8b"
+           target="_self" rel="noopener">
+          <i class="fa-solid fa-screwdriver-wrench"></i> Workshop
+        </a>
+
+        <a class="p5r-btn p5r-btn-journey"
+           href="https://lookerstudio.google.com/reporting/3d191aaf-c32b-474a-9955-b8506abbdca2"
+           target="_self" rel="noopener">
+          <i class="fa-solid fa-city"></i> Fasilitas Umum
+        </a>
+
+        <a class="p5r-btn p5r-btn-journey"
+           href="https://lookerstudio.google.com/reporting/71ba7bb5-b553-46c0-8a6b-4c1eb5fd9cf6"
+           target="_self" rel="noopener">
+          <i class="fa-solid fa-boxes-stacked"></i> Gudang
+        </a>
+
+        <a class="p5r-btn p5r-btn-journey"
+           href="https://lookerstudio.google.com/reporting/a2106bf7-7cfb-4348-8e06-d99a4bdcc383"
+           target="_self" rel="noopener">
+          <i class="fa-solid fa-industry"></i> Produksi
+        </a>
+
+        <a class="p5r-btn p5r-btn-journey"
+           href="https://lookerstudio.google.com/reporting/62398a48-f3b8-4386-928d-a6584cfa435f"
+           target="_self" rel="noopener">
+          <i class="fa-solid fa-flask"></i> Lab
+        </a>
+      </div>
+    </section>
+
+    <!-- ========== REKAP SUBMIT 5R (LIVE VIEW) ========== -->
+    <section class="page-5r-recap content" aria-labelledby="p5r-recap-title">
+  <h2 id="p5r-recap-title" class="p5r-h2">Rekap Submit 5R (Live View)</h2>
+
+  <div class="sheet-wrapper">
+    <iframe
+      title="Rekap Submit 5R"
+      src="https://docs.google.com/spreadsheets/d/1rB3Qd8CLNpEpl4fVKMVGDcUP8toQie0Vh6h5wLeCWyU/pubhtml?gid=1845816717&single=true&widget=true&headers=false&range=1:137">
+    </iframe>
+  </div>
+</section>
+
+  </main>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

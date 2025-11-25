@@ -1,0 +1,976 @@
+/* ========================================
+   STYLE KHUSUS HALAMAN 5R (FIXED)
+======================================== */
+
+/* ===== Global khusus halaman 5R ===== */
+body {
+  background: #ffffff;
+  color: #2f2f2f;
+}
+
+
+
+
+/* ========================================
+   HERO 5R
+======================================== */
+.hero-5r {
+  background: url("BG5R.png") center/cover no-repeat;
+  min-height: 55vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 20px 60px;
+  text-align: center;
+}
+
+.hero-5r .hero-title {
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  color: #fbbf24;
+  text-shadow:
+    0 0 4px rgba(0, 0, 0, 0.25),
+    0 4px 10px rgba(0, 0, 0, 0.35);
+}
+
+/* Perkecil judul di tablet */
+@media (max-width: 768px) {
+  .hero-5r .hero-title {
+    font-size: 2.2rem;
+    letter-spacing: 0.5px;
+  }
+}
+
+/* Perkecil lagi di HP */
+@media (max-width: 480px) {
+  .hero-5r {
+    padding: 60px 10px 40px;
+  }
+
+  .hero-5r .hero-title {
+    font-size: 1.7rem;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.25);
+  }
+}
+
+/* HP kecil (≤360px) */
+@media (max-width: 360px) {
+  .hero-5r .hero-title {
+    font-size: 1.5rem;
+  }
+}
+
+.hero-5r .hero-subtitle,
+.hero-5r p {
+  max-width: 720px;
+  margin-top: 16px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #fffaf0;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+}
+
+/* ========================================
+   WRAPPER KONTEN
+======================================== */
+.content {
+  width: 95%;
+  max-width: 1400px;
+  margin: 40px auto;
+}
+
+
+/* Judul Section */
+.content h2 {
+  text-align: center;
+  margin-bottom: 24px;
+  font-size: 1.9rem;
+  font-weight: 800;
+  color: #ca8a04;
+  border-left: none;
+  padding-left: 0;
+}
+
+.content h2::after {
+  content: "";
+  display: block;
+  width: 90px;
+  height: 4px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #facc15, #f97316);
+  margin: 10px auto 0;
+}
+
+/* =========================
+   BLOK "5R ADALAH …" – versi lebih cakep
+========================= */
+
+.p5r-about {
+  margin-top: 40px;
+  background: linear-gradient(135deg, #f9fafb, #eef2ff);
+  border-radius: 24px;
+  padding: 28px 32px 32px;
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.12);
+}
+
+.p5r-about-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 2.1fr) minmax(0, 1.4fr);
+  gap: 32px;
+  align-items: flex-start;
+}
+
+/* KIRI: judul, bullet, gambar */
+.p5r-about-left h2 {
+  font-size: 2.1rem;
+  font-weight: 800;
+  color: #f59e0b; /* emas-oranye */
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 6px;
+}
+
+.p5r-about-left h2::after {
+  content: "";
+  display: block;
+  width: 120px;
+  height: 4px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #f59e0b, #f97316);
+  margin-top: 10px;
+}
+
+.p5r-about-list {
+  margin: 18px 0 18px 1.4rem;
+  color: #111827;
+  font-size: 1rem;
+}
+
+.p5r-about-list li {
+  margin-bottom: 6px;
+}
+
+/* kartu gambar */
+.p5r-about-figure {
+  margin: 12px 0 0;
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 14px 14px 10px;
+  box-shadow: 0 10px 26px rgba(15, 23, 42, 0.16);
+}
+
+.p5r-about-figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+}
+
+.p5r-about-figure figcaption {
+  margin-top: 6px;
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+/* KANAN: text goals */
+.p5r-about-right {
+  padding-top: 10px;
+}
+
+.p5r-about-heading {
+  font-weight: 800;
+  font-size: 1.1rem;
+  margin-bottom: 14px;
+  color: #111827;
+}
+
+.p5r-about-goals {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.p5r-about-goals li {
+  margin-bottom: 14px;
+  font-size: 0.98rem;
+  color: #111827;
+}
+
+.p5r-about-goals li strong {
+  display: block;
+}
+
+.p5r-about-goals li span {
+  font-weight: 800;
+  color: #2563eb; /* biru highlight */
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .p5r-about {
+    padding: 22px 18px 24px;
+  }
+
+  .p5r-about-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .p5r-about-left h2 {
+    font-size: 1.7rem;
+    text-align: left;
+  }
+}
+
+@media (max-width: 520px) {
+  .p5r-about-left h2 {
+    font-size: 1.5rem;
+  }
+
+  .p5r-about-list {
+    font-size: 0.95rem;
+  }
+
+  .p5r-about-heading,
+  .p5r-about-goals li {
+    font-size: 0.9rem;
+  }
+}
+
+/* KANAN: text goals – versi lebih rapi */
+.p5r-about-right {
+  padding-top: 10px;
+}
+
+.p5r-about-heading {
+  font-weight: 800;
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: #111827;
+}
+
+.p5r-about-goals {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.p5r-about-goals li {
+  position: relative;
+  margin-bottom: 8px;              /* jarak antar baris diperkecil */
+  font-size: 0.98rem;
+  color: #111827;
+  padding-left: 14px;              /* ruang untuk bullet kecil */
+}
+
+/* bullet kecil di kiri */
+.p5r-about-goals li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: #2563eb;
+}
+
+.p5r-about-goals li strong {
+  display: inline;                 /* supaya satu baris dengan span */
+  font-weight: 700;
+}
+
+.p5r-about-goals li span {
+  display: inline;
+  margin-left: 6px;
+  font-weight: 800;
+  color: #2563eb;                  /* highlight biru untuk Zero … */
+}
+
+
+
+
+/* ========================================
+   LIST LANGKAH 5R
+======================================== */
+.page-5r-text {
+  display: flex;
+  justify-content: center;
+}
+
+.page-5r-text ol {
+  list-style-position: inside;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  max-width: 750px;
+}
+
+.page-5r-text ol li {
+  background: #fff8e1;
+  padding: 14px 20px;
+  border-radius: 16px;
+  margin-bottom: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-align: left;
+}
+
+.page-5r-text ol li:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.16);
+}
+
+/* ========================================
+   DOKUMENTASI 5R + SLIDER (FIXED)
+======================================== */
+.page-5r-media {
+  margin-top: 32px;
+  padding: 20px;
+  border-radius: 18px;
+  background: #fffbeb;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+.page-5r-media h3 {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #b45309;
+  margin-bottom: 16px;
+}
+
+/* --- Judul Galeri --- */
+.gallery-title {
+  margin-top: 18px;
+  margin-bottom: 8px;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #b45309;
+}
+
+/* ========================
+   SLIDER FIX RESPONSIVE
+======================== */
+.slider-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden; /* FIX: tidak melewati layar */
+  border-radius: 14px;
+  margin-bottom: 24px;
+  background: #fff;
+  padding: 8px 0;
+}
+
+.slider-wrapper {
+  display: flex;
+  transition: transform 0.35s ease;
+}
+
+/* tiap slide memenuhi lebar, dan konten di tengah */
+.slide {
+  min-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* gambar ikut proporsi, tidak dipotong */
+.slide img {
+  max-width: 100%;
+  max-height: 480px;        /* boleh kamu kecilkan/besarkan sesuai nyaman */
+  width: auto;
+  height: auto;
+  border-radius: 14px;
+  border: 4px solid #facc15;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+  object-fit: contain;      /* ✦ penting: jangan cover, tapi contain */
+  background: #ffffff;      /* biar ada background putih kalau ada ruang kosong */
+}
+
+/* di HP tinggi sedikit dikurangi */
+@media (max-width: 600px) {
+  .slide img {
+    max-height: 360px;
+    border-width: 3px;
+  }
+}
+
+
+/* Buttons */
+.btn-prev,
+.btn-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #fbbf24;
+  border: none;
+  font-size: 1.8rem;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  transition: 0.2s ease;
+}
+
+.btn-prev:hover,
+.btn-next:hover {
+  background: #f59e0b;
+}
+
+.btn-prev {
+  left: 10px;
+}
+
+.btn-next {
+  right: 10px;
+}
+
+/* FIX: tombol tidak mengganggu HP kecil */
+@media (max-width: 480px) {
+  .btn-prev,
+  .btn-next {
+    font-size: 1.4rem;
+    padding: 4px 8px;
+  }
+}
+
+/* ========================================
+   SUBMIT 5R – GRID FORM
+======================================== */
+.p5r-form-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin: 18px 0 26px;
+}
+
+.p5r-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #f59e0b, #f97316);
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+/* ========================================
+   GOOGLE SHEET VIEW
+======================================== */
+.sheet-wrapper {
+  position: relative;
+  width: 100%;
+  min-height: 600px;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 4px solid #facc15;
+  background: #fff;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.18);
+}
+
+.sheet-wrapper iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* ========================================
+   RESPONSIVE FIX
+======================================== */
+
+@media (max-width: 900px) {
+  .p5r-form-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 760px) {
+  .page-5r-media {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 560px) {
+  .p5r-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-5r .hero-title {
+    font-size: 2.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .content {
+    padding: 0 14px;
+    margin: 20px auto 40px;
+  }
+
+  .slide img {
+    border-width: 3px;
+  }
+}
+
+
+/* HERO KHUSUS 5R – Samakan warna dengan bagian “5R ADALAH” */
+.hero-5r .hero-title {
+  color: #F4A300;         /* Warna sama dengan judul 5R ADALAH */
+  text-shadow: 0 4px 10px rgba(0,0,0,0.25);
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+/* Pisahkan Langkah 5R dan Dokumentasi: dibuat bertumpuk (atas–bawah) */
+section[aria-labelledby="p5r-main-title"] .page-5r-grid {
+  display: block;           /* tidak grid lagi */
+}
+
+/* Kasih jarak antara list langkah dan dokumentasi */
+section[aria-labelledby="p5r-main-title"] .page-5r-text {
+  margin-bottom: 24px;
+}
+
+/* ========================================
+   GOALS – CARD STYLE (Total Quality / TPS / TPM)
+======================================== */
+
+.p5r-goals-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.goal-card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 14px 16px;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.12);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.goal-card h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 4px;
+}
+
+.goal-card p {
+  font-size: 0.9rem;
+  margin: 0;
+  color: #4b5563;
+}
+
+.goal-card p span {
+  color: #2563eb;
+  font-weight: 800;
+}
+
+/* Card utama (lebih menonjol seperti contoh UI) */
+.goal-card.goal-primary {
+  background: linear-gradient(135deg, #0ea5e9, #2563eb);
+  color: #f9fafb;
+}
+
+.goal-card.goal-primary h4 {
+  color: #f9fafb;
+}
+
+.goal-card.goal-primary p {
+  color: #e0f2fe;
+}
+
+.goal-card.goal-primary p span {
+  color: #ffffff;
+}
+
+/* Responsif: di HP jadi vertikal */
+@media (max-width: 900px) {
+  .p5r-goals-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==== SECTION WRAPPER ==== */
+.p5r-journey-section {
+  margin-top: 40px;
+  padding: 28px 32px 34px;
+  border-radius: 22px;
+  background: linear-gradient(135deg, #e0f2ff, #eff6ff);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.12);
+}
+
+/* Judul */
+.p5r-journey-section .p5r-h2 {
+  color: #0f172a;
+}
+
+.p5r-journey-section .p5r-h2::after {
+  background: linear-gradient(90deg, #38bdf8, #2563eb);
+}
+
+/* ==== GRID KHUSUS DASHBOARD JOURNEY ==== */
+.p5r-journey-grid {
+  margin-top: 22px;
+}
+
+/* ==== TOMBOL JOURNEY ==== */
+.p5r-btn-journey {
+  background: linear-gradient(135deg, #38bdf8, #2563eb);
+  color: #fff;
+  font-weight: 700;
+  box-shadow: 0 10px 22px rgba(37, 99, 235, 0.35);
+  position: relative;
+  overflow: hidden;
+  border: none;
+}
+
+/* Glow animasi */
+.p5r-btn-journey::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    rgba(255,255,255,0) 0%,
+    rgba(255,255,255,0.4) 50%,
+    rgba(255,255,255,0) 100%
+  );
+  transform: translateX(-120%);
+  transition: transform 0.4s ease;
+}
+
+.p5r-btn-journey:hover::before {
+  transform: translateX(120%);
+}
+
+/* Icon bulat */
+.p5r-btn-journey i {
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.2);
+  font-size: 1.1rem;
+}
+
+/* Hover effect */
+.p5r-btn-journey:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 30px rgba(37, 99, 235, 0.45);
+}
+
+.p5r-btn-journey:active {
+  transform: scale(0.97);
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .p5r-journey-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Cegah halaman geser ke samping */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* FRAME REKAP 5R */
+.sheet-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;        /* biar di layar besar tetap enak */
+  margin: 0 auto;
+  border-radius: 16px;
+  overflow: hidden;         /* sembunyikan scroll horizontal */
+  border: 4px solid #facc15;
+  background: #fff;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.18);
+  
+  /* tinggi default (laptop landscape) */
+  min-height: 550px;
+  height: 70vh;
+}
+
+.sheet-wrapper iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* HP & tablet potrait: tetap landscape view, tapi lebih pendek */
+@media (max-width: 768px) {
+  .sheet-wrapper {
+    height: 65vh;
+    min-height: 420px;
+  }
+}
+/* ========================================
+   STYLE KHUSUS HALAMAN 5R (FINAL FIXED)
+======================================== */
+
+/* GLOBAL */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+  background: #ffffff;
+  color: #2f2f2f;
+}
+
+/* ========================================
+   HERO 5R
+======================================== */
+.hero-5r {
+  background: url("BG5R.png") center/cover no-repeat;
+  min-height: 55vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 20px 60px;
+  text-align: center;
+}
+
+.hero-5r .hero-title {
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  color: #F4A300;
+  text-shadow: 0 4px 10px rgba(0,0,0,0.25);
+}
+
+/* ========================================
+   SECTION WRAPPER
+======================================== */
+.content {
+  width: 95%;
+  max-width: 1400px;
+  margin: 40px auto;
+}
+
+.content h2 {
+  text-align: center;
+  margin-bottom: 24px;
+  font-size: 1.9rem;
+  font-weight: 800;
+  color: #ca8a04;
+}
+
+.content h2::after {
+  content: "";
+  display: block;
+  width: 90px;
+  height: 4px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #facc15, #f97316);
+  margin: 10px auto 0;
+}
+
+/* ========================================
+   5R ADALAH
+======================================== */
+.p5r-about {
+  margin-top: 40px;
+  background: linear-gradient(135deg, #f9fafb, #eef2ff);
+  border-radius: 24px;
+  padding: 28px 32px;
+  box-shadow: 0 16px 40px rgba(15,23,42,0.12);
+}
+
+.p5r-about-grid {
+  display: grid;
+  grid-template-columns: minmax(0,2fr) minmax(0,1fr);
+  gap: 32px;
+}
+
+.p5r-about-left h2 {
+  font-size: 2.1rem;
+  font-weight: 800;
+  color: #f59e0b;
+  text-transform: uppercase;
+}
+
+.p5r-about-figure img {
+  width: 100%;
+  border-radius: 14px;
+}
+
+/* ========================================
+   GOALS (CARD VERSION)
+======================================== */
+.p5r-goals-cards {
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 16px;
+}
+
+.goal-card {
+  padding: 16px;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 10px 24px rgba(15,23,42,0.12);
+}
+
+.goal-card.goal-primary {
+  background: linear-gradient(135deg,#0ea5e9,#2563eb);
+  color: #fff;
+}
+
+/* ========================================
+   LIST LANGKAH 5R
+======================================== */
+.page-5r-text ol li {
+  background: #fff8e1;
+  padding: 16px;
+  border-radius: 16px;
+  margin-bottom: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+/* ========================================
+   SLIDER FOTO (SUPER FIXED)
+======================================== */
+.slider-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+  background: #fff;
+  padding: 8px 0;
+  margin-bottom: 24px;
+}
+
+.slider-wrapper {
+  display: flex;
+  transition: transform .35s ease;
+}
+
+.slide {
+  min-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slide img {
+  max-width: 100%;
+  max-height: 480px;
+  object-fit: contain;
+  background: #fff;
+  border-radius: 14px;
+  border: 4px solid #facc15;
+}
+
+/* Buttons */
+.btn-prev,.btn-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #fbbf24;
+  font-size: 1.8rem;
+  color: #fff;
+  border-radius: 50%;
+  padding: 6px 12px;
+  cursor: pointer;
+  border: none;
+}
+
+/* ========================================
+   DASHBOARD JOURNEY (BUTTONS)
+======================================== */
+.p5r-btn-journey {
+  background: linear-gradient(135deg,#38bdf8,#2563eb);
+  color: #fff;
+  font-weight: 700;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 16px;
+}
+
+/* FRAME REKAP 5R – kotak tengah */
+.sheet-wrapper {
+  position: relative;
+  width: 90%;              /* laptop: nggak full, tapi lega */
+  max-width: 1100px;
+  margin: 0 auto;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 4px solid #facc15;
+  background: #fff;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.18);
+
+  /* laptop */
+  min-height: 550px;
+  height: 75vh;
+}
+
+.sheet-wrapper iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* ====== TABLET LANDSCAPE / KECIL (≤ 1024px) ====== */
+@media (max-width: 1024px) {
+  .sheet-wrapper {
+    width: 92%;         /* sedikit lebih kecil */
+    max-width: 900px;
+    height: 70vh;       /* tinggi ikut mengecil */
+    min-height: 500px;
+  }
+}
+
+/* ====== TABLET PORTRAIT (≤ 768px) ====== */
+@media (max-width: 768px) {
+  .sheet-wrapper {
+    width: 95%;
+    max-width: 700px;
+    height: 65vh;
+    min-height: 420px;
+  }
+}
+
+/* ====== HP KECIL (≤ 480px) ====== */
+@media (max-width: 480px) {
+  .sheet-wrapper {
+    width: 98%;         /* hampir full, tapi tetap ada jarak kiri-kanan */
+    max-width: 420px;
+    height: 60vh;       /* paling pendek di HP */
+    min-height: 360px;
+    border-width: 3px;  /* garis kuning juga ikut lebih tipis */
+  }
+}
+
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}

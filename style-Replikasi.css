@@ -1,0 +1,948 @@
+/* ================================
+   REPLIKASI IMPROVEMENT - LANDING STYLE
+================================ */
+
+/* SECTION UTAMA – HERO BIRU */
+.ss-replikasi {
+  margin-top: 32px;
+  padding: 40px 22px 36px;
+  border-radius: 26px;
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(900px 420px at 0% -40%, rgba(59,130,246,0.65), transparent 60%),
+    linear-gradient(135deg, #1d4ed8, #2563eb);
+  box-shadow: 0 16px 40px rgba(15,23,42,0.35);
+}
+
+/* aksen bulat-bulat di background */
+.ss-replikasi::before,
+.ss-replikasi::after {
+  content: "";
+  position: absolute;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.1);
+}
+.ss-replikasi::before {
+  width: 220px;
+  height: 220px;
+  top: -80px;
+  right: -40px;
+}
+.ss-replikasi::after {
+  width: 140px;
+  height: 140px;
+  bottom: -40px;
+  left: 18%;
+}
+
+/* judul & paragraf di hero */
+.ss-replikasi .ss-title {
+  border-left: none;
+  padding-left: 0;
+  font-size: 2.4rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  line-height: 1.25;
+  margin-bottom: 16px;
+  color: #ffffff;
+}
+
+.ss-replikasi .ss-desc {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  max-width: 760px;
+  font-size: 1.15rem;
+  font-weight: 400;
+  line-height: 1.75;
+  color: #eef2ff;
+  opacity: 0.95;
+}
+
+/* Pada HP */
+@media (max-width: 768px) {
+  .ss-replikasi {
+    padding: 30px 18px 30px;
+    border-radius: 0; /* full-bleed di HP */
+  }
+  .ss-replikasi .ss-title {
+    font-size: 2rem;
+  }
+  .ss-replikasi .ss-desc {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+}
+
+/* ===== BLOK 1: KONSEP & MANFAAT (KARTU PUTIH) ===== */
+
+.ss-replikasi-grid {
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.ss-repl-card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 16px 16px 18px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 10px 26px rgba(15,23,42,0.18);
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: #111827;
+}
+
+.ss-repl-card.soft {
+  background: linear-gradient(135deg, #eff6ff, #ecfdf5);
+}
+
+.ss-repl-card h3 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1rem;
+  font-weight: 800;
+  margin-bottom: 8px;
+  color: #111827;
+}
+
+.ss-repl-card h3 i {
+  width: 34px;
+  height: 34px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  background: #1d4ed8;
+  color: #ffffff;
+  font-size: 1.05rem;
+}
+
+/* list di dalam kartu */
+.ss-repl-list {
+  margin: 0;
+  padding-left: 20px;
+}
+.ss-repl-list li + li {
+  margin-top: 4px;
+}
+
+/* ===== BLOK 2: KRITERIA ===== */
+
+.ss-repl-criteria {
+  margin-top: 26px;
+}
+
+.ss-repl-criteria h3 {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 1rem;
+  font-weight: 800;
+  color: #f9fafb;
+  margin-bottom: 10px;
+}
+.ss-repl-criteria h3 i {
+  color: #22c55e;
+}
+
+.ss-repl-criteria-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 12px;
+}
+
+.ss-repl-chip {
+  background: #f9fafb;
+  border-radius: 16px;
+  padding: 10px 12px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 6px 18px rgba(15,23,42,0.12);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+.chip-label {
+  display: inline-block;
+  padding: 2px 8px;
+  margin-bottom: 4px;
+  border-radius: 999px;
+  background: #e0f2fe;
+  color: #0369a1;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+}
+
+/* ===== BLOK 3: LANGKAH REPLIKASI ===== */
+
+.ss-repl-steps {
+  margin-top: 28px;
+}
+
+.ss-repl-steps h3 {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 1rem;
+  font-weight: 800;
+  color: #f9fafb;
+  margin-bottom: 10px;
+}
+.ss-repl-steps h3 i {
+  color: #f97316;
+}
+
+.ss-repl-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  gap: 14px;
+}
+
+.ss-repl-step {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 12px 12px 14px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 8px 20px rgba(15,23,42,0.18);
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: #111827;
+}
+
+.step-badge {
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #ffffff;
+  background: linear-gradient(135deg, #f97316, #ec4899);
+  margin-bottom: 6px;
+  box-shadow: 0 4px 12px rgba(248,113,113,0.45);
+}
+
+.ss-repl-step h4 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+/* ===== BLOK 4: CONTOH REPLIKASI ===== */
+
+.ss-repl-example {
+  margin-top: 26px;
+  background: #fefce8;
+  border-radius: 22px;
+  padding: 14px 16px 16px;
+  border: 1px solid #facc15;
+  box-shadow: 0 10px 26px rgba(202,138,4,0.26);
+  font-size: 0.9rem;
+}
+
+.ss-repl-example h3 {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 1rem;
+  font-weight: 800;
+  margin-bottom: 8px;
+  color: #1f2937;
+}
+.ss-repl-example h3 i {
+  color: #f59e0b;
+}
+
+.ss-repl-example-grid {
+  display: grid;
+  grid-template-columns: minmax(0,1.2fr) auto minmax(0,1.2fr);
+  gap: 12px;
+  align-items: stretch;
+  margin-bottom: 8px;
+}
+
+.ss-repl-example-box {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 10px 12px;
+  border: 1px solid #facc15;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+}
+
+.example-label {
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: #b45309;
+  margin-bottom: 4px;
+}
+
+.example-text {
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: #1f2937;
+}
+
+.ss-repl-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.7rem;
+  color: #b45309;
+}
+
+.ss-repl-note {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: #78350f;
+}
+
+/* ========= RESPONSIVE REPLIKASI ========= */
+@media (max-width: 1024px) {
+  .ss-replikasi-grid {
+    grid-template-columns: 1fr;
+  }
+  .ss-repl-steps-grid {
+    grid-template-columns: repeat(2, minmax(0,1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .ss-repl-criteria-grid {
+    grid-template-columns: 1fr;
+  }
+  .ss-repl-steps-grid {
+    grid-template-columns: 1fr;
+  }
+  .ss-repl-example-grid {
+    grid-template-columns: 1fr;
+  }
+  .ss-repl-arrow {
+    display: none;
+  }
+}
+
+/* ================================
+   MATRIKS STATUS REPLIKASI
+================================ */
+
+.ss-repl-matrix-v2 {
+  margin-top: 36px;
+  padding: 16px 18px 20px;
+  border-radius: 24px;
+  background: #ffffff;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.14);
+  border: 1px solid #e5e7eb;
+}
+
+.ss-repl-matrix-title {
+  font-size: 1.2rem;
+  font-weight: 800;
+  margin-bottom: 16px;
+  color: #111827;
+}
+
+.ss-repl-matrix-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  align-items: stretch; /* kolom sama tinggi */
+}
+
+/* kolom utama */
+.repl-col {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* bar warna atas */
+.matrix-header {
+  text-align: center;
+  padding: 10px 6px;
+  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #ffffff;
+  border-radius: 10px 10px 0 0;
+}
+
+/* kotak isi tengah */
+.matrix-box {
+  margin-top: 10px;
+  background: #ffffff;
+  padding: 10px 12px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.10);
+}
+
+/* bar warna bawah */
+.matrix-footer {
+  margin-top: 16px;
+  min-height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 8px 10px;
+  font-size: 0.87rem;
+  font-weight: 700;
+  color: #ffffff;
+  border-radius: 0 0 10px 10px;
+}
+
+/* ---- WARNA PER STATUS ---- */
+.approved .matrix-header,
+.approved .matrix-footer {
+  background: #15803d;
+}
+.approved .matrix-box {
+  border-color: #15803d;
+}
+
+.not-approved .matrix-header,
+.not-approved .matrix-footer {
+  background: #b91c1c;
+}
+.not-approved .matrix-box {
+  border-color: #b91c1c;
+}
+
+.under-review .matrix-header,
+.under-review .matrix-footer {
+  background: #f59e0b;
+}
+.under-review .matrix-box {
+  border-color: #f59e0b;
+}
+
+.implemented .matrix-header,
+.implemented .matrix-footer {
+  background: #0f3c64;
+}
+.implemented .matrix-box {
+  border-color: #0f3c64;
+}
+
+/* responsif matriks */
+@media (max-width: 1024px) {
+  .ss-repl-matrix-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .ss-repl-matrix-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ================================
+   HISTORY REPLIKASI – “BUKU”
+   (teks disembunyikan, hanya gambar)
+================================ */
+
+.history-repl {
+  margin-top: 40px;
+}
+
+.history-book {
+  margin: 20px auto;
+  background: #f3f4f6;
+  border-radius: 24px;
+  padding: 30px 24px;
+  box-shadow: 0 10px 30px rgba(15,23,42,0.12);
+  width: max-content;      /* box mengikuti lebar gambar */
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.history-page-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* tiap halaman */
+.history-page {
+  display: none;
+}
+
+.history-image {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+
+/* hanya gambar yang tampil */
+.history-text {
+  display: none;
+}
+
+.history-page.active {
+  display: flex;
+  justify-content: center;
+}
+
+.history-image {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.history-image img {
+  width: 80%;
+  max-width: 450px;
+  margin: 0 auto;
+  border-radius: 18px;
+  box-shadow: 0 10px 28px rgba(15,23,42,0.35);
+}
+
+
+.history-image img {
+  width: 80%;        /* gambar lebih besar tapi tetap center */
+  max-width: 450px;  /* biar tidak terlalu besar */
+  margin: 0 auto;
+  border-radius: 18px;
+  box-shadow: 0 10px 28px rgba(15,23,42,0.35);
+}
+
+/* navigasi halaman */
+.history-nav {
+  margin-top: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.history-nav-btn {
+  border: none;
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  background: #e5e7eb;
+  color: #111827;
+  transition: background .15s ease, color .15s ease, box-shadow .15s ease;
+}
+.history-nav-btn.active {
+  background: #2563eb;
+  color: #ffffff;
+  box-shadow: 0 4px 10px rgba(37,99,235,0.4);
+}
+
+/* layout dua kolom QIT kiri – SS kanan */
+.history-two-column {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin-top: 40px;
+  align-items: flex-start;
+}
+
+.history-left,
+.history-right {
+  width: 100%;
+}
+
+@media (max-width: 900px) {
+  .history-two-column {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ===== LAYOUT DUA KOLOM QIT & SS ===== */
+.history-two-column {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: minmax(0,1fr) minmax(0,1fr);
+  gap: 32px;
+  align-items: flex-start;
+}
+
+/* Kolom masing-masing */
+.history-col {
+  width: 100%;
+}
+
+/* Box buku mengikuti lebar kolom, bukan max-content */
+.history-book {
+  margin-top: 16px;
+  background: #f3f4f6;
+  border-radius: 24px;
+  padding: 20px 18px 22px;
+  box-shadow: 0 10px 30px rgba(15,23,42,0.12);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Label teks kecil di atas gambar (QIT / SS) */
+.history-label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #6b7280;
+  margin-bottom: 10px;
+}
+
+/* Wrapper halaman */
+.history-page-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* Hanya halaman aktif yang tampil */
+.history-page {
+  display: none;
+}
+.history-page.active {
+  display: flex;
+  justify-content: center;
+}
+
+/* Gambar betul-betul di tengah */
+.history-image {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.history-image img {
+  width: 80%;
+  max-width: 450px;
+  margin: 0 auto;
+  border-radius: 18px;
+  box-shadow: 0 10px 28px rgba(15,23,42,0.35);
+  object-fit: contain;
+}
+
+/* Navigasi (tombol halaman) tetap */
+.history-nav {
+  margin-top: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* Responsif: di HP jadi 1 kolom */
+@media (max-width: 900px) {
+  .history-two-column {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ================================
+   GALLERY REPLIKASI – SLIDER SWIPE
+================================ */
+
+.repl-gallery {
+  margin-top: 40px;
+}
+
+/* baris kartu jadi slider horizontal */
+.repl-gallery-grid {
+  margin-top: 20px;
+  display: flex;
+  gap: 18px;
+  overflow-x: auto;
+  padding: 6px 4px 12px;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* scrollbar halus */
+.repl-gallery-grid::-webkit-scrollbar {
+  height: 6px;
+}
+.repl-gallery-grid::-webkit-scrollbar-track {
+  background: transparent;
+}
+.repl-gallery-grid::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.7);
+  border-radius: 999px;
+}
+
+/* kartu tiap history */
+.repl-card {
+  flex: 0 0 260px;
+  scroll-snap-align: start;
+  background: #ffffff;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.16);
+  text-align: center;
+  cursor: pointer;
+  transition: transform .22s ease, box-shadow .22s ease;
+}
+
+/* di desktop kartu sedikit lebih lebar */
+@media (min-width: 1024px) {
+  .repl-card {
+    flex-basis: 300px;
+  }
+}
+
+/* efek hover */
+.repl-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 32px rgba(15, 23, 42, 0.22);
+}
+
+.repl-card img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 4;
+  object-fit: contain;
+  background: #f3f4f6;
+  padding: 10px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.repl-label {
+  padding: 10px 10px 14px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+/* sedikit rapat di HP */
+@media (max-width: 640px) {
+  .repl-card {
+    flex: 0 0 240px;
+  }
+}
+
+/* ===== GLOBAL MOBILE FIX (≤ 480px) ===== */
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+
+  .content,
+  .content.epic {
+    max-width: 100%;
+    margin: 20px auto;
+    padding: 0 12px;
+  }
+
+  .card,
+  section.content > div {
+    border-radius: 14px;
+  }
+}
+
+/* ================================
+   RESPONSIVE FIX — MOBILE OPTIMIZATION
+================================ */
+
+/* KONTAINER UTAMA */
+@media (max-width: 768px) {
+
+  /* Semua konten auto full width */
+  .content {
+    padding: 0 14px !important;
+  }
+
+  /* HERO BIRU */
+  .ss-replikasi {
+    padding: 26px 18px !important;
+    border-radius: 12px !important;
+  }
+
+  .ss-replikasi .ss-title {
+    font-size: 1.6rem !important;
+    line-height: 1.3;
+  }
+
+  .ss-replikasi .ss-desc {
+    font-size: 0.95rem !important;
+  }
+
+
+  /* CARD-LANGKAH */
+  .ss-repl-step {
+    padding: 14px !important;
+    border-radius: 14px !important;
+  }
+
+  .step-badge {
+    width: 26px;
+    height: 26px;
+    font-size: 0.75rem;
+  }
+
+
+  /* MATRIKS STATUS */
+  .ss-repl-matrix-v2 {
+    padding: 16px 14px !important;
+    border-radius: 16px;
+  }
+
+  .matrix-header {
+    font-size: 0.85rem !important;
+    padding: 8px;
+  }
+
+  .matrix-box {
+    font-size: 0.85rem !important;
+    padding: 8px 10px;
+  }
+
+  .matrix-footer {
+    font-size: 0.82rem !important;
+    padding: 6px;
+  }
+
+
+  /* ===== HISTORY BUKU ===== */
+
+  /* Kotak pembungkus */
+  .history-book {
+    padding: 14px !important;
+    border-radius: 16px !important;
+  }
+
+  /* Halaman */
+  .history-page.active {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  /* Gambar tengah penuh */
+  .history-image img {
+    width: 100% !important;
+    max-width: 100% !important;
+    border-radius: 12px !important;
+    margin: 0 auto !important;
+  }
+
+  /* Navi tombol kecil */
+  .history-nav-btn {
+    font-size: 0.75rem !important;
+    padding: 4px 10px !important;
+    border-radius: 50px !important;
+  }
+
+
+  /* ===== GALLERY SLIDER ===== */
+  .repl-card {
+    flex: 0 0 200px !important;
+    border-radius: 14px !important;
+  }
+
+  .repl-card img {
+    padding: 6px !important;
+    border-radius: 12px !important;
+  }
+
+  .repl-label {
+    font-size: 0.85rem !important;
+  }
+
+
+  /* ===== Spacing Global ===== */
+  section {
+    margin-top: 30px !important;
+  }
+
+  .history-repl {
+    margin-top: 20px !important;
+  }
+
+}
+
+/* ===== BLOK HERO TEKS REPLIKASI (SEPERTI CONTOH GAMBAR) ===== */
+.repl-hero-text {
+  max-width: 520px;
+  margin-bottom: 26px;
+}
+
+/* Judul besar dengan highlight kuning */
+.repl-hero-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  line-height: 1.2;
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+
+.repl-hero-title span {
+  color: #facc15;         /* kuning seperti contoh */
+}
+
+/* Subteks pendek di bawah judul */
+.repl-hero-sub {
+  font-size: 0.98rem;
+  line-height: 1.7;
+  color: #e5e7eb;
+  margin-bottom: 18px;
+}
+
+/* Tombol kuning */
+.btn-repl-yellow {
+  display: inline-block;
+  padding: 12px 28px;
+  background: linear-gradient(90deg, #facc15, #f59e0b);
+  color: #ffffff;
+  font-size: 0.98rem;
+  font-weight: 700;
+  border-radius: 999px;
+  text-decoration: none;
+  box-shadow: 0 8px 22px rgba(245, 158, 11, 0.55);
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.btn-repl-yellow:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(245, 158, 11, 0.7);
+}
+
+.btn-repl-yellow:active {
+  transform: scale(0.96);
+}
+
+/* Versi mobile: center seperti hero di gambar */
+@media (max-width: 768px) {
+  .repl-hero-text {
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .btn-repl-yellow {
+    margin: 0 auto;
+  }
+}
+
+.repl-hero-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  line-height: 1.2;
+  color: #ffffff !important;     /* teks jadi putih */
+  margin-bottom: 12px;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.25);
+}
+
+.repl-hero-title span {
+  color: #facc15 !important;     /* highlight kuning */
+}
+
