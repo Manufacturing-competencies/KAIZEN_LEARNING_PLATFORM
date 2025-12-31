@@ -936,3 +936,40 @@ img{
     font-size:1.3rem;
   }
 }
+
+
+/* ==== FIX OFFSIDE / LEBIHAN DI HP KECIL ==== */
+@media (max-width: 640px){
+  /* pastikan tidak bisa scroll horizontal seluruh halaman */
+  html, body{
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  /* padding dalam slider dibuat rapat biar muat */
+  .ss-yes-group,
+  .ss-nonss-group,
+  .ss-steps-grid,
+  .ss-track,
+  .ss-best-rail{
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  /* kartu-kartu di dalam slider jangan sampai selebar full viewport */
+  .ss-yes-block,
+  .ss-nonss-block,
+  .ss-step-card,
+  .ss-item,
+  .ss-best-card{
+    flex-basis: calc(100% - 32px);   /* selalu sedikit lebih kecil dari layar */
+  }
+}
+
+@media (max-width: 640px){
+  .ss-login-illustration img{
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+}
