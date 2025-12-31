@@ -1,425 +1,99 @@
 // =====================================================
-// GLOBAL INIT
+// script.js (CLEAN) — Index + Popup + Contact drag + Safe init
 // =====================================================
-document.addEventListener('DOMContentLoaded', () => {
-  initNavbar();
-  initIndexOverlays();
-  init5RReveal();
-  init5RDateWeek();
-  initP5RBadges();
-  initEpicSelect();
-  initHistoryBooks();   // ⬅️ TAMBAHKAN INI
 
-  console.log(`✅ Script aktif di halaman: ${window.location.pathname}`);
+document.addEventListener("DOMContentLoaded", () => {
+  // ✅ tampilkan popup info (index saja)
+  initInfoPopup();
+
+  // ✅ contact slider drag (kalau ada)
+  initContactSlider();
+
+  console.log("✅ script.js jalan:", window.location.pathname);
 });
 
+/* =====================================================
+   POPUP INFORMASI (index.html)
+   - muncul otomatis
+   - bisa close X / klik luar / ESC
+   - active slide auto (timbul)
+===================================================== */
+function initInfoPopup() {
+  const popup = document.getElementById("infoPopup");
+  const closeBtn = document.getElementById("infoClose");
+  const slider = document.querySelector(".info-slider");
+  const slides = slider ? Array.from(slider.querySelectorAll(".info-slide")) : [];
 
-// =====================================================
-// NAVBAR MOBILE TOGGLE
-// =====================================================
-function initNavbar() {
-  const menuToggle = document.getElementById('menuToggle');
-  const mainNav = document.getElementById('mainNav');
+  // hanya jalan kalau elemen ada
+  if (!popup || !closeBtn || !slider || slides.length === 0) return;
 
-  if (!menuToggle || !mainNav) return;
+  // tampil otomatis (bisa ubah delay)
+  setTimeout(() => popup.classList.add("active"), 300);
 
-  // Klik icon menu
-  menuToggle.addEventListener('click', (e) => {
-    e.stopPropagation();
-    const isActive = mainNav.classList.toggle('active');
-    menuToggle.setAttribute('aria-expanded', isActive ? 'true' : 'false');
+  // close
+  closeBtn.addEventListener("click", () => popup.classList.remove("active"));
+  popup.addEventListener("click", (e) => {
+    if (e.target === popup) popup.classList.remove("active");
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") popup.classList.remove("active");
   });
 
-  // Klik di luar nav → tutup
-  document.addEventListener('click', (e) => {
-    if (
-      mainNav.classList.contains('active') &&
-      !mainNav.contains(e.target) &&
-      e.target !== menuToggle &&
-      !menuToggle.contains(e.target)
-    ) {
-      mainNav.classList.remove('active');
-      menuToggle.setAttribute('aria-expanded', 'false');
-    }
-  });
-}
+  // aktifkan slide yang paling tengah
+  const setActiveByCenter = () => {
+    const rect = slider.getBoundingClientRect();
+    const centerX = rect.left + rect.width / 2;
 
-// =====================================================
-// OVERLAY DASHBOARD (index.html saja)
-// =====================================================
-function initIndexOverlays() {
-  const isDashboardPage = window.location.pathname.includes('index');
-  if (!isDashboardPage) return;
+    let bestIdx = 0;
+    let bestDist = Infinity;
 
-  // Tombol X (tutup overlay)
-  document.querySelectorAll('.page-5r-close').forEach((btn) => {
-    btn.addEventListener('click', () => {
-      const overlay = btn.closest('.page-5r-overlay');
-      if (overlay) {
-        overlay.classList.remove('active');
-        overlay.setAttribute('aria-hidden', 'true');
-      }
+    slides.forEach((s, idx) => {
+      const r = s.getBoundingClientRect();
+      const mid = r.left + r.width / 2;
+      const dist = Math.abs(mid - centerX);
+      if (dist < bestDist) { bestDist = dist; bestIdx = idx; }
     });
-  });
 
-  // Klik area gelap → tutup overlay
-  document.querySelectorAll('.page-5r-overlay').forEach((overlay) => {
-    overlay.addEventListener('click', (e) => {
-      if (e.target === overlay) {
-        overlay.classList.remove('active');
-        overlay.setAttribute('aria-hidden', 'true');
-      }
+    slides.forEach((s, idx) => {
+      s.classList.toggle("active", idx === bestIdx);
+      s.classList.toggle("inactive", idx !== bestIdx);
     });
-  });
-
-  // Tekan ESC → tutup semua overlay
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-      document
-        .querySelectorAll('.page-5r-overlay.active')
-        .forEach((overlay) => {
-          overlay.classList.remove('active');
-          overlay.setAttribute('aria-hidden', 'true');
-        });
-    }
-  });
-}
-
-// Helper global (dipakai onclick di HTML)
-function openOverlay(id) {
-  const overlay = document.getElementById(id);
-  if (!overlay) return;
-  overlay.classList.add('active');
-  overlay.setAttribute('aria-hidden', 'false');
-}
-
-// Fungsi khusus kartu dashboard (biar tetap bisa dipanggil dari HTML)
-function open5ROverlay()       { openOverlay('overlay-5r'); }
-function openEpicOverlay()     { openOverlay('overlay-epic'); }
-function openSSOverlay()       { openOverlay('overlay-ss'); }
-function openReplikasiOverlay(){ openOverlay('overlay-replikasi'); }
-function openLearningOverlay() { openOverlay('overlay-learning'); }
-
-// =====================================================
-// 5R – ANIMASI FADE-IN (LIST & GAMBAR)
-// =====================================================
-function init5RReveal() {
-  const targets = document.querySelectorAll(
-    '.page-5r-text ol li, .page-5r-media'
-  );
-  if (!targets.length) return;
-
-  targets.forEach((el, index) => {
-    el.classList.add('reveal-item');               // class dasar dari CSS
-    el.style.transitionDelay = `${index * 0.08}s`; // muncul berurutan
-  });
-
-  const observer = new IntersectionObserver(
-    (entries, obs) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          obs.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.2 } // 20% elemen masuk viewport
-  );
-
-  targets.forEach((el) => observer.observe(el));
-}
-
-// =====================================================
-// 5R – TANGGAL & NOMOR MINGGU (Wxx)
-// =====================================================
-function init5RDateWeek() {
-  const elDate = document.getElementById('p5r-date');
-  const elWeek = document.getElementById('p5r-week');
-
-  // Kalau tidak ada elemen, skip saja (bukan halaman 5R)
-  if (!elDate && !elWeek) return;
-
-  try {
-    const d = new Date();
-    const opt = { weekday: 'long', month: 'long', day: 'numeric' };
-    const locale = 'id-ID'; // ganti ke 'en-US' kalau mau bahasa Inggris
-    const dateStr = new Intl.DateTimeFormat(locale, opt).format(d);
-
-    // Hitung minggu ke-berapa dalam tahun
-    const start = new Date(d.getFullYear(), 0, 1);
-    const diffDays = Math.floor((d - start) / 86400000);
-    const weekNum = Math.ceil((diffDays + start.getDay() + 1) / 7);
-
-    if (elDate) elDate.textContent = dateStr;
-    if (elWeek) elWeek.textContent = 'W' + weekNum;
-  } catch (e) {
-    console.warn('Gagal set tanggal / week 5R:', e);
-  }
-}
-
-// =====================================================
-// 5R – COUNTER SUDAH / BELUM (localStorage)
-// =====================================================
-function initP5RBadges() {
-  const btns = document.querySelectorAll('.badge-btn');
-  if (!btns.length) return; // bukan halaman 5R
-
-  const KEY_SUDAH = 'p5r_count_sudah';
-  const KEY_BELUM = 'p5r_count_belum';
-
-  const elSudah = document.getElementById('count-sudah');
-  const elBelum = document.getElementById('count-belum');
-
-  const get = (k) => Number(localStorage.getItem(k) || 0);
-  const set = (k, v) => localStorage.setItem(k, String(v));
-
-  const syncUI = () => {
-    if (elSudah) elSudah.textContent = get(KEY_SUDAH);
-    if (elBelum) elBelum.textContent = get(KEY_BELUM);
-  };
-  syncUI();
-
-  // Klik badge → tambah 1
-  btns.forEach((btn) => {
-    btn.addEventListener('click', () => {
-      const t = btn.dataset.type;
-      if (t === 'sudah') set(KEY_SUDAH, get(KEY_SUDAH) + 1);
-      if (t === 'belum') set(KEY_BELUM, get(KEY_BELUM) + 1);
-      syncUI();
-
-      // Kalau mau otomatis scroll ke form 5R, bisa aktifkan:
-      // document
-      //   .querySelector('.page-5r-submit')
-      //   ?.scrollIntoView({ behavior: 'smooth' });
-    });
-  });
-
-  // Long-press (1.2s) pada badge → reset counter masing-masing
-  let pressTimer;
-  const attachReset = (selector, key) => {
-    const el = document.querySelector(selector);
-    if (!el) return;
-
-    const start = () => {
-      pressTimer = setTimeout(() => {
-        set(key, 0);
-        syncUI();
-      }, 1200);
-    };
-    const clear = () => clearTimeout(pressTimer);
-
-    el.addEventListener('mousedown', start);
-    el.addEventListener('touchstart', start, { passive: true });
-
-    ['mouseup', 'mouseleave', 'touchend', 'touchcancel'].forEach((evt) =>
-      el.addEventListener(evt, clear)
-    );
   };
 
-  attachReset('.badge-sudah', KEY_SUDAH);
-  attachReset('.badge-belum', KEY_BELUM);
+  setActiveByCenter();
+  slider.addEventListener("scroll", () => requestAnimationFrame(setActiveByCenter), { passive: true });
 }
 
-// =====================================================
-// EPIC – DROPDOWN PILIH FORM → IFRAME
-// =====================================================
+/* =====================================================
+   CONTACT SLIDER (drag) — jalan kalau ada #contactGrid
+   Catatan: di HTML kamu sekarang contact-grid class,
+   jadi bikin id="contactGrid" kalau mau fitur ini aktif.
+===================================================== */
+function initContactSlider() {
+  const grid = document.getElementById("contactGrid");
+  if (!grid) return;
 
-// Ganti ke URL form yang benar lalu tambahkan ?embedded=true
-const EPIC_FORM_URLS = {
-  office:
-    'https://docs.google.com/forms/d/e/XXXXX/viewform?embedded=true',
-  workshop:
-    'https://docs.google.com/forms/d/e/YYYYY/viewform?embedded=true',
-  produksi:
-    'https://docs.google.com/forms/d/e/ZZZZZ/viewform?embedded=true',
-};
+  let isDown = false;
+  let startX = 0;
+  let scrollLeft = 0;
 
-function initEpicSelect() {
-  const select = document.getElementById('epicSelect');
-  const frame = document.getElementById('epicFrame');
-  if (!select || !frame) return; // bukan halaman EPIC
-
-  const updateSrc = () => {
-    frame.src = EPIC_FORM_URLS[select.value] || 'about:blank';
-  };
-
-  updateSrc();
-  select.addEventListener('change', updateSrc);
-}
-
-
-document.addEventListener('DOMContentLoaded', function () {
-  // ================= NAVBAR MOBILE TOGGLE (punyamu yang lama) =================
-  const menuToggle = document.getElementById('menuToggle');
-  const mainNav = document.getElementById('mainNav');
-
-  if (menuToggle && mainNav) {
-    menuToggle.addEventListener('click', function () {
-      const isActive = mainNav.classList.toggle('active');
-      menuToggle.setAttribute('aria-expanded', isActive ? 'true' : 'false');
-    });
-
-    document.addEventListener('click', function (e) {
-      if (
-        mainNav.classList.contains('active') &&
-        !mainNav.contains(e.target) &&
-        e.target !== menuToggle
-      ) {
-        mainNav.classList.remove('active');
-        menuToggle.setAttribute('aria-expanded', 'false');
-      }
-    });
-  }
-
-  // ================= POPUP INFORMASI =================
-  const infoPopup = document.getElementById('infoPopup');
-  const infoClose = document.getElementById('infoClose');
-
-  // Munculkan popup otomatis saat halaman selesai dimuat
-  if (infoPopup) {
-    infoPopup.classList.add('active');
-  }
-
-  // Tutup popup ketika tombol X diklik
-  if (infoClose) {
-    infoClose.addEventListener('click', function () {
-      infoPopup.classList.remove('active');
-    });
-  }
-});
-
-document.addEventListener('DOMContentLoaded', () => {
-  // ==========================
-  // NAVBAR MOBILE TOGGLE
-  // ==========================
-  const menuToggle = document.getElementById('menuToggle');
-  const mainNav = document.getElementById('mainNav');
-
-  if (menuToggle && mainNav) {
-    menuToggle.addEventListener('click', () => {
-      const isActive = mainNav.classList.toggle('active');
-      menuToggle.setAttribute('aria-expanded', isActive ? 'true' : 'false');
-    });
-
-    // klik di luar nav untuk nutup menu
-    document.addEventListener('click', (e) => {
-      if (
-        mainNav.classList.contains('active') &&
-        !mainNav.contains(e.target) &&
-        e.target !== menuToggle &&
-        !menuToggle.contains(e.target)
-      ) {
-        mainNav.classList.remove('active');
-        menuToggle.setAttribute('aria-expanded', 'false');
-      }
-    });
-  }
-
-  // ==========================
-  // SLIDER 5R (SEMUA GALERI)
-  // ==========================
-  const sliderContainers = document.querySelectorAll('.slider-container');
-
-  sliderContainers.forEach((container) => {
-    const wrapper = container.querySelector('.slider-wrapper');
-    const slides = container.querySelectorAll('.slide');
-    const prevBtn = container.querySelector('.btn-prev');
-    const nextBtn = container.querySelector('.btn-next');
-
-    // kalau elementnya nggak lengkap, skip
-    if (!wrapper || slides.length === 0 || !prevBtn || !nextBtn) return;
-
-    let currentIndex = 0;
-
-    function updateSlider() {
-      // setiap slide lebarnya 100% (di CSS), jadi cukup geser 100%
-      wrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
-    }
-
-    prevBtn.addEventListener('click', () => {
-      currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-      updateSlider();
-    });
-
-    nextBtn.addEventListener('click', () => {
-      currentIndex = (currentIndex + 1) % slides.length;
-      updateSlider();
-    });
-
-    // posisi awal
-    updateSlider();
-  });
-});
-
-document.addEventListener("DOMContentLoaded",function(){
-  var items=document.querySelectorAll(".ss-item");
-  var modal=document.getElementById("ssModal");
-  var modalImg=document.getElementById("ssModalImg");
-  var modalInner=document.querySelector(".ss-modal-inner");
-  var closeBtn=document.querySelector(".ss-modal-close");
-
-  function openModal(src){
-    modalImg.src=src;
-    modal.classList.add("show");
-  }
-
-  function closeModal(){
-    modal.classList.remove("show");
-    modalImg.src="";
-  }
-
-  items.forEach(function(i){
-    i.addEventListener("click",function(){
-      var src=i.getAttribute("data-full")||i.src;
-      openModal(src);
-    });
+  grid.addEventListener("mousedown", (e) => {
+    isDown = true;
+    grid.classList.add("dragging");
+    startX = e.pageX - grid.offsetLeft;
+    scrollLeft = grid.scrollLeft;
   });
 
-  closeBtn.addEventListener("click",closeModal);
-
-  modal.addEventListener("click",function(e){
-    if(!modalInner.contains(e.target)) closeModal();
+  window.addEventListener("mouseup", () => {
+    isDown = false;
+    grid.classList.remove("dragging");
   });
 
-  document.addEventListener("keydown",function(e){
-    if(e.key==="Escape") closeModal();
-  });
-});
-
-// =====================================================
-// HISTORY REPLIKASI – PER BUKU (QIT & SS DIPISAH)
-// =====================================================
-function initHistoryBooks() {
-  const books = document.querySelectorAll('.history-book');
-  if (!books.length) return; // kalau nggak ada section history, skip
-
-  books.forEach((book) => {
-    const pages   = book.querySelectorAll('.history-page');
-    const buttons = book.querySelectorAll('.history-nav-btn');
-
-    // kalau struktur di buku ini nggak lengkap, skip buku ini
-    if (!pages.length || !buttons.length) return;
-
-    // kalau belum ada yang active, aktifkan halaman pertama untuk buku ini
-    if (!book.querySelector('.history-page.active')) {
-      pages[0].classList.add('active');
-      buttons[0].classList.add('active');
-    }
-
-    // event untuk tombol di DALAM buku ini saja
-    buttons.forEach((btn) => {
-      btn.addEventListener('click', () => {
-        const target = btn.dataset.target;
-
-        // aktif/nonaktifkan halaman hanya di buku ini
-        pages.forEach((page) => {
-          page.classList.toggle('active', page.dataset.page === target);
-        });
-
-        // update state tombol di buku ini
-        buttons.forEach((b) => b.classList.remove('active'));
-        btn.classList.add('active');
-      });
-    });
+  grid.addEventListener("mousemove", (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - grid.offsetLeft;
+    const walk = (x - startX) * 1.2;
+    grid.scrollLeft = scrollLeft - walk;
   });
 }

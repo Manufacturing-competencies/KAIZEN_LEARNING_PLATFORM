@@ -7,48 +7,64 @@
 
   <!-- Fonts & Icons -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
 
   <!-- Global & SUMBANG SARAN style -->
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="style-SS.css" />
 </head>
-<body>
-  <!-- NAVBAR -->
-  <nav class="navbar mini-nav" role="navigation" aria-label="Navigasi utama">
-    <button class="logo" type="button" onclick="window.location.href='index.html'" aria-label="Kembali ke Dashboard">
-      <i class="fa-solid fa-house" aria-hidden="true"></i>
-      <span>Dashboard</span>
-    </button>
+<body id="top">
+  <body id="top">
 
-    <ul class="nav-links" id="mainNav">
-      <li>
-        <a href="index.html#kontak">
-          <i class="fa-solid fa-address-book"></i> Kontak
-        </a>
-      </li>
-    </ul>
-
-    <button class="menu-toggle" id="menuToggle" type="button" aria-label="Buka menu" aria-controls="mainNav" aria-expanded="false">
-      <i class="fa-solid fa-bars" aria-hidden="true"></i>
-    </button>
+  <!-- NAVBAR PILL – KHUSUS HALAMAN SS -->
+  <nav class="mini-nav nav-epic" aria-label="Navigasi utama">
+    <a href="index.html" class="brand-logo" aria-label="Paragon Technology & Innovation">
+      <img src="Logo.jpg" alt="Paragon Technology & Innovation" />
+    </a>
   </nav>
 
+
   <main>
-    <!-- ================================
-       HERO SUMBANG SARAN (OPENING)
-    ================================ -->
-    <section class="ss-hero" aria-labelledby="ss-hero-title">
-      <div class="ss-hero-inner">
-        <h1 id="ss-hero-title">PROGRAM SUMBANG SARAN</h1>
-        <p class="ss-subtitle">
-          Ide kecil hari ini bisa menjadi dampak besar untuk kita semua esok hari.
-          Sampaikan gagasanmu, wujudkan perubahan nyata!
-        </p>
+    <!-- ================= HERO ================= -->
+    <section class="hero">
+      <div class="hero-inner">
+        <!-- KIRI: TEKS -->
+        <div class="hero-left">
+          <span class="hero-pill">PROGRAM</span>
+
+          <h1 class="hero-heading">
+            <span class="hero-highlight">SUMBANG SARAN</span><br />
+            PARAGON
+          </h1>
+
+          <p class="hero-subtitle">
+            Ide kecil hari ini bisa menjadi dampak besar untuk kita semua esok hari.
+            Sampaikan gagasanmu, wujudkan perubahan nyata!
+          </p>
+
+          <div class="hero-cta">
+            <a href="#ss-links-title" class="btn-primary">Informasi SS</a>
+            <a href="#pembuatan-ss" class="btn-ghost">Cara Membuat SS</a>
+          </div>
+        </div>
+
+        <!-- KANAN: GAMBAR -->
+        <div class="hero-right">
+          <div class="hero-illustration">
+            <img
+              src="HEROSS.png"
+              alt="Program Sumbang Saran"
+              class="hero-img-main"
+            />
+          </div>
+        </div>
       </div>
     </section>
-
-
 
     <!-- ================================
        LINK CEPAT SUMBANG SARAN
@@ -61,7 +77,7 @@
           <div class="ss-link-icon"><i class="fa-solid fa-pen-to-square" aria-hidden="true"></i></div>
           <div class="ss-link-body">
             <h3>Link Submitted Sumbang Saran</h3>
-            <p>Silahkan submit ide terbaik kamu dilink berikut.</p>
+            <p>Silahkan submit ide terbaik kamu di link berikut.</p>
           </div>
         </a>
 
@@ -77,7 +93,7 @@
           <div class="ss-link-icon"><i class="fa-solid fa-video" aria-hidden="true"></i></div>
           <div class="ss-link-body">
             <h3>Video Edukasi Sumbang Saran</h3>
-            <p>Pahami alur & manfaat SS lewat video singkat.</p>
+            <p>Pahami alur &amp; manfaat SS lewat video singkat.</p>
           </div>
         </a>
 
@@ -85,7 +101,7 @@
           <div class="ss-link-icon"><i class="fa-solid fa-robot" aria-hidden="true"></i></div>
           <div class="ss-link-body">
             <h3>Prompt Desain AI</h3>
-            <p>Prompt AI desain untuk Pembuatan visualisasi/Desain implementasi Sumbang Saran.</p>
+            <p>Prompt AI desain untuk pembuatan visualisasi/desain implementasi Sumbang Saran.</p>
           </div>
         </a>
 
@@ -93,14 +109,14 @@
           <div class="ss-link-icon"><i class="fa-solid fa-gift" aria-hidden="true"></i></div>
           <div class="ss-link-body">
             <h3>Best Sumbang Saran Bulanan</h3>
-            <p>Cek Implementer Sumbang Saran terbaik dibulan ini</p>
+            <p>Cek Implementer Sumbang Saran terbaik di bulan ini.</p>
           </div>
         </a>
 
         <a class="ss-link-card" href="DENI SAPUTRA" target="_self" rel="noopener">
           <div class="ss-link-icon"><i class="fa-solid fa-circle-info" aria-hidden="true"></i></div>
           <div class="ss-link-body">
-            <h3>List Implementer Sumbang Saran Bulanan & Implementer Tematik Sumbang Saran.</h3>
+            <h3>List Implementer Sumbang Saran Bulanan &amp; Implementer Tematik Sumbang Saran</h3>
             <p>Informasi hadiah untuk Implementer Sumbang Saran.</p>
           </div>
         </a>
@@ -115,41 +131,40 @@
       </div>
     </section>
 
-
-<!-- ================================
+    <!-- ================================
        TIPS & TRIK SUMBANG SARAN
     ================================ -->
- <section class="content ss-tips" id="tips-ss">
-  <h2 class="ss-title">Tips &amp; Trik Sumbang Saran</h2>
+    <section class="content ss-tips" id="tips-ss">
+      <h2 class="ss-title">Tips &amp; Trik Sumbang Saran</h2>
 
-  <div class="ss-carousel">
-    <div class="ss-track">
-      <img src="TRIK1.png" class="ss-item" data-full="TRIK1.png" alt="Tips SS 1">
-      <img src="TRIK2.png" class="ss-item" data-full="TRIK2.png" alt="Tips SS 1">
-      <img src="TRIK3.png" class="ss-item" data-full="TRIK3.png" alt="Tips SS 1">
+      <div class="ss-carousel">
+        <div class="ss-track">
+          <img src="TRIK1.png" class="ss-item" data-full="TRIK1.png" alt="Tips SS 1" />
+          <img src="TRIK2.png" class="ss-item" data-full="TRIK2.png" alt="Tips SS 2" />
+          <img src="TRIK3.png" class="ss-item" data-full="TRIK3.png" alt="Tips SS 3" />
+        </div>
+      </div>
+
+      <div class="ss-dots">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+    </section>
+
+    <!-- Modal fullscreen -->
+    <div class="ss-modal" id="ssModal">
+      <div class="ss-modal-inner">
+        <button class="ss-modal-close" type="button" aria-label="Tutup">&times;</button>
+        <img id="ssModalImg" class="ss-modal-img" alt="" />
+      </div>
     </div>
-  </div>
-
-  <div class="ss-dots">
-    <span class="dot active"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
-  </div>
-</section>
-
-<!-- Modal fullscreen -->
-<div class="ss-modal" id="ssModal">
-  <div class="ss-modal-inner">
-    <button class="ss-modal-close" type="button" aria-label="Tutup">&times;</button>
-    <img id="ssModalImg" class="ss-modal-img" alt="">
-  </div>
-</div>
 
     <!-- ================================
        AWALAN TENTANG SUMBANG SARAN
     ================================ -->
-    <section class="content ss-intro">
-      <h2 class="ss-title">Apa itu Sumbang Saran?</h2>
+    <section class="content ss-intro" id="definisi-ss">
+  <h2 class="ss-title">Apa itu Sumbang Saran?</h2>
 
       <p class="ss-desc">
         <strong>Sumbang Saran</strong> adalah salah satu tools yang dapat digunakan oleh Paragonian
@@ -203,7 +218,7 @@
       </ul>
     </section>
 
-<!-- ================================
+    <!-- ================================
        CONTOH MERUPAKAN SS
     ================================ -->
     <section class="content ss-yes-ss" id="contoh-ss">
@@ -385,7 +400,7 @@
         <!-- KATEGORI 1 -->
         <div class="ss-nonss-block">
           <p class="ss-nonss-red">
-            - SS terkait kebijakan perusahaan; tunjangan, insentif, dsb<br>
+            - SS terkait kebijakan perusahaan; tunjangan, insentif, dsb<br />
             - SS terkait peraturan perusahaan dan struktur organisasi perusahaan; Jam kerja, Perubahan aturan kerja, dsb
           </p>
 
@@ -529,7 +544,6 @@
 
       </div>
     </section>
-
 
     <!-- ================================
        PEMBUATAN SS – 4 LANGKAH
@@ -698,7 +712,7 @@
 
           <h3><i class="fa-solid fa-key"></i> Password</h3>
           <p>
-            Password diisikan sesuai <strong>tanggal lahir paragonian</strong>
+            Password diisikan sesuai <strong>tanggal lahir Paragonian</strong>
             dengan format <strong>DD/MM/YY</strong>.
           </p>
           <p class="ss-example-title">Contoh:</p>
@@ -714,155 +728,146 @@
       </div>
     </section>
 
-    
-    
-
-<!-- ================================
+    <!-- ================================
        Photo Best Sumbang Saran
     ================================ -->
-<section class="ss-best-impl content">
+    <section class="ss-best-impl content" id="best-ss">
   <h2 class="ss-best-title">Implementer Sumbang Saran Terbaik</h2>
-  <p class="ss-best-subtitle">
-    Highlight implementer Sumbang Saran terbaik setiap bulan.
-  </p>
+      <p class="ss-best-subtitle">
+        Highlight implementer Sumbang Saran terbaik setiap bulan.
+      </p>
 
-  <div class="ss-best-rail">
-    <article class="ss-best-card">
-      <div class="ss-best-img">
-        <img src="BS1.png" alt="Implementer SS Bulan Januari">
-      </div>
-      <div class="ss-best-meta">
-        <span class="ss-best-month">Januari 2025</span>
-      </div>
-    </article>
+      <div class="ss-best-rail">
+        <article class="ss-best-card">
+          <div class="ss-best-img">
+            <img src="BS1.png" alt="Implementer SS Bulan Januari" />
+          </div>
+          <div class="ss-best-meta">
+            <span class="ss-best-month">Januari 2025</span>
+          </div>
+        </article>
 
-    <article class="ss-best-card ss-best-main">
-      <div class="ss-best-img">
-        <img src="BS2.png" alt="Implementer SS Bulan Februari">
-      </div>
-      <div class="ss-best-meta">
-        <span class="ss-best-month">Februari 2025</span>
-      </div>
-    </article>
+        <article class="ss-best-card ss-best-main">
+          <div class="ss-best-img">
+            <img src="BS2.png" alt="Implementer SS Bulan Februari" />
+          </div>
+          <div class="ss-best-meta">
+            <span class="ss-best-month">Februari 2025</span>
+          </div>
+        </article>
 
-    <article class="ss-best-card">
-      <div class="ss-best-img">
-        <img src="BS3.png" alt="Implementer SS Bulan Maret">
+        <article class="ss-best-card">
+          <div class="ss-best-img">
+            <img src="BS3.png" alt="Implementer SS Bulan Maret" />
+          </div>
+          <div class="ss-best-meta">
+            <span class="ss-best-month">Maret 2025</span>
+          </div>
+        </article>
+
+        <article class="ss-best-card">
+          <div class="ss-best-img">
+            <img src="BS4.png" alt="Implementer SS Bulan April" />
+          </div>
+          <div class="ss-best-meta">
+            <span class="ss-best-month">April 2025</span>
+          </div>
+        </article>
+
+        <article class="ss-best-card">
+          <div class="ss-best-img">
+            <img src="BS5.png" alt="Implementer SS Bulan Mei" />
+          </div>
+          <div class="ss-best-meta">
+            <span class="ss-best-month">Mei 2025</span>
+          </div>
+        </article>
+
+        <article class="ss-best-card">
+          <div class="ss-best-img">
+            <img src="BS6.png" alt="Implementer SS Bulan Juni" />
+          </div>
+          <div class="ss-best-meta">
+            <span class="ss-best-month">Juni 2025</span>
+          </div>
+        </article>
+
+        <article class="ss-best-card">
+          <div class="ss-best-img">
+            <img src="BS7.png" alt="Implementer SS Bulan Juli" />
+          </div>
+          <div class="ss-best-meta">
+            <span class="ss-best-month">Juli 2025</span>
+          </div>
+        </article>
+
+        <article class="ss-best-card">
+          <div class="ss-best-img">
+            <img src="BS8.png" alt="Implementer SS Bulan Agustus" />
+          </div>
+          <div class="ss-best-meta">
+            <span class="ss-best-month">Agustus 2025</span>
+          </div>
+        </article>
+
+        <article class="ss-best-card">
+          <div class="ss-best-img">
+            <img src="BS9.png" alt="Implementer SS Bulan September" />
+          </div>
+          <div class="ss-best-meta">
+            <span class="ss-best-month">September 2025</span>
+          </div>
+        </article>
+
+        <article class="ss-best-card">
+          <div class="ss-best-img">
+            <img src="BS10.png" alt="Implementer SS Bulan September" />
+          </div>
+          <div class="ss-best-meta">
+            <span class="ss-best-month">Oktober 2025</span>
+          </div>
+        </article>
+
+        <article class="ss-best-card">
+          <div class="ss-best-img">
+            <img src="BS11.png" alt="Implementer SS Bulan September" />
+          </div>
+          <div class="ss-best-meta">
+            <span class="ss-best-month">November 2025</span>
+          </div>
+        </article>
       </div>
-      <div class="ss-best-meta">
-        <span class="ss-best-month">Maret 2025</span>
-      </div>
-    </article>
-
-    <article class="ss-best-card">
-      <div class="ss-best-img">
-        <img src="BS4.png" alt="Implementer SS Bulan April">
-      </div>
-      <div class="ss-best-meta">
-        <span class="ss-best-month">April 2025</span>
-    </article>
-
-    <article class="ss-best-card">
-      <div class="ss-best-img">
-        <img src="BS5.png" alt="Implementer SS Bulan April">
-      </div>
-      <div class="ss-best-meta">
-        <span class="ss-best-month">Mei 2025</span>
-    </article>
-
-    <article class="ss-best-card">
-      <div class="ss-best-img">
-        <img src="BS6.png" alt="Implementer SS Bulan April">
-      </div>
-      <div class="ss-best-meta">
-        <span class="ss-best-month">Juni 2025</span>
-    </article>
-
-    <article class="ss-best-card">
-      <div class="ss-best-img">
-        <img src="BS7.png" alt="Implementer SS Bulan April">
-      </div>
-      <div class="ss-best-meta">
-        <span class="ss-best-month">Juli 2025</span>
-    </article>
-
-    <article class="ss-best-card">
-      <div class="ss-best-img">
-        <img src="BS8.png" alt="Implementer SS Bulan April">
-      </div>
-      <div class="ss-best-meta">
-        <span class="ss-best-month">Agustus 2025</span>
-    </article>
-
-    <article class="ss-best-card">
-      <div class="ss-best-img">
-        <img src="BS9.png" alt="Implementer SS Bulan April">
-      </div>
-      <div class="ss-best-meta">
-        <span class="ss-best-month">September 2025</span>
-    </article>
-
-
-  </div>
-</section>
-
+    </section>
+  </main>
 
   <!-- JS global (navbar, dsb) -->
   <script src="script.js" defer></script>
 
-
+  <!-- Script kecil carousel tips -->
   <script>
-document.addEventListener("DOMContentLoaded",function(){
-  var pages=document.querySelectorAll(".ss-page");
-  if(!pages.length) return;
+    document.addEventListener("DOMContentLoaded", function () {
+      const items = document.querySelectorAll(".ss-item");
+      const modal = document.getElementById("ssModal");
+      const modalImg = document.getElementById("ssModalImg");
+      const closeBtn = document.querySelector(".ss-modal-close");
 
-  var dots=document.querySelectorAll(".ss-dot");
-  var prev=document.querySelector(".ss-book-prev");
-  var next=document.querySelector(".ss-book-next");
-  var container=document.querySelector(".ss-book-page");
-  var index=0;
-  var startX=0;
-  var threshold=50;
+      if (!items.length || !modal || !modalImg || !closeBtn) return;
 
-  function showPage(i){
-    index=(i+pages.length)%pages.length;
-    pages.forEach(function(p,j){
-      p.classList.toggle("ss-page-active",j===index);
+      items.forEach((img) => {
+        img.addEventListener("click", () => {
+          modalImg.src = img.dataset.full || img.src;
+          modal.classList.add("show");
+        });
+      });
+
+      closeBtn.addEventListener("click", () => {
+        modal.classList.remove("show");
+      });
+
+      modal.addEventListener("click", (e) => {
+        if (e.target === modal) modal.classList.remove("show");
+      });
     });
-    dots.forEach(function(d,j){
-      d.classList.toggle("ss-dot-active",j===index);
-    });
-  }
-
-  function goPrev(){ showPage(index-1); }
-  function goNext(){ showPage(index+1); }
-
-  if(prev) prev.addEventListener("click",goPrev);
-  if(next) next.addEventListener("click",goNext);
-
-  dots.forEach(function(dot){
-    dot.addEventListener("click",function(){
-      var i=parseInt(dot.getAttribute("data-page"),10);
-      showPage(i);
-    });
-  });
-
-  if(container){
-    container.addEventListener("touchstart",function(e){
-      if(!e.touches||!e.touches.length) return;
-      startX=e.touches[0].clientX;
-    },{passive:true});
-
-    container.addEventListener("touchend",function(e){
-      if(!e.changedTouches||!e.changedTouches.length) return;
-      var endX=e.changedTouches[0].clientX;
-      var diff=endX-startX;
-      if(Math.abs(diff)<threshold) return;
-      if(diff<0) goNext(); else goPrev();
-    });
-  }
-});
-</script>
-
+  </script>
 </body>
 </html>

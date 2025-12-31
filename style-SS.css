@@ -1,3 +1,6 @@
+/* ======================================
+   THEME KHUSUS HALAMAN SS
+====================================== */
 :root{
   --ss-pink:#fb7185;
   --ss-orange:#f97316;
@@ -5,65 +8,9 @@
   --ss-purple:#a855f7;
   --ss-bg-soft:#fff7ed;
   --ss-text:#1f2933;
-  --nav-height:72px; /* kira-kira tinggi navbar-mu */
 }
 
-/* ... CSS lain tetap ... */
-
-/* MODAL FULLSCREEN */
-.ss-modal{
-  position:fixed;
-  left:0;
-  right:0;
-  top:var(--nav-height);
-  bottom:0;
-  background:rgba(0,0,0,.7);
-  z-index:999;
-  display:none;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-
-.ss-modal.show{
-  display:flex;
-}
-
-.ss-modal-inner{
-  position:relative;
-  max-width:min(90vw,700px);
-  max-height:calc(100vh - var(--nav-height) - 40px);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-
-.ss-modal-img{
-  max-width:100%;
-  max-height:100%;
-  border-radius:16px;
-  box-shadow:0 16px 40px rgba(0,0,0,.45);
-}
-
-.ss-modal-close{
-  position:absolute;
-  top:-14px;
-  right:-14px;
-  width:34px;
-  height:34px;
-  border-radius:999px;
-  border:none;
-  background:#ffffff;
-  color:#111827;
-  font-size:1.5rem;
-  font-weight:700;
-  cursor:pointer;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  box-shadow:0 8px 20px rgba(0,0,0,.35);
-}
-
+/* wrapper konten SS */
 .content{
   width:100%;
   max-width:1100px;
@@ -71,78 +18,15 @@
   padding:0 16px;
 }
 
-/* HERO */
-.ss-hero{
-  position:relative;
-  min-height:55vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  padding:80px 20px 60px;
-  background:
-    radial-gradient(900px 360px at 0% -120px,#fed7e2,transparent 60%),
-    radial-gradient(900px 360px at 100% -140px,#fee2b3,transparent 60%),
-    linear-gradient(135deg,#ec4899,#f97316);
-  overflow:hidden;
-  color:#fff;
+/* supaya saat klik anchor (#id) tidak ketutup navbar */
+.hero,
+.content{
+  scroll-margin-top:90px;
 }
 
-.ss-hero::before,
-.ss-hero::after{
-  content:"";
-  position:absolute;
-  border-radius:999px;
-  filter:blur(12px);
-  opacity:.5;
-  animation:float-bubble 16s infinite alternate ease-in-out;
-}
-
-.ss-hero::before{
-  width:260px;
-  height:260px;
-  background:rgba(248,250,252,.2);
-  left:-80px;
-  top:-40px;
-}
-
-.ss-hero::after{
-  width:220px;
-  height:220px;
-  background:rgba(15,23,42,.18);
-  right:-60px;
-  bottom:-60px;
-  animation-delay:-4s;
-}
-
-@keyframes float-bubble{
-  0%{transform:translate3d(0,0,0) scale(1);}
-  100%{transform:translate3d(20px,20px,0) scale(1.05);}
-}
-
-.ss-hero-inner{
-  position:relative;
-  z-index:1;
-  max-width:720px;
-  padding:24px 20px;
-}
-
-.ss-hero-inner h1{
-  font-size:2.6rem;
-  font-weight:900;
-  letter-spacing:.06em;
-  text-transform:uppercase;
-  text-shadow:0 10px 28px rgba(0,0,0,.45);
-}
-
-.ss-subtitle{
-  margin-top:14px;
-  font-size:1.08rem;
-  font-weight:600;
-  line-height:1.6;
-}
-
-/* TITLES & TEXT */
+/* ======================================
+   TEKS & JUDUL
+====================================== */
 .ss-title{
   margin:0 0 14px;
   padding-left:16px;
@@ -196,12 +80,14 @@
   padding-left:4px;
 }
 
-/* INTRO & RULES CARD */
+/* ======================================
+   INTRO & RULES CARD
+====================================== */
 .content.ss-intro,
 .content.ss-rules{
-  background:#f8fbff;
+  background: radial-gradient(circle at top left, #e0f2fe 0, #ffffff 55%);
   border-radius:18px;
-  padding:24px 30px 26px;
+  padding:24px 28px 26px;
   box-shadow:0 10px 26px rgba(15,23,42,.06);
   border:1px solid #dbeafe;
   position:relative;
@@ -213,16 +99,95 @@
 .content.ss-rules::before{
   content:"";
   position:absolute;
-  right:-80px;
-  top:-80px;
-  width:220px;
-  height:220px;
-  background:radial-gradient(circle at 30% 30%,rgba(59,130,246,.2),transparent 60%);
-  opacity:.7;
+  right:-70px;
+  top:-70px;
+  width:210px;
+  height:210px;
+  background:radial-gradient(circle at 30% 30%,rgba(59,130,246,.25),transparent 60%);
+  opacity:.75;
   pointer-events:none;
 }
 
-/* LINK CEPAT */
+.ss-intro .ss-title,
+.ss-rules .ss-title{
+  margin:0 0 12px;
+  padding-left:16px;
+  border-left:5px solid #2563eb;
+  font-size:1.8rem;
+  font-weight:800;
+  color:#1d4ed8;
+}
+
+.ss-intro .ss-title::after,
+.ss-rules .ss-title::after{
+  content:"";
+  display:block;
+  width:80px;
+  height:3px;
+  border-radius:999px;
+  margin-top:6px;
+  background:linear-gradient(90deg,#fb7185,#f97316);
+}
+
+.ss-intro .ss-desc,
+.ss-rules .ss-desc{
+  font-size:1rem;
+  line-height:1.7;
+  color:#111827;
+  max-width:980px;
+  margin-bottom:10px;
+}
+
+.ss-intro .ss-list,
+.ss-rules .ss-rules-list{
+  margin:10px 0 4px 0;
+  padding:0;
+  list-style:none;
+  color:#1f2937;
+}
+
+.ss-intro .ss-list li,
+.ss-rules .ss-rules-list>li{
+  position:relative;
+  margin-bottom:6px;
+  padding-left:26px;
+}
+
+.ss-intro .ss-list li::before,
+.ss-rules .ss-rules-list>li::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:0.55em;
+  width:9px;
+  height:9px;
+  border-radius:999px;
+  background:linear-gradient(135deg,#2563eb,#38bdf8);
+  box-shadow:0 0 0 4px rgba(191,219,254,.95);
+}
+
+.ss-rules .ss-rules-list ul{
+  margin:6px 0 4px 22px;
+  padding:0;
+}
+
+.ss-rules .ss-rules-list ul li{
+  margin-bottom:4px;
+  padding-left:16px;
+  position:relative;
+}
+
+.ss-rules .ss-rules-list ul li::before{
+  content:"•";
+  position:absolute;
+  left:0;
+  top:0;
+  color:#2563eb;
+}
+
+/* ======================================
+   LINK CEPAT
+====================================== */
 .ss-links{
   margin-top:30px;
 }
@@ -299,208 +264,107 @@
   color:#4b5563;
 }
 
-/* RULES LIST */
-.ss-rules-list{
-  margin:10px 0 4px 1.3rem;
-  padding:0;
-  color:#1f2937;
+/* ======================================
+   CONTOH SS & BUKAN SS
+   → DIJADIKAN SLIDER HORIZONTAL
+====================================== */
+.ss-yes-group,
+.ss-nonss-group{
+  display:flex;
+  gap:18px;
+  margin-top:10px;
+  padding:6px 4px 10px;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+  scrollbar-width:none;
 }
 
-.ss-rules-list>li{
-  margin-bottom:6px;
-  padding-left:4px;
+.ss-yes-group::-webkit-scrollbar,
+.ss-nonss-group::-webkit-scrollbar{
+  display:none;
 }
 
-.ss-rules-list ul{
-  margin-top:6px;
-  margin-bottom:4px;
-  margin-left:1.1rem;
+.ss-yes-block,
+.ss-nonss-block{
+  flex:0 0 min(320px,100% - 40px);
+  scroll-snap-align:center;
+  background:#fff;
+  border-radius:16px;
+  padding:12px 12px 14px;
+  box-shadow:0 6px 16px rgba(15,23,42,.08);
 }
 
-/* ================================
-   CONTOH BUKAN SS / MERUPAKAN SS
-==================================*/
-
-/* GRID UTAMA: otomatis menyesuaikan lebar layar */
-.ss-nonss-group,
-.ss-yes-group {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 18px;
-  margin-top: 10px;
+.ss-nonss-block{
+  border:1px solid #fecaca;
 }
 
-/* ---------- BUKAN SS (MERAH) ---------- */
-.ss-nonss-block {
-  background: #fff;
-  border-radius: 16px;
-  padding: 12px 12px 14px;
-  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.08);
-  border: 1px solid #fecaca;          /* merah pastel */
+.ss-yes-block{
+  border:1px solid #bbf7d0;
 }
 
-.ss-nonss-red {
-  font-size: .9rem;
-  font-weight: 600;
-  color: #b91c1c;                      /* merah */
-  margin-bottom: 8px;
+.ss-nonss-red,
+.ss-yes-red{
+  font-size:.9rem;
+  font-weight:600;
+  margin-bottom:8px;
 }
 
-.ss-nonss-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: .86rem;
+.ss-nonss-red{
+  color:#b91c1c;
 }
 
-.ss-nonss-table thead {
-  background: #fee2e2 !important;      /* header merah muda */
+.ss-yes-red{
+  color:#047857;
+}
+
+/* tabel di dalam kartu */
+.ss-nonss-table,
+.ss-yes-table{
+  width:100%;
+  border-collapse:collapse;
+  font-size:.86rem;
 }
 
 .ss-nonss-table th,
-.ss-nonss-table td {
-  border: 1px solid #e5e7eb;
-  padding: 6px 8px;
-  text-align: left;
-}
-
-.ss-nonss-table th {
-  color: #7f1d1d;
-  font-weight: 700;
-}
-
-.ss-nonss-table tbody tr:nth-child(even) {
-  background: #f9fafb;
-}
-
-/* ---------- MERUPAKAN SS (HIJAU) ---------- */
-.ss-yes-block {
-  background: #fff;
-  border-radius: 16px;
-  padding: 12px 12px 14px;
-  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.08);
-  border: 1px solid #bbf7d0;          /* hijau pastel */
-}
-
-.ss-yes-red {                          /* ini judul kategori hijau */
-  font-size: .9rem;
-  font-weight: 600;
-  color: #047857;                      /* hijau emerald */
-  margin-bottom: 8px;
-}
-
-.ss-yes-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: .86rem;
-}
-
-.ss-yes-table thead {
-  background: #d1fae5 !important;      /* header hijau muda */
-}
-
+.ss-nonss-table td,
 .ss-yes-table th,
-.ss-yes-table td {
-  border: 1px solid #e5e7eb;
-  padding: 6px 8px;
-  text-align: left;
+.ss-yes-table td{
+  border:1px solid #e5e7eb;
+  padding:6px 8px;
+  text-align:left;
 }
 
-.ss-yes-table th {
-  color: #065f46;
-  font-weight: 700;
+.ss-nonss-table thead{
+  background:#fee2e2 !important;
 }
 
-.ss-yes-table tbody tr:nth-child(even) {
-  background: #f9fafb;
+.ss-nonss-table th{
+  color:#7f1d1d;
+  font-weight:700;
 }
 
-/* WRAPPER TABEL (BIAR BISA DI-SCROLL DI HP KALAU KELEBARAN) */
-.ss-table-wrap {
-  overflow-x: auto;
+.ss-yes-table thead{
+  background:#d1fae5 !important;
 }
 
-/* ================================
-   RESPONSIVE
-==================================*/
-
-/* Tablet & laptop kecil */
-@media (max-width: 900px) {
-  .ss-nonss-group,
-  .ss-yes-group {
-    grid-template-columns: 1fr;        /* kartu ditumpuk 1 kolom */
-  }
-
-  .ss-nonss-block,
-  .ss-yes-block {
-    padding: 10px 10px 12px;
-  }
-
-  .ss-nonss-table,
-  .ss-yes-table {
-    font-size: .8rem;
-  }
-
-  .ss-nonss-table th,
-  .ss-nonss-table td,
-  .ss-yes-table th,
-  .ss-yes-table td {
-    padding: 5px 6px;
-  }
+.ss-yes-table th{
+  color:#065f46;
+  font-weight:700;
 }
 
-/* HP kecil */
-@media (max-width: 640px) {
-  .content.ss-non-ss,
-  .content.ss-yes-ss {
-    padding: 18px 12px 20px;
-    border-radius: 14px;
-  }
-
-  .ss-nonss-block,
-  .ss-yes-block {
-    border-radius: 12px;
-    padding: 10px 10px 12px;
-  }
-
-  .ss-nonss-red,
-  .ss-yes-red {
-    font-size: .85rem;
-  }
-
-  .ss-nonss-table,
-  .ss-yes-table {
-    font-size: .78rem;
-  }
+.ss-nonss-table tbody tr:nth-child(even),
+.ss-yes-table tbody tr:nth-child(even){
+  background:#f9fafb;
 }
 
-/* BLOK MERUPAKAN SS (HIJAU) */
-.ss-yes-block {
-  background: #fff;
-  border-radius: 16px;
-  padding: 12px 12px 14px;
-  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.08);
-  border: 1px solid #bbf7d0; /* hijau pastel */
+/* wrapper tabel tetap bisa scroll kalau isinya kepanjangan */
+.ss-table-wrap{
+  overflow-x:auto;
 }
 
-.ss-yes-red { 
-  /* ganti nama kalau mau, misal ss-yes-green */
-  font-size: .9rem;
-  font-weight: 600;
-  color: #047857; /* hijau emerald */
-  margin-bottom: 8px;
-}
-
-.ss-yes-table thead {
-  background: #d1fae5 !important; /* hijau muda */
-}
-
-.ss-yes-table th {
-  color: #065f46 !important; /* hijau tua */
-  font-weight: 700;
-}
-
-
-/* FLOW 4 LANGKAH */
+/* ======================================
+   FLOW 4 LANGKAH (tetap grid)
+====================================== */
 .ss-flow-grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
@@ -566,15 +430,27 @@
   margin-bottom:3px;
 }
 
-/* LANGKAH INPUT SS */
+/* ======================================
+   LANGKAH INPUT SS
+   → JUGA SLIDER HORIZONTAL
+====================================== */
 .ss-steps-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  display:flex;
   gap:16px;
   margin-top:14px;
+  padding-bottom:8px;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+  scrollbar-width:none;
+}
+
+.ss-steps-grid::-webkit-scrollbar{
+  display:none;
 }
 
 .ss-step-card{
+  flex:0 0 min(280px,100% - 40px);
+  scroll-snap-align:start;
   background:#fff;
   border-radius:18px;
   padding:16px 14px 18px;
@@ -618,7 +494,9 @@
   color:#374151;
 }
 
-/* LOGIN GRID */
+/* ======================================
+   PANDUAN LOGIN
+====================================== */
 .ss-login-grid{
   display:grid;
   grid-template-columns:minmax(0,1.1fr) minmax(0,0.9fr);
@@ -665,7 +543,9 @@
   box-shadow:0 10px 24px rgba(15,23,42,.16);
 }
 
-/* TIPS & TRIK – CAROUSEL */
+/* ======================================
+   TIPS & TRIK – CAROUSEL + MODAL
+====================================== */
 .ss-tips{
   margin-top:30px;
 }
@@ -724,24 +604,24 @@
   background:linear-gradient(135deg,#fb7185,#f97316);
 }
 
-/* MODAL FULLSCREEN */
+/* Modal fullscreen gambar tips
+   → z-index lebih tinggi dari navbar */
 .ss-modal{
   position:fixed;
   inset:0;
   background:rgba(0,0,0,.7);
-  z-index:999;
+  z-index:2000;
   display:none;
+  align-items:center;
+  justify-content:center;
 }
 
 .ss-modal.show{
-  display:block;
+  display:flex;
 }
 
 .ss-modal-inner{
-  position:absolute;
-  left:50%;
-  top:50%;
-  transform:translate(-50%,-50%);
+  position:relative;
   max-width:min(90vw,700px);
   max-height:90vh;
   display:flex;
@@ -756,73 +636,291 @@
   box-shadow:0 16px 40px rgba(0,0,0,.45);
 }
 
+/* Tombol silang di atas poster */
 .ss-modal-close{
   position:absolute;
-  top:-14px;
-  right:-14px;
+  top:10px;
+  right:10px;
   width:34px;
   height:34px;
   border-radius:999px;
   border:none;
-  background:#ffffff;
-  color:#111827;
+  background:rgba(0,0,0,.7);
+  color:#ffffff;
   font-size:1.5rem;
   font-weight:700;
   cursor:pointer;
   display:flex;
   align-items:center;
   justify-content:center;
-  box-shadow:0 8px 20px rgba(0,0,0,.35);
+  box-shadow:0 8px 20px rgba(0,0,0,.45);
 }
 
-/* GLOBAL IMG */
-img{
-  max-width:100% !important;
-  height:auto !important;
+/* ======================================
+   BEST SS – RESPONSIVE SLIDER
+====================================== */
+.ss-best-impl{
+  margin-top:40px;
+  padding:24px 20px 40px;
+  border-radius:24px;
+  background:linear-gradient(135deg,rgba(251,113,133,.05),rgba(249,115,22,.04));
+  box-shadow:0 10px 24px rgba(0,0,0,.06);
+  border:1px solid #fee2e2;
+}
+
+.ss-best-rail{
+  display:flex;
+  gap:24px;
+  overflow-x:auto;
+  padding:10px 5px;
+  scroll-snap-type:x mandatory;
+  scrollbar-width:none;
+}
+
+.ss-best-rail::-webkit-scrollbar{
+  display:none;
+}
+
+.ss-best-card{
+  flex:0 0 320px;
+  height:480px;
+  border-radius:24px;
+  background:#fff;
+  box-shadow:0 12px 26px rgba(0,0,0,.08);
+  border:1px solid #e2e8f0;
+  overflow:hidden;
+  scroll-snap-align:center;
+  transition:transform .25s ease,box-shadow .25s ease;
+  display:flex;
+  flex-direction:column;
+}
+
+.ss-best-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 18px 40px rgba(0,0,0,.12);
+  border-color:#f97316;
+}
+
+.ss-best-img{
+  width:100%;
+  background:#f8fafc;
+}
+
+.ss-best-img img{
+  width:100%;
+  height:350px;
+  object-fit:cover;
   display:block;
 }
 
-/* RESPONSIVE */
+.ss-best-meta{
+  padding:14px 18px;
+  text-align:center;
+}
+
+.ss-best-month{
+  background:linear-gradient(135deg,#fb7185,#f97316);
+  padding:6px 18px;
+  border-radius:999px;
+  font-weight:700;
+  color:#fff;
+  font-size:.9rem;
+  display:inline-block;
+  margin-bottom:8px;
+}
+
+/* ======================================
+   GLOBAL IMG
+====================================== */
+img{
+  max-width:100%;
+  height:auto;
+  display:block;
+}
+
+/* ======================================
+   RESPONSIVE
+====================================== */
+
+/* tablet */
 @media (max-width:900px){
+  .content.ss-intro,
+  .content.ss-rules{
+    padding:20px 18px 22px;
+    border-radius:16px;
+  }
+
+  .ss-intro .ss-title,
+  .ss-rules .ss-title{
+    font-size:1.5rem;
+  }
+
+  .ss-intro .ss-desc,
+  .ss-rules .ss-desc{
+    font-size:.96rem;
+  }
+
+  .ss-nonss-table,
+  .ss-yes-table{
+    font-size:.8rem;
+  }
+
+  .ss-nonss-table th,
+  .ss-nonss-table td,
+  .ss-yes-table th,
+  .ss-yes-table td{
+    padding:5px 6px;
+  }
+
+  .ss-best-card{
+    flex:0 0 280px;
+    height:480px;
+  }
+
+  .ss-best-img img{
+    height:300px;
+  }
+
   .ss-login-grid{
     grid-template-columns:1fr;
   }
 }
 
-@media (max-width:720px){
+/* HP kecil */
+@media (max-width:640px){
   .content{
     margin:30px auto;
     padding:0 12px;
   }
 
-  .ss-title{
-    font-size:1.5rem;
-    padding-left:12px;
-  }
-
-  .ss-desc,
-  .ss-rules-list,
-  .ss-list{
-    font-size:.95rem;
-  }
-
-  .ss-links-grid,
-  .ss-flow-grid,
-  .ss-steps-grid{
-    grid-template-columns:1fr;
-  }
-
-  .ss-step-card{
-    padding:12px 14px;
-  }
-
   .content.ss-intro,
   .content.ss-rules{
-    padding:18px 16px 20px;
+    padding:18px 14px 20px;
+    margin-bottom:20px;
     border-radius:14px;
+  }
+
+  .ss-intro .ss-title,
+  .ss-rules .ss-title{
+    font-size:1.35rem;
+    padding-left:12px;
+    border-left-width:4px;
+  }
+
+  .ss-intro .ss-title::after,
+  .ss-rules .ss-title::after{
+    width:60px;
+  }
+
+  .ss-intro .ss-desc,
+  .ss-rules .ss-desc{
+    font-size:.94rem;
+  }
+
+  .ss-intro .ss-list li,
+  .ss-rules .ss-rules-list>li{
+    padding-left:22px;
+  }
+
+  .ss-intro .ss-list li::before,
+  .ss-rules .ss-rules-list>li::before{
+    width:8px;
+    height:8px;
+    box-shadow:0 0 0 3px rgba(191,219,254,.95);
+  }
+
+  .ss-nonss-red,
+  .ss-yes-red{
+    font-size:.85rem;
+  }
+
+  .ss-nonss-table,
+  .ss-yes-table{
+    font-size:.78rem;
+  }
+
+  .ss-best-card{
+    flex:0 0 240px;
+    height:430px;
+  }
+
+  .ss-best-img img{
+    height:260px;
+  }
+
+  .ss-best-month{
+    font-size:.8rem;
+    padding:5px 14px;
+  }
+
+  /* kartu slider sedikit lebih kecil supaya enak di-swipe */
+  .ss-yes-block,
+  .ss-nonss-block,
+  .ss-step-card{
+    flex-basis:min(260px,100% - 32px);
   }
 }
 
+/* GRID LINK CEPAT – compact HP & tablet */
+@media (max-width:1023px){
+  .ss-links-grid{
+    grid-template-columns:repeat(2,1fr)!important;
+    gap:14px;
+  }
+
+  .ss-link-card{
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+    justify-content:center;
+    padding:18px 10px;
+    border-radius:18px;
+    gap:10px;
+    height:150px;
+  }
+
+  .ss-link-icon{
+    width:48px;
+    height:48px;
+    border-radius:14px;
+  }
+
+  .ss-link-icon i{
+    font-size:1.4rem;
+  }
+
+  .ss-link-body h3{
+    font-size:.95rem;
+    font-weight:800;
+    margin:0;
+  }
+
+  .ss-link-body p{
+    display:none;
+  }
+}
+
+/* HP sangat kecil → 1 kolom link cepat */
+@media (max-width:480px){
+  body{
+    font-size:14px;
+  }
+
+  .ss-links-grid{
+    grid-template-columns:1fr!important;
+  }
+
+  .ss-link-card{
+    height:130px;
+  }
+
+  .ss-link-icon{
+    width:44px;
+    height:44px;
+  }
+}
+
+/* modal responsive */
 @media (max-width:768px){
   .ss-modal-inner{
     max-width:94vw;
@@ -835,481 +933,6 @@ img{
   .ss-modal-close{
     width:30px;
     height:30px;
-    top:-10px;
-    right:-10px;
     font-size:1.3rem;
-  }
-}
-
-@media (max-width:480px){
-  body{
-    font-size:14px;
-  }
-}
-
-
-/* --- DESKTOP / LAPTOP --- */
-@media (min-width: 1024px){
-  .ss-modal-inner{
-    max-width: 390px;        /* kecil */
-    max-height: 82vh;
-  }
-}
-
-  .ss-modal-img{
-    border-radius: 14px;
-  }
-}
-/* --- TABLET (600px–1023px) --- */
-@media (min-width: 600px) and (max-width: 1023px){
-  .ss-modal-inner{
-    max-width: 650px;        /* lebih besar */
-    max-height: 88vh;
-  }
-}
-
-/* --- HP (<= 599px) --- */
-@media (max-width: 599px){
-  .ss-modal-inner{
-    max-width: 94vw;         /* hampir full layar */
-    max-height: 92vh;
-  }
-
-  .ss-modal-img{
-    border-radius: 12px;     /* biar enak dilihat */
-  }
-
-  .ss-modal-close{
-    width: 32px;
-    height: 32px;
-    top: -12px;
-    right: -12px;
-    font-size: 1.3rem;
-  }
-}
-
-/* --- HP (kecil) --- */
-@media (max-width: 600px){
-
-  .ss-link-icon{
-    width: 38px;
-    height: 38px;
-    border-radius: 12px;
-  }
-
-  .ss-link-icon i{
-    font-size: 1.1rem;
-  }
-
-  .ss-link-card{
-    padding: 12px 14px;
-    gap: 10px;
-    border-radius: 14px;
-  }
-
-  .ss-link-body h3{
-    font-size: .95rem;
-  }
-
-  .ss-link-body p{
-    font-size: .85rem;
-  }
-}
-
-/* --- TABLET (sedang) --- */
-@media (min-width: 601px) and (max-width: 1023px){
-
-  .ss-link-icon{
-    width: 46px;
-    height: 46px;
-    border-radius: 14px;
-  }
-
-  .ss-link-icon i{
-    font-size: 1.25rem;
-  }
-
-  .ss-link-card{
-    padding: 14px 16px;
-    gap: 12px;
-    border-radius: 16px;
-  }
-
-  .ss-link-body h3{
-    font-size: 1rem;
-  }
-
-  .ss-link-body p{
-    font-size: .9rem;
-  }
-}
-
-/* --- COMPACT GRID FOR MOBILE & TABLET --- */
-@media (max-width: 1023px){
-
-  .ss-links-grid{
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 14px;
-  }
-
-  .ss-link-card{
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-    padding: 18px 10px;
-    border-radius: 18px;
-    gap: 10px;
-    height: 150px; /* tinggi kotak seragam */
-  }
-
-  /* icon lebih besar */
-  .ss-link-icon{
-    width: 48px;
-    height: 48px;
-    border-radius: 14px;
-  }
-
-  .ss-link-icon i{
-    font-size: 1.4rem;
-  }
-
-  /* judul lebih compact */
-  .ss-link-body h3{
-    font-size: .95rem;
-    font-weight: 800;
-    margin: 0;
-  }
-
-  /* deskripsi disembunyikan untuk versi compact */
-  .ss-link-body p{
-    display: none;
-  }
-}
-
-/* --- HP SANGAT KECIL → 1 kolom --- */
-@media (max-width: 480px){
-  .ss-links-grid{
-    grid-template-columns: 1fr !important;
-  }
-
-  .ss-link-card{
-    height: 130px;
-  }
-
-  .ss-link-icon{
-    width: 44px;
-    height: 44px;
-  }
-}
-
-/* ================================
-   APA ITU / MANFAAT / ATURAN SS
-   (card cantik + responsif)
-==================================*/
-
-/* Kartu utama */
-.content.ss-intro,
-.content.ss-rules {
-  background: radial-gradient(circle at top left, #e0f2fe 0, #ffffff 55%);
-  border-radius: 18px;
-  padding: 24px 28px 26px;
-  box-shadow: 0 10px 26px rgba(15, 23, 42, .06);
-  border: 1px solid #dbeafe;
-  position: relative;
-  overflow: hidden;
-  margin-bottom: 26px;
-}
-
-/* aksen bubble kanan atas */
-.content.ss-intro::before,
-.content.ss-rules::before {
-  content: "";
-  position: absolute;
-  right: -70px;
-  top: -70px;
-  width: 210px;
-  height: 210px;
-  background:
-    radial-gradient(circle at 30% 30%, rgba(59, 130, 246, .25), transparent 60%);
-  opacity: .75;
-  pointer-events: none;
-}
-
-/* judul section (khusus di blok ini) */
-.ss-intro .ss-title,
-.ss-rules .ss-title {
-  margin: 0 0 12px;
-  padding-left: 16px;
-  border-left: 5px solid #2563eb;
-  font-size: 1.8rem;
-  font-weight: 800;
-  color: #1d4ed8;
-}
-
-/* garis kecil di bawah judul (optional) */
-.ss-intro .ss-title::after,
-.ss-rules .ss-title::after {
-  content: "";
-  display: block;
-  width: 80px;
-  height: 3px;
-  border-radius: 999px;
-  margin-top: 6px;
-  background: linear-gradient(90deg, #fb7185, #f97316);
-}
-
-/* paragraf penjelasan */
-.ss-intro .ss-desc,
-.ss-rules .ss-desc {
-  font-size: 1rem;
-  line-height: 1.7;
-  color: #111827;
-  max-width: 980px;
-  margin-bottom: 10px;
-}
-
-/* highlight kalimat penting */
-.ss-intro .ss-desc strong,
-.ss-rules .ss-desc strong {
-  font-weight: 700;
-  color: #0f172a;
-}
-
-/* list manfaat & aturan */
-.ss-intro .ss-list,
-.ss-rules .ss-rules-list {
-  margin: 10px 0 4px 0;
-  padding: 0;
-  list-style: none;
-  color: #1f2937;
-}
-
-/* tiap bullet */
-.ss-intro .ss-list li,
-.ss-rules .ss-rules-list > li {
-  position: relative;
-  margin-bottom: 6px;
-  padding-left: 26px;
-}
-
-/* bullet bulat cantik */
-.ss-intro .ss-list li::before,
-.ss-rules .ss-rules-list > li::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0.55em;
-  width: 9px;
-  height: 9px;
-  border-radius: 999px;
-  background: linear-gradient(135deg, #2563eb, #38bdf8);
-  box-shadow: 0 0 0 4px rgba(191, 219, 254, .95);
-}
-
-/* sub-list di bawah aturan */
-.ss-rules .ss-rules-list ul {
-  margin: 6px 0 4px 22px;
-  padding: 0;
-}
-
-.ss-rules .ss-rules-list ul li {
-  margin-bottom: 4px;
-  padding-left: 16px;
-  position: relative;
-}
-
-.ss-rules .ss-rules-list ul li::before {
-  content: "•";
-  position: absolute;
-  left: 0;
-  top: 0;
-  color: #2563eb;
-}
-
-/* ==================================
-   RESPONSIVE
-==================================*/
-
-/* tablet */
-@media (max-width: 900px) {
-  .content.ss-intro,
-  .content.ss-rules {
-    padding: 20px 18px 22px;
-    border-radius: 16px;
-  }
-
-  .ss-intro .ss-title,
-  .ss-rules .ss-title {
-    font-size: 1.5rem;
-  }
-
-  .ss-intro .ss-desc,
-  .ss-rules .ss-desc {
-    font-size: .96rem;
-  }
-}
-
-/* HP kecil */
-@media (max-width: 640px) {
-  .content.ss-intro,
-  .content.ss-rules {
-    padding: 18px 14px 20px;
-    margin-bottom: 20px;
-    border-radius: 14px;
-  }
-
-  .ss-intro .ss-title,
-  .ss-rules .ss-title {
-    font-size: 1.35rem;
-    padding-left: 12px;
-    border-left-width: 4px;
-  }
-
-  .ss-intro .ss-title::after,
-  .ss-rules .ss-title::after {
-    width: 60px;
-  }
-
-  .ss-intro .ss-desc,
-  .ss-rules .ss-desc {
-    font-size: .94rem;
-  }
-
-  .ss-intro .ss-list li,
-  .ss-rules .ss-rules-list > li {
-    padding-left: 22px;
-  }
-
-  .ss-intro .ss-list li::before,
-  .ss-rules .ss-rules-list > li::before {
-    width: 8px;
-    height: 8px;
-    box-shadow: 0 0 0 3px rgba(191, 219, 254, .95);
-  }
-}
-
-/* ===============================
-   BEST SS – RESPONSIVE SLIDER
-================================ */
-
-.ss-best-impl {
-  margin-top: 40px;
-  padding: 24px 20px 40px;
-  border-radius: 24px;
-  background: linear-gradient(135deg, rgba(251,113,133,.05), rgba(249,115,22,.04));
-  box-shadow: 0 10px 24px rgba(0,0,0,.06);
-  border: 1px solid #fee2e2;
-}
-
-.ss-best-rail {
-  display: flex;
-  gap: 24px;
-  overflow-x: auto;
-  padding: 10px 5px;
-  scroll-snap-type: x mandatory;
-  scrollbar-width: none;
-}
-
-.ss-best-rail::-webkit-scrollbar {
-  display: none;
-}
-
-/* KARTU */
-.ss-best-card {
-  flex: 0 0 320px;           /* Ukuran BESAR dan SAMA */
-  height: 480px;             /* Konsisten */
-  border-radius: 24px;
-  background: #fff;
-  box-shadow: 0 12px 26px rgba(0,0,0,.08);
-  border: 1px solid #e2e8f0;
-  overflow: hidden;
-  scroll-snap-align: center;
-  transition: transform .25s ease, box-shadow .25s ease;
-  display: flex;
-  flex-direction: column;
-}
-
-.ss-best-meta {
-  padding: 10px 12px 6px;  /* bawahnya diperkecil */
-}
-
-.ss-best-month {
-  margin-bottom: 4px;     /* jarak bulan ke bawah diperkecil */
-}
-
-.ss-best-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 18px 40px rgba(0,0,0,.12);
-  border-color: #f97316;
-}
-
-/* GAMBAR */
-.ss-best-img {
-  width: 100%;
-  background: #f8fafc;
-}
-
-.ss-best-img img {
-  width: 100%;
-  height: 350px;             /* DIGEDEKAN agar jelas */
-  object-fit: cover;
-  display: block;
-}
-
-/* FOOTER INFO */
-.ss-best-meta {
-  padding: 14px 18px;
-  text-align: center;
-}
-
-.ss-best-month {
-  background: linear-gradient(135deg, #fb7185, #f97316);
-  padding: 6px 18px;
-  border-radius: 999px;
-  font-weight: 700;
-  color: #fff;
-  font-size: .9rem;
-  display: inline-block;
-  margin-bottom: 8px;
-}
-
-.ss-best-name {
-  font-weight: 800;
-  font-size: 1rem;
-  color: #1f2937;
-  margin: 0;
-}
-
-/* ===========================
-   RESPONSIVE
-=========================== */
-
-/* TABLET */
-@media (max-width: 900px) {
-  .ss-best-card {
-    flex: 0 0 280px;
-    height: 480px;
-  }
-
-  .ss-best-img img {
-    height: 300px;
-  }
-}
-
-/* HP */
-@media (max-width: 600px) {
-  .ss-best-card {
-    flex: 0 0 240px;
-    height: 430px;
-  }
-
-  .ss-best-img img {
-    height: 260px;
-  }
-
-  .ss-best-month {
-    font-size: .8rem;
-    padding: 5px 14px;
   }
 }

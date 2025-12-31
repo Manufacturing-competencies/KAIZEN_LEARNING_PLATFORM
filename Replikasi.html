@@ -21,70 +21,66 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="style-Replikasi.css" />
 </head>
-<body>
-  <!-- ================= NAVBAR ================= -->
-  <nav class="navbar mini-nav" role="navigation" aria-label="Navigasi utama">
-    <button
-      class="logo"
-      type="button"
-      onclick="window.location.href='index.html'"
-      aria-label="Kembali ke Dashboard"
-    >
-      <i class="fa-solid fa-house" aria-hidden="true"></i>
-      <span>Dashboard</span>
-    </button>
+<body id="top">
+  <!-- ================= NAVBAR PILL – KHUSUS REPLIKASI ================= -->
+  <nav class="mini-nav nav-repl" aria-label="Navigasi utama">
+    <a href="index.html" class="brand-logo" aria-label="Kembali ke Dashboard">
+      <img src="Logo.jpg" alt="Paragon Technology & Innovation" />
+    </a>
 
-    <ul class="nav-links" id="mainNav">
-      <li>
-        <a href="index.html#kontak">
-          <i class="fa-solid fa-address-book"></i> Kontak
-        </a>
-      </li>
-    </ul>
-
-    <button
-      class="menu-toggle"
-      id="menuToggle"
-      type="button"
-      aria-label="Buka menu"
-      aria-controls="mainNav"
-      aria-expanded="false"
-    >
-      <i class="fa-solid fa-bars" aria-hidden="true"></i>
-    </button>
   </nav>
 
   <main>
-
-     <!-- ================================
-         BUTTON LAPORAN
+    <!-- ================================ 
+         HERO REPLIKASI IMPROVEMENT 
     ================================= -->
+    <section class="repl-hero" id="repl-hero">
+      <div class="repl-hero-inner">
+        <div class="repl-hero-text">
+          <span class="repl-chip">PROGRAM</span>
 
-<section class="content ss-replikasi" id="replikasi-improvement">
-  <div class="repl-hero-text">
-    <h2 class="repl-hero-title">
-      Laporan Replikasi <span>Improvement</span>
-    </h2>
+          <h1 class="repl-hero-title">
+            Replikasi <span>Improvement</span>
+          </h1>
 
-    <p class="repl-hero-sub">
-      Akses cepat untuk melihat status, lokasi, dan progres
-      <strong>Replikasi Improvement</strong> dari QIT &amp; Sumbang Saran
-      dalam satu tampilan.
-    </p>
+          <p class="repl-hero-sub">
+            Akses cepat untuk melihat status, lokasi, dan progres
+            <strong>Replikasi Improvement</strong> dari QIT &amp; Sumbang Saran
+            dalam satu tampilan.
+          </p>
 
-    <a
-      href="https://docs.google.com/spreadsheets/d/1_yovynZRh2EGgQS8FQh31_OHpYF9GK_HsFQZ4UVw2XU/edit?usp=sharing"
-      class="btn-repl-yellow"
-      target="_blank"
-      rel="noopener"
-    >
-      Buka Laporan Replikasi
-    </a>
+          <div class="repl-hero-cta">
+            <a
+              href="https://docs.google.com/spreadsheets/d/1_yovynZRh2EGgQS8FQh31_OHpYF9GK_HsFQZ4UVw2XU/edit?usp=sharing"
+              class="btn-repl-yellow"
+              target="_blank"
+              rel="noopener"
+            >
+              <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+              Buka Laporan Replikasi
+            </a>
+
+            <a
+              href="https://docs.google.com/spreadsheets/d/1_yovynZRh2EGgQS8FQh31_OHpYF9GK_HsFQZ4UVw2XU/edit?usp=sharing"
+              class="btn-repl-yellow"
+              target="_blank"
+              rel="noopener"
+            >
+              <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+              Link Submittedplan replikasi Improvement
+            </a>
+          </div>
+        </div>
+
+        <!-- kalau nanti mau tambah gambar hero, tinggal isi di sini -->
+        <div class="repl-hero-inner">
+    <div class="repl-hero-card-image">
+      <!-- GANTI nama file di bawah sesuai file kamu -->
+      <img src="HEROREPLIKASI.png"
+           alt="Duplikasi dampak baik ke lebih banyak area." />
+    </div>
   </div>
 </section>
-
-
-
 
     <!-- ================================
          1. REPLIKASI IMPROVEMENT
@@ -95,13 +91,10 @@
       <p class="ss-desc">
         <strong>Replikasi Improvement</strong> adalah penerapan kembali ide atau
         solusi yang sudah terbukti efektif di satu area, kemudian diaplikasikan
-        ke area lain yang memiliki permasalahan sejenis. Tujuannya agar dampak
+        ke area lain yang memiliki permasalahan, spesifikasi sejenis. Tujuannya agar dampak
         perbaikan menjadi lebih luas, terukur, dan konsisten di seluruh area
         kerja.
       </p>
-
-
-
 
       <!-- BLOK 1: KONSEP & MANFAAT -->
       <div class="ss-replikasi-grid">
@@ -143,6 +136,10 @@
               Memaksimalkan <strong>hasil ide SS / QIT</strong> yang sudah
               terbukti efektif.
             </li>
+            <li>
+              Menghindari <strong>hasil ide SS / QIT</strong> yang sudah
+              pernah dilakukan sebelumnya.
+            </li>
           </ul>
         </article>
       </div>
@@ -159,7 +156,7 @@
             <span class="chip-label">Terbukti Efektif</span>
             <p>
               Hasil improvement sudah menunjukkan perbaikan (data
-              sebelum–sesudah jelas).
+              sebelum & sesudah jelas).
             </p>
           </div>
 
@@ -190,79 +187,87 @@
 
       <!-- BLOK 3: LANGKAH REPLIKASI IMPROVEMENT -->
       <div class="ss-repl-steps">
-        <h3>
-          <i class="fa-solid fa-person-running"></i>
-          Langkah Replikasi Improvement
-        </h3>
+  <h3>
+    <i class="fa-solid fa-person-running"></i>
+    Langkah Replikasi Improvement
+  </h3>
 
-        <div class="ss-repl-steps-grid">
-          <article class="ss-repl-step">
-            <div class="step-badge">1</div>
-            <h4>Identifikasi Improvement</h4>
-            <p>
-              Improvement yang sudah selesai dan telah diimplementasikan baik
-              dari Quality Improvement Team (QIT) &amp; Sumbang Saran (SS) yang
-              sudah terbukti.
-            </p>
-          </article>
+  <!-- rail slider langkah -->
+  <div class="ss-repl-steps-rail">
+    <!-- STEP 1 -->
+    <article class="ss-repl-step">
+      <div class="step-badge">1</div>
+      <h4>Identifikasi Improvement</h4>
+      <p>
+        Improvement yang sudah selesai dan telah diimplementasikan baik
+        dari Quality Improvement Team (QIT) &amp; Sumbang Saran (SS) yang
+        sudah terbukti.
+      </p>
+    </article>
 
-          <article class="ss-repl-step">
-            <div class="step-badge">2</div>
-            <h4>Genba Sumber Improvement ke Area</h4>
-            <p>
-              Cek detail, manfaat, tujuan, dan dampak improvement yang telah
-              terimplementasi bersama PIC Improvement ke area.
-            </p>
-          </article>
+    <!-- STEP 2 -->
+    <article class="ss-repl-step">
+      <div class="step-badge">2</div>
+      <h4>Genba Sumber Improvement ke Area</h4>
+      <p>
+        Cek detail, manfaat, tujuan, dan dampak improvement yang telah
+        terimplementasi bersama PIC Improvement ke area.
+      </p>
+    </article>
 
-          <article class="ss-repl-step">
-            <div class="step-badge">3</div>
-            <h4>Tentukan Area Replikasi</h4>
-            <p>
-              Mapping area / line lain yang punya permasalahan serupa atau area
-              yang memiliki spesifikasi yang sama.
-            </p>
-          </article>
+    <!-- STEP 3 -->
+    <article class="ss-repl-step">
+      <div class="step-badge">3</div>
+      <h4>Tentukan Area Replikasi</h4>
+      <p>
+        Mapping area / line lain yang punya permasalahan serupa atau area
+        yang memiliki spesifikasi yang sama.
+      </p>
+    </article>
 
-          <article class="ss-repl-step">
-            <div class="step-badge">4</div>
-            <h4>Diskusi dengan PIC &amp; Superior</h4>
-            <p>
-              Koordinasi dengan PIC area awal, PIC area target, serta Superior
-              &amp; Head of Department terkait scope replikasi improvement.
-            </p>
-          </article>
+    <!-- STEP 4 -->
+    <article class="ss-repl-step">
+      <div class="step-badge">4</div>
+      <h4>Diskusi dengan PIC &amp; Superior</h4>
+      <p>
+        Koordinasi dengan PIC area awal, PIC area target, serta Superior
+        &amp; Head of Department terkait scope replikasi improvement.
+      </p>
+    </article>
 
-          <article class="ss-repl-step">
-            <div class="step-badge">5</div>
-            <h4>Sesuaikan Desain / Metode</h4>
-            <p>
-              Jika diperlukan, lakukan penyesuaian kecil (dimensi, layout,
-              metode kerja) agar cocok dengan area baru.
-            </p>
-          </article>
+    <!-- STEP 5 -->
+    <article class="ss-repl-step">
+      <div class="step-badge">5</div>
+      <h4>Sesuaikan Desain / Metode</h4>
+      <p>
+        Jika diperlukan, lakukan penyesuaian kecil (dimensi, layout,
+        metode kerja) agar cocok dengan area baru.
+      </p>
+    </article>
 
-          <article class="ss-repl-step">
-            <div class="step-badge">6</div>
-            <h4>Implementasi &amp; Uji Coba</h4>
-            <p>
-              Lakukan pemasangan / perubahan proses, uji coba, dan pastikan
-              berjalan aman serta stabil.
-            </p>
-          </article>
+    <!-- STEP 6 -->
+    <article class="ss-repl-step">
+      <div class="step-badge">6</div>
+      <h4>Implementasi &amp; Uji Coba</h4>
+      <p>
+        Lakukan pemasangan / perubahan proses, uji coba, dan pastikan
+        berjalan aman serta stabil.
+      </p>
+    </article>
 
-          <article class="ss-repl-step">
-            <div class="step-badge">7</div>
-            <h4>Dokumentasi &amp; Pelaporan</h4>
-            <p>
-              Update data replikasi (lokasi, line, tanggal, foto
-              sebelum–sesudah) dan laporkan kepada Superior dan Head of
-              Department terkait.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
+    <!-- STEP 7 -->
+    <article class="ss-repl-step">
+      <div class="step-badge">7</div>
+      <h4>Dokumentasi &amp; Pelaporan</h4>
+      <p>
+        Update data replikasi (lokasi, line, tanggal, foto
+        sebelum–sesudah) dan laporkan kepada Superior dan Head of
+        Department terkait.
+      </p>
+    </article>
+  </div>
+</div>
+
 
     <!-- ================================
          2. MATRIKS STATUS & KRITERIA
@@ -350,7 +355,7 @@
       </div>
     </section>
 
-    <!-- ================================
+   <!-- ================================
      3–4. HISTORY REPLIKASI (QIT & SS)
 ================================= -->
 <section class="content history-two-column" id="history-repl">
@@ -361,7 +366,7 @@
     <p class="ss-desc">
       Rangkuman Paragonian yang berhasil melakukan
       <strong>Replikasi Improvement</strong> melalui program
-      <strong>Quality Improvement Team (QIT)</strong>.
+      <strong>QIT</strong>.
     </p>
 
     <div class="history-book">
@@ -371,41 +376,38 @@
         <!-- HALAMAN 1 -->
         <article class="history-page active" data-page="1">
           <div class="history-image">
-            <img
-              src="1.png"
-              alt="Replikasi Improvement QIT - Halaman 1"
-            />
+            <img src="QIT01.png" alt="Replikasi Improvement QIT - Halaman 1" />
           </div>
         </article>
 
         <!-- HALAMAN 2 -->
         <article class="history-page" data-page="2">
           <div class="history-image">
-            <img
-              src="2.png"
-              alt="Replikasi Improvement Tim Hashira - Batch 7"
-            />
+            <img src="QIT02.png" alt="Replikasi Improvement QIT - Halaman 2" />
           </div>
         </article>
 
         <!-- HALAMAN 3 -->
         <article class="history-page" data-page="3">
           <div class="history-image">
-            <img
-              src="3.png"
-              alt="Replikasi Improvement Tim Fearless Pioneers - Batch 7"
-            />
+            <img src="QIT03.png" alt="Replikasi Improvement QIT - Halaman 3" />
+          </div>
+        </article>
+
+        <!-- HALAMAN 4 -->
+        <article class="history-page" data-page="4">
+          <div class="history-image">
+            <img src="QIT04.png" alt="Replikasi Improvement QIT - Halaman 4" />
           </div>
         </article>
       </div>
 
       <!-- NAVIGASI HALAMAN QIT -->
       <div class="history-nav" aria-label="Pilih halaman history QIT">
-        <button class="history-nav-btn active" data-target="1">
-          Halaman 1
-        </button>
+        <button class="history-nav-btn active" data-target="1">Halaman 1</button>
         <button class="history-nav-btn" data-target="2">Halaman 2</button>
         <button class="history-nav-btn" data-target="3">Halaman 3</button>
+        <button class="history-nav-btn" data-target="4">Halaman 4</button>
       </div>
     </div>
   </div>
@@ -417,102 +419,86 @@
     <p class="ss-desc">
       Rangkuman Paragonian yang berhasil melakukan
       <strong>Replikasi Improvement</strong> dari program
-      <strong>Sumbang Saran <br>(SS)</strong>.
+      <strong>SS</strong>.
     </p>
 
     <div class="history-book">
       <div class="history-label">Program Sumbang Saran (SS)</div>
 
       <div class="history-page-wrapper">
-        <!-- HANYA 1 HALAMAN -->
+        <!-- HALAMAN 1 -->
         <article class="history-page active" data-page="1">
           <div class="history-image">
-            <img
-              src="4.png"
-              alt="Replikasi Improvement Sumbang Saran"
-            />
+            <img src="SS01.png" alt="Replikasi Improvement SS - Halaman 1" />
+          </div>
+        </article>
+
+        <!-- HALAMAN 2 -->
+        <article class="history-page" data-page="2">
+          <div class="history-image">
+            <img src="SS02.png" alt="Replikasi Improvement SS - Halaman 2" />
+          </div>
+        </article>
+
+        <!-- HALAMAN 3 -->
+        <article class="history-page" data-page="3">
+          <div class="history-image">
+            <img src="SS03.png" alt="Replikasi Improvement SS - Halaman 3" />
+          </div>
+        </article>
+
+        <!-- HALAMAN 4 -->
+        <article class="history-page" data-page="4">
+          <div class="history-image">
+            <img src="SS04.png" alt="Replikasi Improvement SS - Halaman 4" />
           </div>
         </article>
       </div>
 
       <!-- NAVIGASI HALAMAN SS -->
-      <div
-        class="history-nav"
-        aria-label="Pilih halaman history Sumbang Saran"
-      >
-        <button class="history-nav-btn active" data-target="1">
-          Halaman 1
-        </button>
+      <div class="history-nav" aria-label="Pilih halaman history Sumbang Saran">
+        <button class="history-nav-btn active" data-target="1">Halaman 1</button>
+        <button class="history-nav-btn" data-target="2">Halaman 2</button>
+        <button class="history-nav-btn" data-target="3">Halaman 3</button>
+        <button class="history-nav-btn" data-target="4">Halaman 4</button>
       </div>
     </div>
   </div>
 </section>
-  </main>
 
+<!-- ================= JS: HISTORY ================= -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // HISTORY REPLIKASI (QIT & SS) – per buku
+    const books = document.querySelectorAll(".history-book");
 
+    books.forEach((book) => {
+      const pages = book.querySelectorAll(".history-page");
+      const buttons = book.querySelectorAll(".history-nav-btn");
+      if (!pages.length || !buttons.length) return;
 
-  <!-- ================= JS: NAVBAR + HISTORY ================= -->
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      // ---------- NAVBAR MOBILE ----------
-      const menuToggle = document.getElementById("menuToggle");
-      const mainNav = document.getElementById("mainNav");
-
-      if (menuToggle && mainNav) {
-        menuToggle.addEventListener("click", function (e) {
-          e.stopPropagation();
-          const isActive = mainNav.classList.toggle("active");
-          menuToggle.setAttribute("aria-expanded", isActive ? "true" : "false");
-        });
-
-        // klik di luar nav untuk nutup menu
-        document.addEventListener("click", function (e) {
-          if (
-            mainNav.classList.contains("active") &&
-            !mainNav.contains(e.target) &&
-            e.target !== menuToggle &&
-            !menuToggle.contains(e.target)
-          ) {
-            mainNav.classList.remove("active");
-            menuToggle.setAttribute("aria-expanded", "false");
-          }
-        });
+      // Safety: kalau tidak ada yang active di HTML, set default page 1
+      if (!book.querySelector(".history-page.active")) {
+        pages[0].classList.add("active");
+      }
+      if (!book.querySelector(".history-nav-btn.active")) {
+        buttons[0].classList.add("active");
       }
 
-      // ---------- HISTORY REPLIKASI (QIT & SS DIPISAH PER BUKU) ----------
-      const books = document.querySelectorAll(".history-book");
-      books.forEach((book) => {
-        const pages = book.querySelectorAll(".history-page");
-        const buttons = book.querySelectorAll(".history-nav-btn");
-        if (!pages.length || !buttons.length) return;
+      // Klik tombol → ganti halaman di buku itu saja
+      buttons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const target = btn.dataset.target;
 
-        // pastikan ada default active per buku
-        if (!book.querySelector(".history-page.active")) {
-          pages[0].classList.add("active");
-        }
-        if (!book.querySelector(".history-nav-btn.active")) {
-          buttons[0].classList.add("active");
-        }
-
-        buttons.forEach((btn) => {
-          btn.addEventListener("click", () => {
-            const target = btn.dataset.target;
-
-            // toggle hanya di dalam buku ini
-            pages.forEach((page) => {
-              page.classList.toggle(
-                "active",
-                page.dataset.page === target
-              );
-            });
-
-            buttons.forEach((b) => b.classList.remove("active"));
-            btn.classList.add("active");
+          pages.forEach((page) => {
+            page.classList.toggle("active", page.dataset.page === target);
           });
+
+          buttons.forEach((b) => b.classList.remove("active"));
+          btn.classList.add("active");
         });
       });
     });
-  </script>
-</body>
-</html>
+  });
+</script>
 

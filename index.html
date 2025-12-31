@@ -6,76 +6,70 @@
   <title>Dashboard QIT</title>
 
   <!-- Fonts & Icons -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap"
-    rel="stylesheet"
-  />
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
 
   <!-- Main CSS -->
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
   <!-- ================= NAVBAR ================= -->
-  <nav class="navbar mini-nav" role="navigation" aria-label="Navigasi utama">
-    <button
-      class="logo"
-      type="button"
-      onclick="window.location.href='index.html'"
-      aria-label="Kembali ke Dashboard"
-    >
-      <i class="fa-solid fa-house" aria-hidden="true"></i>
-      <span>Dashboard</span>
-    </button>
-
-    <ul class="nav-links" id="mainNav">
-      <li>
-        <a href="#kontak">
-          <i class="fa-solid fa-address-book" aria-hidden="true"></i>
-          <span>Kontak</span>
-        </a>
-      </li>
-    </ul>
-
-    <button class="menu-toggle" id="menuToggle" aria-label="Buka menu navigasi">
-      <i class="fa-solid fa-bars" aria-hidden="true"></i>
-    </button>
+  <nav class="mini-nav" aria-label="Navigasi utama">
+    <a href="index.html" class="brand-logo" aria-label="Paragon Technology & Innovation">
+      <img src="Logo.jpg" alt="Paragon Technology & Innovation" />
+    </a>
   </nav>
 
   <!-- =============== POPUP INFORMASI =============== -->
-  <div class="info-popup" id="infoPopup" aria-modal="true" role="dialog">
+  <div class="info-popup" id="infoPopup" role="dialog" aria-modal="true">
     <div class="info-popup-inner">
-      <button
-        class="info-close"
-        id="infoClose"
-        type="button"
-        aria-label="Tutup informasi"
-      >
+      <button class="info-close" id="infoClose" type="button" aria-label="Tutup informasi">
         &times;
       </button>
 
       <div class="info-slider">
+
         <article class="info-slide">
-          <img src="TKMPN2025.png" class="info-img" alt="Informasi keempat" />
-        </article>
-        <article class="info-slide">
-          <img src="BESTSSOKT.png" class="info-img" alt="Informasi November" />
+          <img src="2026.png" class="info-img" alt="2026" />
         </article>
 
         <article class="info-slide">
-          <img src="SSDES.png" class="info-img" alt="Informasi ketiga" />
+          <img src="2026-01.png" class="info-img" alt="2026-01" />
         </article>
 
         <article class="info-slide">
-          <img src="COACHING3.jpeg" class="info-img" alt="Informasi keempat" />
+          <img src="5R01.png" class="info-img" alt="5R01" />
         </article>
 
         <article class="info-slide">
-          <img src="NEXTCHALLENGE.jpeg" class="info-img" alt="Informasi keempat" />
+          <img src="5R02.png" class="info-img" alt="5R02" />
         </article>
+
+        <article class="info-slide">
+          <img src="QIT04.png" class="info-img" alt="QIT04" />
+        </article>
+
+        <article class="info-slide">
+          <img src="SS02.png" class="info-img" alt="SS02" />
+        </article>
+
+        <article class="info-slide">
+          <img src="SS03.png" class="info-img" alt="SS03" />
+        </article>
+
+        <article class="info-slide">
+          <img src="SS04.png" class="info-img" alt="SS04" />
+        </article>
+
+        <article class="info-slide">
+          <img src="BS11.png" class="info-img" alt="SS11" />
+        </article>
+
+        <article class="info-slide">
+          <img src="COACHING3.jpeg" class="info-img" alt="Coaching" />
+        </article>
+
       </div>
     </div>
   </div>
@@ -83,29 +77,48 @@
   <main>
     <!-- ================= HERO ================= -->
     <section class="hero">
-      <h1 class="hero-title">Kaizen &amp; Learning Platform</h1>
-      <!-- Kalau mau subtitle nanti tinggal aktifkan:
-      <p>Bekerja adalah ruang belajar, dan belajar adalah bagian dari bekerja.</p>
-      -->
+      <div class="hero-inner">
+        <div class="hero-left">
+          <span class="hero-pill">WELLCOME</span>
+
+          <h1 class="hero-heading">
+            <span class="hero-highlight">KAIZEN</span> &amp; LEARNING<br />
+            PLATFORM
+          </h1>
+
+          <p class="hero-subtitle">
+            Membangun budaya belajar dan perbaikan berkelanjutan di lingkungan kerja.
+          </p>
+
+          <div class="hero-cta">
+            <a href="#program" class="btn-primary">Program</a>
+            <a href="#kontak" class="btn-ghost">Kontak PIC</a>
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <div class="hero-illustration">
+            <img src="MCS.png" alt="Tim Kaizen &amp; Learning" class="hero-img-main" />
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- ================= DASHBOARD BUTTONS ================= -->
-    <section class="dashboard-buttons" aria-label="Menu program">
+    <!-- ================= MENU PROGRAM ================= -->
+    <section id="program" class="dashboard-buttons" aria-label="Menu program">
       <!-- 5R -->
       <a class="ig-card" href="5r.html">
         <div class="ig-card-inner">
           <div class="ig-top">
             <div class="ig-avatar" aria-hidden="true"></div>
             <div class="ig-user">
-              <span class="ig-name">Hi Learning</span>
-              <span class="ig-sub">@hi.learning</span>
+              <span class="ig-name">Program</span>
+              <span class="ig-sub"></span>
             </div>
             <i class="fa-solid fa-ellipsis ig-more" aria-hidden="true"></i>
           </div>
 
-          <div class="ig-image ig-5r">
-            <span>5R</span>
-          </div>
+          <div class="ig-image ig-5r"><span>5R</span></div>
 
           <div class="ig-footer">
             <div class="ig-actions">
@@ -127,15 +140,13 @@
           <div class="ig-top">
             <div class="ig-avatar" aria-hidden="true"></div>
             <div class="ig-user">
-              <span class="ig-name">Hi Learning</span>
-              <span class="ig-sub">@hi.learning</span>
+              <span class="ig-name">Program</span>
+              <span class="ig-sub"></span>
             </div>
             <i class="fa-solid fa-ellipsis ig-more" aria-hidden="true"></i>
           </div>
 
-          <div class="ig-image ig-epic">
-            <span>EPIC</span>
-          </div>
+          <div class="ig-image ig-epic"><span>EPIC</span></div>
 
           <div class="ig-footer">
             <div class="ig-actions">
@@ -157,15 +168,13 @@
           <div class="ig-top">
             <div class="ig-avatar" aria-hidden="true"></div>
             <div class="ig-user">
-              <span class="ig-name">Hi Learning</span>
-              <span class="ig-sub">@hi.learning</span>
+              <span class="ig-name">Program</span>
+              <span class="ig-sub"></span>
             </div>
             <i class="fa-solid fa-ellipsis ig-more" aria-hidden="true"></i>
           </div>
 
-          <div class="ig-image ig-ss">
-            <span>SUMBANG<br />SARAN</span>
-          </div>
+          <div class="ig-image ig-ss"><span>SUMBANG<br />SARAN</span></div>
 
           <div class="ig-footer">
             <div class="ig-actions">
@@ -187,15 +196,13 @@
           <div class="ig-top">
             <div class="ig-avatar" aria-hidden="true"></div>
             <div class="ig-user">
-              <span class="ig-name">Hi Learning</span>
-              <span class="ig-sub">@hi.learning</span>
+              <span class="ig-name">Program</span>
+              <span class="ig-sub"></span>
             </div>
             <i class="fa-solid fa-ellipsis ig-more" aria-hidden="true"></i>
           </div>
 
-          <div class="ig-image ig-replikasi">
-            <span>REPLIKASI<br />IMPROVEMENT</span>
-          </div>
+          <div class="ig-image ig-replikasi"><span>REPLIKASI<br />IMPROVEMENT</span></div>
 
           <div class="ig-footer">
             <div class="ig-actions">
@@ -217,15 +224,13 @@
           <div class="ig-top">
             <div class="ig-avatar" aria-hidden="true"></div>
             <div class="ig-user">
-              <span class="ig-name">Hi Learning</span>
-              <span class="ig-sub">@hi.learning</span>
+              <span class="ig-name">Program</span>
+              <span class="ig-sub"></span>
             </div>
             <i class="fa-solid fa-ellipsis ig-more" aria-hidden="true"></i>
           </div>
 
-          <div class="ig-image ig-learning">
-            <span>LEARNING</span>
-          </div>
+          <div class="ig-image ig-learning"><span>LEARNING</span></div>
 
           <div class="ig-footer">
             <div class="ig-actions">
@@ -241,26 +246,19 @@
         </div>
       </a>
 
-      <!-- QIT (EXTERNAL) -->
-      <a
-        class="ig-card"
-        href="https://manufacturing-competencies.github.io/Quality_Improveement_Team/"
-        target="_self"
-        rel="noopener"
-      >
+      <!-- QIT (External) -->
+      <a class="ig-card" href="https://manufacturing-competencies.github.io/Quality_Improveement_Team/">
         <div class="ig-card-inner">
           <div class="ig-top">
             <div class="ig-avatar" aria-hidden="true"></div>
             <div class="ig-user">
-              <span class="ig-name">Hi Learning</span>
-              <span class="ig-sub">@hi.learning</span>
+              <span class="ig-name">Program</span>
+              <span class="ig-sub"></span>
             </div>
             <i class="fa-solid fa-ellipsis ig-more" aria-hidden="true"></i>
           </div>
 
-          <div class="ig-image ig-qit">
-            <span>QIT</span>
-          </div>
+          <div class="ig-image ig-qit"><span>QIT</span></div>
 
           <div class="ig-footer">
             <div class="ig-actions">
@@ -282,12 +280,7 @@
       <h2>Kontak</h2>
 
       <div class="contact-grid">
-        <a
-          class="contact-card"
-          href="https://wa.me/6287814045008"
-          target="_blank"
-          rel="noopener"
-        >
+        <a class="contact-card" href="https://wa.me/6287814045008" target="_blank" rel="noopener">
           <div class="avatar-ring">
             <img src="MILA.png" alt="MILA" />
           </div>
@@ -296,12 +289,7 @@
           <p class="plant">Plant J1 &amp; J3</p>
         </a>
 
-        <a
-          class="contact-card"
-          href="https://wa.me/6287817277513"
-          target="_blank"
-          rel="noopener"
-        >
+        <a class="contact-card" href="https://wa.me/6287817277513" target="_blank" rel="noopener">
           <div class="avatar-ring">
             <img src="LIA.png" alt="LIA" />
           </div>
@@ -310,12 +298,7 @@
           <p class="plant">Plant J2 &amp; J5</p>
         </a>
 
-        <a
-          class="contact-card"
-          href="https://wa.me/6285946870850"
-          target="_blank"
-          rel="noopener"
-        >
+        <a class="contact-card" href="https://wa.me/6285946870850" target="_blank" rel="noopener">
           <div class="avatar-ring">
             <img src="TAMI.png" alt="TAMI" />
           </div>
@@ -324,12 +307,7 @@
           <p class="plant">Plant J4</p>
         </a>
 
-        <a
-          class="contact-card"
-          href="https://wa.me/6287814045175"
-          target="_blank"
-          rel="noopener"
-        >
+        <a class="contact-card" href="https://wa.me/6287814045175" target="_blank" rel="noopener">
           <div class="avatar-ring">
             <img src="DEDEN.png" alt="DEDEN" />
           </div>
@@ -338,12 +316,7 @@
           <p class="plant">Plant J6</p>
         </a>
 
-        <a
-          class="contact-card"
-          href="https://wa.me/6287815825017"
-          target="_blank"
-          rel="noopener"
-        >
+        <a class="contact-card" href="https://wa.me/6287815825017" target="_blank" rel="noopener">
           <div class="avatar-ring">
             <img src="DENI.png" alt="DENI" />
           </div>
@@ -353,11 +326,7 @@
         </a>
       </div>
 
-      <div class="contact-footer-note">
-        <hr />
-        <p>Paragon Technology and Innovation – MCS</p>
-      </div>
-    </section>
+      </section>
   </main>
 
   <script src="script.js"></script>

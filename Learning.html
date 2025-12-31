@@ -22,7 +22,7 @@
   <link rel="stylesheet" href="style-Learning.css" />
 </head>
 <body>
-  <!-- ================= NAVBAR ================= -->
+  <!-- ================= NAVBAR (SAMA DENGAN HALAMAN LAIN) ================= -->
   <nav class="navbar mini-nav" role="navigation" aria-label="Navigasi utama">
     <button
       class="logo"
@@ -34,13 +34,6 @@
       <span>Dashboard</span>
     </button>
 
-    <ul class="nav-links" id="mainNav">
-      <li>
-        <a href="index.html#kontak">
-          <i class="fa-solid fa-address-book"></i> Kontak
-        </a>
-      </li>
-    </ul>
 
     <button
       class="menu-toggle"
@@ -56,39 +49,43 @@
 
   <!-- ================= MAIN CONTENT ================= -->
   <main class="learning-page">
-    <!-- HERO -->
+    <!-- ========== HERO ========== -->
     <section class="hero-learning">
+      <!-- KIRI: TEKS -->
       <div class="hero-learning-text">
         <p class="tagline">Learning Zone</p>
-        <h1>Belajar Sambil Berkarya</h1>
+        <h1>Belajar Sambil <span>Berkarya</span></h1>
         <p class="subtitle">
-          Karena bagi kami, bekerja adalah ruang belajar, dan belajar adalah bagian dari bekerja.
+          Karena bagi kami, bekerja adalah ruang belajar, dan belajar adalah
+          bagian dari bekerja. Yuk, upgrade diri lewat Kaizen, QIT, dan
+          berbagai program learning lainnya.
         </p>
+
         <div class="hero-actions">
           <a href="#learning-track" class="btn-primary">
             <i class="fa-solid fa-play"></i> Mulai Learning
           </a>
-          <!-- DIPERBAIKI: id anchor dari #internal-trainingt menjadi #internal-training -->
           <a href="#internal-training" class="btn-ghost">
             <i class="fa-solid fa-file-lines"></i> Lihat Dokumentasi
           </a>
         </div>
       </div>
 
+      <!-- KANAN: VISUAL MENGAMBANG -->
       <div class="hero-learning-visual">
         <div class="bubble bubble-1"></div>
         <div class="bubble bubble-2"></div>
         <div class="bubble bubble-3"></div>
 
         <div class="hero-card">
-          <p class="hero-card-title">Progress Learning</p>
+          <p class="hero-card-title">Progress Minggu</p>
           <p class="hero-card-number" id="weekNumber"></p>
           <p class="hero-card-desc">Keep growing, Paragonian!</p>
         </div>
       </div>
     </section>
 
-    <!-- TRACK LEARNING / KATEGORI -->
+    <!-- ========== TRACK LEARNING ========== -->
     <section id="learning-track" class="learning-track content">
       <h2>Track Learning</h2>
       <p class="section-subtitle">
@@ -96,54 +93,30 @@
       </p>
 
       <div class="track-grid">
-        <!-- CARD 1 -->
-        <article
-          class="track-card"
-          onclick="window.open('https://docs.google.com/forms/d/e/LINK_FORM_5R/viewform','_blank')"
-        >
-          <div class="track-icon"><i class="fa-solid fa-lightbulb"></i></div>
-          <div class="track-body">
-            <h3>Basic Kaizen & 5R</h3>
-            <p>Pengenalan mindset improvement, 5R, dan contoh-contoh di area kerja.</p>
-            <span class="track-link">
-              Buka form Basic Kaizen & 5R <i class="fa-solid fa-arrow-right"></i>
-            </span>
-          </div>
-        </article>
+       <!-- CARD 1 -->
+<article
+  class="track-card"
+  onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSddawWKvxWwCy_oPs-3MMMD2VUMA6u3PjuUlgJUkUVu8fkP4A/viewform', '_blank')"
+>
+  <div class="track-icon">
+    <i class="fa-solid fa-lightbulb"></i>
+  </div>
+  <div class="track-body">
+    <h3>Link Form Request Training</h3>
+    <p>
+      Ajukan kebutuhan pembelajaran untuk mendukung peningkatan kompetensi di area kerja.
+    </p>
+    <span class="track-link">
+      👉 Akses Form Request Learning
+      <i class="fa-solid fa-arrow-right"></i>
+    </span>
+  </div>
+</article>
 
-        <!-- CARD 2 -->
-        <article
-          class="track-card"
-          onclick="window.open('https://docs.google.com/forms/d/e/LINK_FORM_QIT/viewform','_blank')"
-        >
-          <div class="track-icon"><i class="fa-solid fa-people-group"></i></div>
-          <div class="track-body">
-            <h3>QIT & Project</h3>
-            <p>Alur QIT, peran tim, dan cara menyusun problem statement, data, dan solusi.</p>
-            <span class="track-link">
-              Buka form QIT & Project <i class="fa-solid fa-arrow-right"></i>
-            </span>
-          </div>
-        </article>
-
-        <!-- CARD 3 -->
-        <article
-          class="track-card"
-          onclick="window.open('https://docs.google.com/forms/d/e/LINK_FORM_TOOLS/viewform','_blank')"
-        >
-          <div class="track-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
-          <div class="track-body">
-            <h3>Tools Improvement</h3>
-            <p>Basic 7 tools, fishbone, 5 why, pareto, dan template siap pakai.</p>
-            <span class="track-link">
-              Buka form Tools Improvement <i class="fa-solid fa-arrow-right"></i>
-            </span>
-          </div>
-        </article>
       </div>
     </section>
 
-    <!-- INTERNAL TRAINING GALLERY -->
+    <!-- ========== INTERNAL TRAINING GALLERY (SCROLL KANAN-KIRI) ========== -->
     <section id="internal-training" class="training-gallery content">
       <h2>Dokumentasi Internal Training</h2>
       <p class="section-subtitle">
@@ -228,7 +201,7 @@
            href="https://sites.google.com/view/dokumentasitraining/internal/dokumen-dokumentasi?authuser=0"
            target="_self"
            style="background-image: url('DOKUMEN.png');">
-          <span class="poster-title">Dokumen & Dokumentasi</span>
+          <span class="poster-title">Dokumen &amp; Dokumentasi</span>
         </a>
 
         <!-- Poster 11 – Induction Officer Up New -->
@@ -329,7 +302,7 @@
       </div>
     </section>
 
-    <!-- EKSTERNAL TRAINING GALLERY -->
+    <!-- ========== EKSTERNAL TRAINING GALLERY (SCROLL KANAN-KIRI) ========== -->
     <section id="external-training" class="training-gallery content">
       <h2>Dokumentasi Eksternal Training</h2>
       <p class="section-subtitle">
@@ -468,7 +441,7 @@
     </section>
   </main>
 
-  <!-- Auto week number -->
+  <!-- ================= JS: AUTO WEEK NUMBER ================= -->
   <script>
     function getWeekNumber(date) {
       const onejan = new Date(date.getFullYear(), 0, 1);

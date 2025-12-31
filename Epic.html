@@ -18,46 +18,81 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="style-epic.css" />
 </head>
+
 <body>
-  <!-- NAVBAR -->
-  <nav class="navbar mini-nav" role="navigation" aria-label="Navigasi utama">
-    <button
-      class="logo"
-      type="button"
-      onclick="window.location.href='index.html'"
-      aria-label="Kembali ke Dashboard"
-    >
-      <i class="fa-solid fa-house" aria-hidden="true"></i>
-      <span>Dashboard</span>
-    </button>
+  <!-- Anchor top harus di dalam body -->
+  <div id="top"></div>
 
-    <ul class="nav-links" id="mainNav">
-      <li>
-        <a href="index.html#kontak">
-          <i class="fa-solid fa-address-book"></i>
-          Kontak
-        </a>
-      </li>
-    </ul>
+  <!-- NAVBAR KHUSUS HALAMAN SS -->
+<nav class="mini-nav nav-ss" aria-label="Navigasi utama">
+  <a href="index.html" class="brand-logo" aria-label="Paragon Technology & Innovation">
+    <img src="Logo.jpg" alt="Paragon Technology & Innovation" />
+  </a>
+</nav>
 
-    <button
-      class="menu-toggle"
-      id="menuToggle"
-      type="button"
-      aria-label="Buka menu"
-      aria-controls="mainNav"
-      aria-expanded="false"
-    >
-      <i class="fa-solid fa-bars" aria-hidden="true"></i>
-    </button>
-  </nav>
 
-  <!-- HERO EPIC -->
+  <!-- HERO -->
   <section class="epic-hero" aria-labelledby="epic-hero-title">
-    <h1 id="epic-hero-title">PROGRAM EPIC</h1>
-    <p class="epic-hero-sub">
-      Karena bagi kami, bekerja adalah ruang belajar, dan belajar adalah bagian dari bekerja.
-    </p>
+    <div class="epic-hero-inner">
+      <!-- LEFT -->
+      <div class="epic-hero-left">
+        <div class="epic-chip">
+          <i class="fa-solid fa-bolt" aria-hidden="true"></i>
+          <span>• ONLINE LEARNING</span>
+        </div>
+
+        <h1 id="epic-hero-title" class="epic-hero-title">
+          PROGRAM<br />EPIC
+        </h1>
+
+        <p class="epic-hero-sub">
+          Karena bagi kami, bekerja adalah ruang belajar, dan belajar adalah bagian dari bekerja.
+        </p>
+
+        <div class="epic-hero-cta">
+          <!-- CTA diarahkan ke section yang ADA -->
+          <a class="epic-btn-primary" href="#epic-title">
+            <i class="fa-solid fa-play" aria-hidden="true"></i> Mulai Akses
+          </a>
+          <a class="epic-btn-ghost" href="#epic-tutorial-title">
+            <i class="fa-regular fa-circle-question" aria-hidden="true"></i> Lihat Tutorial
+          </a>
+        </div>
+
+        <div class="epic-hero-stats" aria-label="Highlight EPIC">
+          <div class="epic-stat">
+            <i class="fa-regular fa-clock" aria-hidden="true"></i>
+            <div>
+              <strong>24/7</strong>
+              <span>Akses Fleksibel</span>
+            </div>
+          </div>
+
+          <div class="epic-stat">
+            <i class="fa-solid fa-calendar-check" aria-hidden="true"></i>
+            <div>
+              <strong>1 Bulan</strong>
+              <span>Batas Penyelesaian</span>
+            </div>
+          </div>
+
+          <div class="epic-stat">
+            <i class="fa-solid fa-users" aria-hidden="true"></i>
+            <div>
+              <strong>Semua</strong>
+              <span>Paragonian</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT -->
+      <div class="epic-hero-right" aria-hidden="true">
+        <div class="epic-hero-card">
+          <img src="EPICHERO.jpg" alt="" />
+        </div>
+      </div>
+    </div>
   </section>
 
   <main>
@@ -78,7 +113,6 @@
       <div class="epic-access-wrap">
         <!-- Ilustrasi kiri -->
         <div class="epic-access-illustration">
-          <!-- ganti nama file sesuai gambar kamu -->
           <img src="Paragon.png" alt="Ilustrasi Paragonian sedang belajar EPIC" />
         </div>
 
@@ -98,12 +132,10 @@
       </div>
     </section>
 
-
-
     <!-- CARA AKSES EPIC -->
     <section class="epic-wrap" aria-labelledby="epic-title">
       <section class="epic-card">
-        <!-- ilustrasi kiri -->
+        <!-- ilustrasi -->
         <div class="epic-illustration" aria-hidden="true">
           <img
             src="LOGOEPIC.png"
@@ -139,7 +171,7 @@
             </a>
 
             <button type="button" class="addr-btn" aria-label="Cari">
-              <i class="fa-solid fa-magnifying-glass"></i>
+              <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
             </button>
           </div>
 
@@ -157,16 +189,12 @@
             <div class="cred-row">
               <span class="cred-label">Password</span>
               <span class="cred-sep">:</span>
-              <span class="cred-value">
-                <strong>060699 (DD/MM/YY)</strong>
-              </span>
+              <span class="cred-value"><strong>060699 (DD/MM/YY)</strong></span>
             </div>
             <div class="cred-row">
               <span class="cred-label">Contoh</span>
               <span class="cred-sep">:</span>
-              <span class="cred-value">
-                <strong>11 April 2003 (menjadi 110403)</strong>
-              </span>
+              <span class="cred-value"><strong>11 April 2003 (menjadi 110403)</strong></span>
             </div>
           </div>
         </div>
@@ -181,7 +209,6 @@
     <section class="content epic-anytime" aria-labelledby="anytime-title">
       <div class="anytime-head">
         <div class="anytime-clock" aria-hidden="true">
-          <i class="fa-regular fa-clock"></i>
           <span>24/7</span>
         </div>
 
@@ -190,14 +217,15 @@
             Kapan waktu mengakses <span>EPIC</span>?
           </h2>
           <p class="anytime-sub">
-            Tidak ada batasan tempat dan waktu untuk mengakses EPIC. Kegiatan dapat dilakukan di mana pun dan kapan pun, dengan syarat memiliki perangkat dan akses internet.
+            Tidak ada batasan tempat dan waktu untuk mengakses EPIC. Kegiatan dapat dilakukan di mana pun dan kapan pun,
+            dengan syarat memiliki perangkat dan akses internet.
           </p>
         </div>
       </div>
 
       <!-- bar info memanjang -->
       <div class="epic-info-bar">
-        <i class="fa-solid fa-clock"></i>
+        <i class="fa-solid fa-clock" aria-hidden="true"></i>
         <span>
           <strong>Batas waktu pengerjaan EPIC:</strong>
           pengerjaan EPIC wajib diselesaikan maksimal
@@ -216,7 +244,7 @@
 
         <div class="course-calendar" aria-hidden="true">
           <div class="course-calendar-text">
-            <span><i class="fa-solid fa-calendar-check"></i> Selesaikan dalam 1 bulan</span>
+            <span><i class="fa-solid fa-calendar-check" aria-hidden="true"></i> Selesaikan dalam 1 bulan</span>
           </div>
         </div>
       </div>
@@ -224,9 +252,7 @@
       <div class="course-list-grid" role="list">
         <ul>
           <li>
-            <span class="course-icon">
-              <i class="fa-solid fa-shield-heart" aria-hidden="true"></i>
-            </span>
+            <span class="course-icon"><i class="fa-solid fa-shield-heart" aria-hidden="true"></i></span>
             <div class="course-text">
               <strong>Safety Riding / Keselamatan Berkendara</strong>
               <span>Dasar keselamatan berkendara bagi Paragonian.</span>
@@ -234,9 +260,7 @@
           </li>
 
           <li>
-            <span class="course-icon">
-              <i class="fa-solid fa-people-roof" aria-hidden="true"></i>
-            </span>
+            <span class="course-icon"><i class="fa-solid fa-people-roof" aria-hidden="true"></i></span>
             <div class="course-text">
               <strong>HR Services (Plant) / Layanan SDM (Pabrik)</strong>
               <span>Pengenalan layanan SDM dan dukungan untuk karyawan pabrik.</span>
@@ -244,9 +268,7 @@
           </li>
 
           <li>
-            <span class="course-icon">
-              <i class="fa-solid fa-mosque" aria-hidden="true"></i>
-            </span>
+            <span class="course-icon"><i class="fa-solid fa-mosque" aria-hidden="true"></i></span>
             <div class="course-text">
               <strong>Sistem Jaminan Halal</strong>
               <span>Dasar implementasi dan kepatuhan sistem jaminan halal.</span>
@@ -254,9 +276,7 @@
           </li>
 
           <li>
-            <span class="course-icon">
-              <i class="fa-solid fa-diagram-project" aria-hidden="true"></i>
-            </span>
+            <span class="course-icon"><i class="fa-solid fa-diagram-project" aria-hidden="true"></i></span>
             <div class="course-text">
               <strong>Sistem Manajemen Terintegrasi</strong>
               <span>Gambaran singkat integrasi sistem manajemen di Paragon.</span>
@@ -264,9 +284,7 @@
           </li>
 
           <li>
-            <span class="course-icon">
-              <i class="fa-solid fa-star-half-stroke" aria-hidden="true"></i>
-            </span>
+            <span class="course-icon"><i class="fa-solid fa-star-half-stroke" aria-hidden="true"></i></span>
             <div class="course-text">
               <strong>Quality Awareness / Kesadaran Kualitas</strong>
               <span>Membentuk mindset kualitas dalam aktivitas kerja harian.</span>
@@ -276,9 +294,7 @@
 
         <ul>
           <li>
-            <span class="course-icon">
-              <i class="fa-solid fa-scale-balanced" aria-hidden="true"></i>
-            </span>
+            <span class="course-icon"><i class="fa-solid fa-scale-balanced" aria-hidden="true"></i></span>
             <div class="course-text">
               <strong>Industrial Relation / Hubungan Industrial</strong>
               <span>Dasar-dasar hubungan industrial dan regulasi ketenagakerjaan.</span>
@@ -286,9 +302,7 @@
           </li>
 
           <li>
-            <span class="course-icon">
-              <i class="fa-solid fa-box-open" aria-hidden="true"></i>
-            </span>
+            <span class="course-icon"><i class="fa-solid fa-box-open" aria-hidden="true"></i></span>
             <div class="course-text">
               <strong>Product Knowledge / Pengetahuan Produk</strong>
               <span>Pengenalan produk-produk utama Paragon.</span>
@@ -296,9 +310,7 @@
           </li>
 
           <li>
-            <span class="course-icon">
-              <i class="fa-solid fa-brain" aria-hidden="true"></i>
-            </span>
+            <span class="course-icon"><i class="fa-solid fa-brain" aria-hidden="true"></i></span>
             <div class="course-text">
               <strong>Digital Mindset / Pola Pikir Digital</strong>
               <span>Membangun cara berpikir digital dalam pekerjaan.</span>
@@ -306,9 +318,7 @@
           </li>
 
           <li>
-            <span class="course-icon">
-              <i class="fa-solid fa-gears" aria-hidden="true"></i>
-            </span>
+            <span class="course-icon"><i class="fa-solid fa-gears" aria-hidden="true"></i></span>
             <div class="course-text">
               <strong>Lean Manufacturing / Pengantar Lean Manufacturing</strong>
               <span>Konsep dasar lean untuk peningkatan efisiensi.</span>
@@ -316,9 +326,7 @@
           </li>
 
           <li>
-            <span class="course-icon">
-              <i class="fa-solid fa-spray-can-sparkles" aria-hidden="true"></i>
-            </span>
+            <span class="course-icon"><i class="fa-solid fa-spray-can-sparkles" aria-hidden="true"></i></span>
             <div class="course-text">
               <strong>CPPKRTB (Cara pembuatan perbekalan kesehatan rumah tangga yang baik)</strong>
               <span>Standar pembuatan PKRT yang aman dan sesuai regulasi.</span>
@@ -338,7 +346,7 @@
       <div class="tutorial-wrap">
         <!-- ilustrasi kiri -->
         <div class="tutorial-img">
-          <img src="Hero.png" alt="Tutorial akun EPIC" />
+          <img src="MCS.png" alt="Tutorial akun EPIC" />
         </div>
 
         <!-- daftar link kanan -->
@@ -346,7 +354,7 @@
           <div class="tutorial-item pink">
             <p>
               Video tutorial EPIC<br />
-              <a href="https://drive.google.com/file/d/1iz1tkMrZrBqLjoK_gawoOgz4irDf_q3h/view?usp=sharing" target="_self" rel="noopener">
+              <a href="https://drive.google.com/file/d/1iz1tkMrZrBqLjoK_gawoOgz4irDf_q3h/view?usp=sharing" target="_blank" rel="noopener">
                 bit.ly/tutorialepic1
               </a>
             </p>
@@ -355,7 +363,7 @@
           <div class="tutorial-item rose">
             <p>
               Video kendala lupa password<br />
-              <a href="https://drive.google.com/file/d/1WKYs50JlMCpSCNd9U6yBXK7icWcc7UmT/view?usp=sharing" target="_self" rel="noopener">
+              <a href="https://drive.google.com/file/d/1WKYs50JlMCpSCNd9U6yBXK7icWcc7UmT/view?usp=sharing" target="_blank" rel="noopener">
                 bit.ly/tutorialepic2
               </a>
             </p>
@@ -364,7 +372,7 @@
           <div class="tutorial-item purple">
             <p>
               Tautan Dokumen Pelaporan Pengerjaan EPIC<br />
-              <a href="https://bit.ly/FormPelaporanEPICdanSS" target="_self" rel="noopener">
+              <a href="https://bit.ly/FormPelaporanEPICdanSS" target="_blank" rel="noopener">
                 bit.ly/tutorialepic3
               </a>
             </p>

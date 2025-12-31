@@ -1,217 +1,636 @@
-/* ================================
-   THEME EPIC (selaras Canva)
-   Edit variable warna di sini
-================================= */
+/* =========================================================
+   EPIC — BEAUTIFY + RESPONSIVE (ALL DEVICE)
+   Sesuai HTML kamu, rapi, hidup, semua gambar responsif
+========================================================= */
+
+/* ===============================
+   THEME / VARIABLES
+================================ */
 :root{
-  --epic-primary:   #4f46e5;  /* indigo */
-  --epic-secondary: #7c3aed;  /* purple */
-  --epic-accent:    #a78bfa;  /* light purple */
-  --epic-bg-soft:   #f5f3ff;  /* soft background box */
-  --epic-text-strong:#312e81;
+  --epic-primary:#4f46e5;
+  --epic-secondary:#7c3aed;
+  --epic-accent:#a78bfa;
+
+  --epic-ink:#0f172a;
+  --epic-muted:#475569;
+
+  --epic-card:#ffffff;
+  --epic-soft:#f5f3ff;
+  --epic-border: rgba(148,163,184,.32);
+
+  --shadow-sm: 0 10px 22px rgba(2,6,23,.06);
+  --shadow-md: 0 18px 42px rgba(2,6,23,.10);
+  --shadow-lg: 0 28px 76px rgba(2,6,23,.14);
+
+  --radius-lg: 22px;
+  --radius-md: 16px;
+  --radius-sm: 12px;
+
+  --container: 1180px;
+  --container-narrow: 980px;
+
+  --glass: rgba(255,255,255,.66);
+  --glass-strong: rgba(255,255,255,.78);
 }
 
-/* wrapper konten halaman EPIC */
-.content.epic{
-  width: 100%;
-  max-width: 980px;
-  margin: 36px auto 26px;
+/* ===============================
+   GLOBAL BASE
+================================ */
+*{ box-sizing:border-box; }
+html,body{ overflow-x:hidden; }
+body{
+  font-family:'Poppins',sans-serif;
+  color: var(--epic-ink);
+}
+
+img{
+  max-width:100%;
+  height:auto;
+  display:block;
+}
+
+/* bikin semua section anchor enak (navbar sticky) */
+section{ scroll-margin-top:110px; }
+
+/* content width helper */
+.content{
+  width:100%;
+  max-width: var(--container-narrow);
+  margin: 34px auto 26px;
   padding: 0 16px;
 }
 
-/* ================================
-   HERO
-================================= */
+/* =========================================
+   NAVBAR — ROUND PILL (MATCH 5R)
+========================================= */
+.mini-nav.nav-epic{
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  display:flex;
+  align-items:center;
+  gap:12px;
+
+  padding: 10px 14px;
+  background: linear-gradient(90deg, #0ea5e9, #2563eb);
+  box-shadow: 0 10px 26px rgba(0,0,0,.18);
+}
+
+.mini-nav.nav-epic .brand-logo{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding: 7px 12px;
+  background:#fff;
+  border-radius: 999px;
+  border: 1px solid rgba(148,163,184,.22);
+  box-shadow: 0 12px 24px rgba(15,23,42,.18);
+  flex: 0 0 auto;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.mini-nav.nav-epic .brand-logo:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 16px 34px rgba(15,23,42,.22);
+}
+.mini-nav.nav-epic .brand-logo img{
+  height: 30px;
+  width:auto;
+  object-fit:contain;
+}
+
+.mini-nav.nav-epic .pill-wrap{
+  margin-left:auto;
+
+  display:flex;
+  align-items:center;
+  gap:10px;
+
+  padding: 8px 10px;
+  border-radius:999px;
+
+  background: rgba(255,255,255,.14);
+  border: 1px solid rgba(255,255,255,.22);
+  box-shadow:
+    0 16px 40px rgba(2,6,23,.14),
+    inset 0 1px 0 rgba(255,255,255,.22);
+
+  backdrop-filter: blur(10px) saturate(140%);
+  -webkit-backdrop-filter: blur(10px) saturate(140%);
+
+  overflow-x:auto;
+  scrollbar-width:none;
+
+  /* desktop tidak kepanjangan */
+  max-width: 920px;
+  width: min(920px, 62vw);
+}
+.mini-nav.nav-epic .pill-wrap::-webkit-scrollbar{ display:none; }
+
+.mini-nav.nav-epic .pill-link{
+  border-radius: 999px;
+  padding: 9px 16px;
+
+  background: rgba(255,255,255,.18);
+  color: rgba(15,23,42,.92);
+
+  font-weight: 800;
+  font-size: .92rem;
+  text-decoration:none;
+  white-space:nowrap;
+
+  min-height:44px;
+
+  transition: transform .14s ease, background .18s ease, box-shadow .18s ease, color .18s ease;
+}
+.mini-nav.nav-epic .pill-link:hover{
+  background: rgba(255,255,255,.30);
+  transform: translateY(-1px);
+}
+.mini-nav.nav-epic .pill-link.active{
+  background: linear-gradient(135deg,#0ea5e9,#2563eb);
+  color:#fff;
+  box-shadow: 0 16px 34px rgba(37,99,235,.45);
+}
+.mini-nav.nav-epic .pill-link:active{ transform: scale(.97); }
+
+.mini-nav.nav-epic .pill-link:focus-visible{
+  outline: 3px solid rgba(147,197,253,.95);
+  outline-offset: 3px;
+}
+
+/* tablet */
+@media (max-width: 900px){
+  .mini-nav.nav-epic{ padding: 10px 12px; gap:10px; }
+  .mini-nav.nav-epic .brand-logo img{ height: 28px; }
+  .mini-nav.nav-epic .pill-wrap{
+    width: min(900px, 70vw);
+    padding: 7px 8px;
+    gap: 8px;
+  }
+  .mini-nav.nav-epic .pill-link{
+    padding: 8px 14px;
+    font-size: .88rem;
+  }
+}
+
+/* mobile */
+@media (max-width: 640px){
+  .mini-nav.nav-epic{
+    padding: 9px 10px;
+    gap: 10px;
+    flex-wrap: nowrap;
+  }
+  .mini-nav.nav-epic .brand-logo{ padding: 6px 10px; }
+  .mini-nav.nav-epic .brand-logo img{ height: 26px; }
+
+  .mini-nav.nav-epic .pill-wrap{
+    width: auto;
+    max-width: calc(100% - 118px);
+    padding: 6px 8px;
+    gap: 8px;
+
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    overscroll-behavior-x: contain;
+  }
+  .mini-nav.nav-epic .pill-link{
+    scroll-snap-align: start;
+    padding: 8px 12px;
+    font-size: .84rem;
+  }
+}
+
+@media (max-width: 420px){
+  .mini-nav.nav-epic .brand-logo img{ height: 24px; }
+  .mini-nav.nav-epic .pill-wrap{ max-width: calc(100% - 106px); gap:6px; }
+  .mini-nav.nav-epic .pill-link{ padding: 7px 11px; font-size: .82rem; }
+}
+
+
+/* =========================================================
+   HERO — HIDUP + RESPONSIVE (krem/putih + kuning lembut)
+========================================================= */
 .epic-hero{
-  background: url('BGEPIC.png') center/cover no-repeat;
-  min-height: 58vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 80px 20px 60px;
-  color: #fff;
   position: relative;
+  overflow: hidden;
+  padding: clamp(56px, 7vw, 92px) clamp(16px, 4vw, 56px);
+  background:
+    radial-gradient(1100px 520px at 12% 18%, rgba(253,230,138,.55), transparent 62%),
+    radial-gradient(900px 420px at 88% 12%, rgba(226,232,240,.90), transparent 60%),
+    linear-gradient(180deg, #ffffff, #fbfbfb);
+  color: var(--epic-ink);
 }
 
-.epic-hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(79,70,229,0.4) 100%);
-  border-radius: inherit;
+.epic-hero::before,
+.epic-hero::after{
+  content:"";
+  position:absolute;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: .30;
+  pointer-events:none;
   z-index: 0;
-  backdrop-filter: blur(2px);
+  animation: epicBlob 10s ease-in-out infinite;
+}
+.epic-hero::before{
+  left: -180px;
+  top: -180px;
+  background: rgba(245,158,11,.55);
+}
+.epic-hero::after{
+  right: -220px;
+  bottom: -220px;
+  background: rgba(148,163,184,.55);
+  animation-delay: -4s;
 }
 
+@keyframes epicBlob{
+  0%,100%{ transform: translate(0,0) scale(1); }
+  50%{ transform: translate(36px, 28px) scale(1.08); }
+}
 
-.epic-hero h1,
-.epic-hero p {
+.epic-hero-inner{
   position: relative;
   z-index: 1;
+  width: min(var(--container), 100%);
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, .92fr);
+  gap: clamp(16px, 3vw, 40px);
+  align-items: center;
 }
 
-.epic-hero-sub {
-  margin-top: 12px;
-  font-weight: 600;
-  opacity: .96;
+.epic-hero-left,
+.epic-hero-right{
+  animation: epicFadeUp .7s ease-out both;
+}
+.epic-hero-right{ animation-delay: .08s; }
+
+@keyframes epicFadeUp{
+  from{ opacity:0; transform: translateY(14px); }
+  to{ opacity:1; transform: translateY(0); }
 }
 
-/* tambahkan blur ke overlay sekalian */
-.epic-hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(79,70,229,0.4) 100%);
-  border-radius: inherit;
-  z-index: 0;
-  backdrop-filter: blur(2px);
+/* chip */
+.epic-chip{
+  width: fit-content;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: var(--glass-strong);
+  border: 1px solid var(--epic-border);
+  box-shadow: var(--shadow-sm);
+  backdrop-filter: blur(10px) saturate(140%);
+  -webkit-backdrop-filter: blur(10px) saturate(140%);
+
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  font-size: .78rem;
+  color: rgba(15,23,42,.82);
+
+  transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+}
+.epic-chip i{
+  color: rgba(245,158,11,.95);
+  filter: drop-shadow(0 6px 16px rgba(245,158,11,.25));
+  animation: epicPulse 2.6s ease-in-out infinite;
+}
+@keyframes epicPulse{
+  0%,100%{ transform: scale(1); }
+  50%{ transform: scale(1.12); }
+}
+.epic-chip:hover{
+  transform: translateY(-2px);
+  background: rgba(255,255,255,.92);
+}
+
+/* title */
+.epic-hero-title{
+  margin-top: 14px;
+  font-size: clamp(2.2rem, 5vw, 4.2rem);
+  line-height: .95;
+  font-weight: 900;
+  letter-spacing: .02em;
+  text-transform: uppercase;
+
+  background: linear-gradient(90deg, #0f172a, #111827, #0f172a);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+
+  position: relative;
+}
+.epic-hero-title::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: linear-gradient(90deg, transparent, rgba(245,158,11,.22), transparent);
+  transform: translateX(-110%);
+  animation: epicShine 3.8s ease-in-out infinite;
+  mix-blend-mode: overlay;
+  pointer-events:none;
+}
+@keyframes epicShine{
+  0%,55%{ transform: translateX(-110%); }
+  70%,100%{ transform: translateX(110%); }
+}
+
+.epic-hero-sub{
+  margin-top: 14px;
+  max-width: 56ch;
+  font-weight: 650;
+  color: var(--epic-muted);
+  font-size: clamp(.95rem, 1.6vw, 1.1rem);
+  line-height: 1.6;
+}
+
+/* CTA */
+.epic-hero-cta{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.epic-btn-primary,
+.epic-btn-ghost{
+  display: inline-flex;
+  align-items: center;
+  justify-content:center;
+  gap: 10px;
+
+  text-decoration: none;
+  padding: 12px 18px;
+  border-radius: 999px;
+
+  font-weight: 900;
+  transition: transform .14s ease, box-shadow .18s ease, background .18s ease, color .18s ease;
+  user-select: none;
+  will-change: transform;
+}
+
+.epic-btn-primary{
+  background: linear-gradient(135deg, #f59e0b, #fbbf24);
+  color: #111827;
+  box-shadow: 0 16px 34px rgba(245,158,11,.22);
+  border: 1px solid rgba(245,158,11,.22);
+}
+.epic-btn-primary:hover{ transform: translateY(-2px); box-shadow: 0 22px 50px rgba(245,158,11,.30); }
+.epic-btn-primary:active{ transform: translateY(0) scale(.98); }
+
+.epic-btn-ghost{
+  background: var(--glass);
+  color: #0f172a;
+  border: 1px solid rgba(148,163,184,.45);
+  box-shadow: 0 10px 22px rgba(2,6,23,.06);
+  backdrop-filter: blur(10px) saturate(140%);
+  -webkit-backdrop-filter: blur(10px) saturate(140%);
+}
+.epic-btn-ghost:hover{ transform: translateY(-2px); background: rgba(255,255,255,.92); }
+.epic-btn-ghost:active{ transform: translateY(0) scale(.98); }
+
+/* stats */
+.epic-hero-stats{
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  max-width: 680px;
+}
+.epic-stat{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 12px;
+  border-radius: var(--radius-md);
+
+  background: rgba(255,255,255,.62);
+  border: 1px solid rgba(148,163,184,.30);
+  box-shadow: 0 12px 26px rgba(2,6,23,.06);
+
+  backdrop-filter: blur(10px) saturate(140%);
+  -webkit-backdrop-filter: blur(10px) saturate(140%);
+  transition: transform .16s ease, box-shadow .18s ease;
+}
+.epic-stat:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 18px 38px rgba(2,6,23,.10);
+}
+.epic-stat i{
+  width: 40px;
+  height: 40px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  background: rgba(245,158,11,.16);
+  color: #92400e;
+}
+.epic-stat strong{ display:block; font-weight: 950; color:#111827; line-height:1.1; }
+.epic-stat span{ display:block; font-weight: 750; font-size: .9rem; color:#475569; }
+
+/* hero right card (gambar hidup + responsif) */
+.epic-hero-right{
+  display:flex;
+  justify-content:center;
+}
+
+.epic-hero-card{
+  width: min(560px, 100%);
+  border-radius: 28px;
+  background: linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,255,255,.55));
+  border: 1px solid rgba(148,163,184,.35);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  position: relative;
+
+  transform: translateY(0);
+  animation: epicFloat 6s ease-in-out infinite;
+  will-change: transform;
+}
+@keyframes epicFloat{
+  0%,100%{ transform: translateY(0); }
+  50%{ transform: translateY(-10px); }
+}
+
+.epic-hero-card::before,
+.epic-hero-card::after{
+  content:"";
+  position:absolute;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  filter: blur(18px);
+  opacity: .55;
+  pointer-events: none;
+}
+.epic-hero-card::before{ top:-70px; left:-70px; background: rgba(253,230,138,.72); }
+.epic-hero-card::after{ bottom:-90px; right:-90px; background: rgba(226,232,240,.95); }
+
+/* gambar auto rapi (cover) */
+.epic-hero-card img{
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  transform: scale(1.02);
+}
+
+/* hover hidup hanya di device yang bisa hover */
+@media (hover:hover){
+  .epic-hero-card:hover{
+    transform: translateY(-12px) scale(1.01);
+    box-shadow: 0 34px 92px rgba(2,6,23,.18);
+    animation-play-state: paused;
+  }
+}
+
+/* hero responsive */
+@media (max-width: 980px){
+  .epic-hero-inner{ grid-template-columns: 1fr; }
+  .epic-hero-right{ order:-1; }
+  .epic-hero-sub{ max-width: 100%; }
+  .epic-hero-stats{ grid-template-columns: 1fr; max-width: 520px; }
+}
+@media (max-width: 560px){
+  .epic-chip{ font-size:.72rem; padding: 9px 12px; }
+  .epic-btn-primary, .epic-btn-ghost{ padding: 11px 16px; }
+  .epic-hero-card{ border-radius: 22px; }
 }
 
 
-
-/* ================================
-   Heading & Intro
-================================= */
+/* =========================================================
+   HEADING & INTRO (lebih rapi)
+========================================================= */
 .epic-h2{
   color: var(--epic-primary);
   border-bottom: 4px solid var(--epic-accent);
   display: inline-block;
   padding-bottom: 6px;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 
 .epic-intro{
-  background: var(--epic-bg-soft);
-  border: 1px solid #ddd6fe;
-  color: var(--epic-text-strong);
-  padding: 14px 16px;
-  border-radius: 14px;
-  margin-bottom: 16px;
+  background: var(--epic-soft);
+  border: 1px solid rgba(221,214,254,.9);
+  color: #312e81;
+  padding: 16px 16px;
+  border-radius: var(--radius-md);
+  box-shadow: 0 10px 24px rgba(2,6,23,.05);
 }
 
-/* ===== EPIC — SIAPA YANG BISA MENGAKSES ===== */
-.epic-access {
-  margin-top: 10px;
-}
 
-.epic-access-wrap {
+/* =========================================================
+   ACCESS SECTION — gambar & teks sejajar + hidup
+========================================================= */
+.epic-access{ margin-top: 10px; }
+
+.epic-access-wrap{
   display: grid;
   grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
   align-items: center;
-  gap: 24px;
+  gap: 26px;
   padding: 26px 22px;
-  border-radius: 20px;
-  background: #fefce8; /* krem seperti slide */
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
+  border-radius: var(--radius-lg);
+  background: #fefce8;
+  border: 1px solid rgba(253,230,138,.65);
+  box-shadow: 0 14px 34px rgba(2,6,23,.06);
 }
 
-.epic-access-illustration img {
+.epic-access-illustration img{
   width: 100%;
-  max-width: 420px;
-  display: block;
+  max-width: 440px;
   margin: 0 auto;
-  border-radius: 12px;
+  border-radius: 16px;
+  box-shadow: 0 16px 40px rgba(2,6,23,.12);
+  transform: translateY(0);
+  transition: transform .18s ease, box-shadow .18s ease, filter .18s ease;
+}
+@media (hover:hover){
+  .epic-access-illustration img:hover{
+    transform: translateY(-6px);
+    box-shadow: 0 22px 56px rgba(2,6,23,.16);
+    filter: saturate(1.03);
+  }
 }
 
-/* teks kanan */
-.epic-access-text h2 {
-  font-size: 2rem;
-  font-weight: 800;
-  color: #4b0082; /* ungu ala slide */
-  line-height: 1.25;
+/* teks */
+.epic-access-text h2{
+  font-size: clamp(1.6rem, 2.2vw, 2.1rem);
+  font-weight: 900;
+  color: #4b0082;
+  line-height: 1.18;
   margin-bottom: 10px;
 }
+.epic-access-text h2 span{ color: #a855f7; }
 
-.epic-access-text h2 span {
-  color: #a855f7;
-}
-
-.epic-access-sub {
-  font-weight: 600;
+.epic-access-sub{
+  font-weight: 700;
   color: #374151;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
 
-/* highlight 'Semua PARAGONIAN' */
-.epic-access-highlight {
+.epic-access-highlight{
   display: inline-flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 4px;
-  padding: 8px 14px;
-  border-radius: 14px;
-  background: #fffbeb;
+  padding: 10px 14px;
+  border-radius: 16px;
+  background: rgba(255,251,235,.95);
+  border: 1px solid rgba(253,230,138,.7);
+  box-shadow: 0 10px 22px rgba(2,6,23,.06);
 }
-
-.epic-access-small {
-  font-size: 0.95rem;
-  font-weight: 600;
+.epic-access-small{
+  font-size: .95rem;
+  font-weight: 700;
   color: #111827;
 }
-
-/* efek kuas kuning di belakang PARAGONIAN */
-.epic-access-big {
+.epic-access-big{
   position: relative;
-  font-size: 1.8rem;
-  font-weight: 800;
-  letter-spacing: 0.06em;
+  font-size: 1.85rem;
+  font-weight: 900;
+  letter-spacing: .06em;
   color: #111827;
   text-transform: uppercase;
-  padding: 2px 8px;
+  padding: 2px 10px;
 }
-
-.epic-access-big::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  padding: 0 6px;
+.epic-access-big::before{
+  content:"";
+  position:absolute;
+  inset:0;
   transform: skewX(-8deg);
   background: #facc15;
   border-radius: 999px;
   z-index: -1;
 }
 
-/* Responsif */
-@media (max-width: 900px) {
-  .epic-access-wrap {
+/* responsive */
+@media (max-width: 900px){
+  .epic-access-wrap{
     grid-template-columns: 1fr;
     text-align: center;
   }
-
-  .epic-access-text {
-    align-items: center;
-  }
-
-  .epic-access-highlight {
-    align-items: center;
-  }
+  .epic-access-highlight{ align-items:center; }
 }
-
-@media (max-width: 560px) {
-  .epic-access-wrap {
-    padding: 22px 16px;
-    border-radius: 16px;
-  }
-
-  .epic-access-text h2 {
-    font-size: 1.6rem;
-  }
-
-  .epic-access-big {
-    font-size: 1.5rem;
-  }
+@media (max-width: 560px){
+  .epic-access-wrap{ padding: 22px 16px; border-radius: 16px; }
+  .epic-access-big{ font-size: 1.55rem; }
 }
-
 
 
 /* =========================================================
-   KARTU UTAMA: "Bagaimana cara akses EPIC?"
-   (mengikuti HTML: <main class="epic-wrap"><section class="epic-card">…)
+   CARD: Cara akses EPIC (lebih modern + icon rapi)
 ========================================================= */
 .epic-wrap{
   width: 100%;
-  max-width: 1100px;
+  max-width: var(--container);
   margin: 0 auto 40px;
   padding: 0 16px;
 }
@@ -219,96 +638,123 @@
 .epic-card{
   position: relative;
   display: grid;
-  grid-template-columns: 1.1fr .9fr;   /* teks : ilustrasi */
+  grid-template-columns: 1.1fr .9fr;
   gap: 28px;
   align-items: center;
-  background: #fff;
-  border: 1px solid #e9d5ff;
-  border-radius: 18px;
-  box-shadow: 0 10px 28px rgba(79,70,229,.12);
+
+  background: var(--epic-card);
+  border: 1px solid rgba(233,213,255,.95);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 14px 38px rgba(79,70,229,.10);
   padding: 26px 24px;
   overflow: hidden;
 }
 
-/* dekor kiri (ikon-ikon kecil) */
-.epic-decor{
-  position: absolute;
-  left: 12px; top: 12px;
-  display: flex; flex-direction: column; gap: 10px;
-  opacity: .18; font-size: 18px; color: var(--epic-secondary);
+/* efek glow halus */
+.epic-card::before{
+  content:"";
+  position:absolute;
+  inset:-120px;
+  background:
+    radial-gradient(circle at 25% 15%, rgba(167,139,250,.20), transparent 55%),
+    radial-gradient(circle at 80% 70%, rgba(56,189,248,.14), transparent 60%);
+  pointer-events:none;
 }
-.epic-decor i{ display: block; }
 
-/* konten teks kanan-kiri */
+.epic-content{
+  position: relative;
+  z-index: 1;
+}
+
 .epic-content h1{
-  font-weight: 800;
-  font-size: 2.1rem;
-  line-height: 1.2;
-  color: var(--epic-text-strong);
+  font-weight: 900;
+  font-size: clamp(1.7rem, 2.2vw, 2.2rem);
+  line-height: 1.15;
+  color: #312e81;
   margin-bottom: 8px;
 }
 .epic-content h1 span{ color: var(--epic-primary); }
+
 .epic-sub{
   color: #4338ca;
-  font-weight: 700;
+  font-weight: 800;
   margin: 10px 0 8px;
 }
 
-/* kata "Search" ala Google */
 .epic-search-word{
-  font-weight: 800; font-size: 2.6rem; letter-spacing: .02em;
+  font-weight: 900;
+  font-size: clamp(2.0rem, 2.8vw, 2.6rem);
+  letter-spacing: .02em;
   margin: 6px 0 14px;
 }
-.g-r  { color:#ea4335; } /* S */
-.g-b  { color:#4285f4; } /* e */
-.g-y  { color:#fbbc05; } /* a */
-.g-r2 { color:#ea4335; } /* r */
-.g-g  { color:#34a853; } /* c */
-.g-b2 { color:#4285f4; } /* h */
+.g-r{ color:#ea4335; }
+.g-b{ color:#4285f4; }
+.g-y{ color:#fbbc05; }
+.g-r2{ color:#ea4335; }
+.g-g{ color:#34a853; }
+.g-b2{ color:#4285f4; }
 
 /* address bar */
 .epic-address{
-  display:flex; align-items:center; justify-content:space-between;
-  gap:10px; background:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+
+  background:#fff;
   border:2px solid var(--epic-accent);
-  box-shadow: 0 6px 18px rgba(167,139,250,.22);
+  box-shadow: 0 10px 22px rgba(167,139,250,.18);
   padding: 12px 14px;
   border-radius: 14px;
-  max-width: 520px;
+  max-width: 560px;
 }
+
 .addr-text{
-  font-weight: 700; color:#1f2937; letter-spacing:.2px;
-  overflow:hidden; text-overflow:ellipsis; white-space:nowrap;
+  font-weight: 800;
+  color:#1f2937;
+  letter-spacing:.2px;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  text-decoration:none;
 }
+.addr-text:hover{ text-decoration: underline; }
+
 .addr-btn{
-  display:grid; place-items:center;
-  width: 38px; height: 38px;
-  border-radius: 10px; border: 0;
-  color:#fff; background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  display:grid;
+  place-items:center;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  border: 0;
+
+  color:#fff;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
   cursor: pointer;
-  box-shadow: 0 6px 16px rgba(99,102,241,.25);
+  box-shadow: 0 10px 22px rgba(99,102,241,.22);
+  transition: transform .14s ease, filter .14s ease, box-shadow .18s ease;
 }
 .addr-btn i{ font-size: 16px; }
+.addr-btn:hover{ filter: brightness(1.06); transform: translateY(-1px); box-shadow: 0 16px 34px rgba(99,102,241,.28); }
+.addr-btn:active{ transform: scale(.98); }
 
-/* catatan login */
 .epic-note{
   margin: 12px 0 12px;
   font-size: .95rem;
-  color: var(--epic-text-strong);
-  background: var(--epic-bg-soft);
-  border: 1px solid #ddd6fe;
-  padding: 8px 10px;
-  border-radius: 10px;
+  color: #312e81;
+  background: var(--epic-soft);
+  border: 1px solid rgba(221,214,254,.95);
+  padding: 10px 12px;
+  border-radius: 12px;
 }
 
-/* kotak kredensial */
 .epic-cred{
   background: #ffffff;
-  border: 2px dashed #c4b5fd;
+  border: 2px dashed rgba(196,181,253,.95);
   border-radius: 14px;
   padding: 12px 14px;
-  max-width: 520px;
-  box-shadow: 0 6px 18px rgba(167,139,250,.12) inset;
+  max-width: 560px;
+  box-shadow: inset 0 8px 22px rgba(167,139,250,.10);
 }
 .cred-row{
   display: grid;
@@ -318,144 +764,83 @@
   font-size: .98rem;
   color: #111827;
 }
-.cred-label{ font-weight: 700; color:#5b21b6; }
-.cred-sep  { text-align:center; color:#6b7280; }
-.cred-value{ font-weight: 700; }
+.cred-label{ font-weight: 800; color:#5b21b6; }
+.cred-sep{ text-align:center; color:#6b7280; }
+.cred-value{ font-weight: 800; }
 
-/* footer kecil */
-.epic-divider{ border: 0; border-top: 1px solid #e9d5ff; margin: 14px 0; }
-.epic-foot{ color:#6b7280; font-size:.9rem; }
-
-/* ilustrasi kanan */
 .epic-illustration{
+  position: relative;
+  z-index: 1;
   width: 100%;
-  display: flex; align-items: center; justify-content: center;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
 .epic-illustration img{
-  width: 100%; max-width: 420px; height: auto;
-  filter: drop-shadow(0 14px 24px rgba(0,0,0,.15));
+  width: 100%;
+  max-width: 440px;
+  height: auto;
+  border-radius: 18px;
+  box-shadow: 0 22px 60px rgba(2,6,23,.14);
+  transform: translateY(0);
+  transition: transform .18s ease, box-shadow .18s ease;
 }
-
-/* aksen ✦ */
-.epic-sparkle{
-  position: absolute;
-  right: 16px; top: 12px; color: #a78bfa; opacity:.5;
+@media (hover:hover){
+  .epic-illustration img:hover{
+    transform: translateY(-6px);
+    box-shadow: 0 30px 80px rgba(2,6,23,.18);
+  }
 }
-.epic-sparkle.s2{
-  right: 46px; top: 42px; opacity:.35; transform: scale(1.2);
-}
-
-.epic-illustration.fallback {
-  min-height: 160px;
+.epic-illustration.fallback{
+  min-height: 180px;
+  width: min(440px, 100%);
   display: grid;
   place-items: center;
-  border-radius: 14px;
+  border-radius: 18px;
   background: rgba(167,139,250,.08);
+  border: 1px solid rgba(167,139,250,.20);
 }
-.epic-illustration.fallback::before {
+.epic-illustration.fallback::before{
   content: "💻";
   font-size: 64px;
   opacity: .35;
 }
 
+.epic-sparkle{
+  position: absolute;
+  right: 16px; top: 12px;
+  color: rgba(167,139,250,.75);
+  opacity:.7;
+  animation: twinkle 2.8s ease-in-out infinite;
+}
+.epic-sparkle.s2{
+  right: 44px; top: 42px;
+  opacity:.5;
+  transform: scale(1.2);
+  animation-delay: .6s;
+}
+@keyframes twinkle{
+  0%,100%{ transform: translateY(0) scale(1); }
+  50%{ transform: translateY(-3px) scale(1.06); }
+}
 
+.epic-divider{ border: 0; border-top: 1px solid #e9d5ff; margin: 16px 0 8px; }
+.epic-foot{ color:#6b7280; font-size:.92rem; }
 
-/* responsif kartu akses */
+/* responsive */
 @media (max-width: 980px){
-  .epic-card{
-    grid-template-columns: 1fr;
-    text-align: left;
-  }
-  .epic-illustration{ order: -1; } /* ilustrasi di atas konten */
-  .epic-decor{ display:none; }
+  .epic-card{ grid-template-columns: 1fr; }
+  .epic-illustration{ order: -1; }
 }
 @media (max-width: 560px){
-  .epic-content h1{ font-size: 1.7rem; }
-  .epic-search-word{ font-size: 2.1rem; }
-  .epic-hero h1{ font-size: 2.1rem; }
+  .cred-row{ grid-template-columns: 92px 12px 1fr; font-size:.94rem; }
 }
+
 
 /* =========================================================
-   KOMPONEN LAIN (opsional): grid 4 pilar, dokumentasi, tombol form
-   — discope ke .epic-grid agar tidak bentrok dengan .epic-card utama
+   ANYTIME + INFO BAR (lebih rapih & center)
 ========================================================= */
-
-/* Grid 4 pilar */
-.epic-grid{
-  display:grid; grid-template-columns:repeat(4, minmax(0,1fr));
-  gap:12px; margin:14px 0 22px;
-}
-.epic-grid .epic-card{
-  background:#ffffff; border:1px solid #e9d5ff; border-radius:14px;
-  padding:14px; box-shadow:0 4px 12px rgba(79,70,229,.08);
-  transition:transform .15s ease, box-shadow .15s ease;
-}
-.epic-grid .epic-card:hover{ transform:translateY(-3px); box-shadow:0 10px 20px rgba(79,70,229,.12); }
-.epic-grid .epic-card h3{ color:#6d28d9; margin-bottom:6px; }
-
-/* Dokumentasi */
-.epic-media{
-  margin-top:22px; padding:16px; border-radius:16px; text-align:center;
-  background:#faf5ff; border:1px solid #e9d5ff; box-shadow:0 3px 10px rgba(0,0,0,.06);
-}
-.epic-img{
-  display:block; width:100%; max-width:760px; margin:0 auto;
-  border-radius:14px; border:4px solid var(--epic-accent);
-  box-shadow:0 4px 14px rgba(0,0,0,.12);
-}
-
-/* Tombol cepat form */
-.epic-form-grid{
-  display:grid; grid-template-columns:repeat(3, minmax(0,1fr));
-  gap:12px; margin:14px 0 20px;
-}
-.epic-btn{
-  display:inline-flex; align-items:center; justify-content:center; gap:10px;
-  padding:12px 16px; border-radius:14px; text-decoration:none; font-weight:700;
-  background:linear-gradient(135deg, #6366f1, #8b5cf6); color:#fff;
-  box-shadow:0 4px 12px rgba(99,102,241,.18);
-  transition:transform .15s ease, box-shadow .15s ease, filter .15s ease;
-}
-.epic-btn:hover{ transform:translateY(-2px); box-shadow:0 8px 18px rgba(99,102,241,.25); filter:brightness(1.03); }
-
-/* Dropdown embed (sheet/form) */
-.epic-label{ display:block; font-weight:700; margin-bottom:8px; color:var(--epic-primary); }
-.epic-select{
-  width:100%; max-width:360px; padding:10px 12px; margin-bottom:12px;
-  border-radius:12px; border:2px solid var(--epic-accent);
-  background:var(--epic-bg-soft); color:var(--epic-text-strong); font-weight:600;
-}
-.epic-iframe-wrap{ margin-bottom:10px; }
-
-/* Sheet border jika pakai komponen dari 5R */
-.epic-sheet{ border-color: var(--epic-accent); }
-
-/* Responsive tambahan */
-@media (max-width: 1024px){
-  .epic-grid{ grid-template-columns: repeat(2, minmax(0,1fr)); }
-}
-@media (max-width: 560px){
-  .epic-grid{ grid-template-columns:1fr; }
-  .epic-form-grid{ grid-template-columns:1fr; }
-}
-
-/* Versi halus: kecil, samar, agak keluar panel */
-.epic-card .epic-decor{
-  left:-10px; top:-10px;
-  opacity:.06;
-  transform: scale(.85);
-  pointer-events:none;
-}
-
-@media (max-width:980px){
-  .epic-card .epic-decor{ display:none; }
-}
-
-/* ===== EPIC — ANYTIME SECTION (24/7) ===== */
-.epic-anytime{
-  --ring:#fcd34d; /* kuning lembut ala canva contoh */
-  margin-top: 18px;
-}
+.epic-anytime{ margin-top: 18px; }
 
 .anytime-head{
   display:grid;
@@ -466,76 +851,66 @@
 }
 
 .anytime-clock{
-  position:relative;
-  width:180px; height:180px;
+  width:180px;
+  height:180px;
   border-radius:50%;
   background:
-    radial-gradient(transparent 62%, #0000 63%) padding-box,
-    conic-gradient(from 0deg, var(--ring) 0 100%);
-  box-shadow: 0 8px 22px rgba(0,0,0,.06);
-  display:grid; place-items:center;
-  isolation:isolate;
-}
-.anytime-clock i{
-  position:absolute; inset:0; margin:auto;
-  font-size:0; /* purely decorative ring, icon hidden */
+    radial-gradient(circle at 30% 25%, rgba(255,255,255,.65), rgba(255,255,255,0) 55%),
+    conic-gradient(from 0deg, #fcd34d 0 100%);
+  box-shadow: 0 12px 30px rgba(2,6,23,.08);
+  display:grid;
+  place-items:center;
+  border: 1px solid rgba(253,230,138,.7);
 }
 .anytime-clock span{
-  font-weight:800; font-size:40px; color:#f59e0b;
-  letter-spacing:.02em;
+  font-weight: 900;
+  font-size: 40px;
+  color:#b45309;
+  letter-spacing: .02em;
 }
 
 .anytime-title-wrap h2{
-  font-size:2rem; font-weight:800;
-  color: var(--epic-text-strong);
+  font-size: clamp(1.6rem, 2.2vw, 2.1rem);
+  font-weight: 900;
+  color: #312e81;
 }
-.anytime-title-wrap h2 span{
-  color: var(--epic-primary);
-}
+.anytime-title-wrap h2 span{ color: var(--epic-primary); }
+
 .anytime-sub{
   margin-top:6px;
-  color:#4b5563; font-weight:600;
+  color:#4b5563;
+  font-weight:650;
+  line-height: 1.6;
 }
 
-/* Cards */
-.anytime-cards{
-  display:grid;
-  grid-template-columns: repeat(3, minmax(0,1fr));
-  gap:14px; margin-top:12px;
-}
-.any-card{
-  background:#fff;
-  border:1px solid #e9d5ff;
-  border-radius:16px;
-  padding:16px 14px;
-  text-align:center;
-  box-shadow:0 6px 16px rgba(79,70,229,.08);
-  transition: transform .15s ease, box-shadow .15s ease;
-}
-.any-card:hover{
-  transform: translateY(-4px);
-  box-shadow:0 14px 28px rgba(79,70,229,.12);
-}
-.any-illust{
-  width:92px; height:92px; margin:6px auto 10px;
-  display:grid; place-items:center;
-  border-radius:18px;
-  background: linear-gradient(135deg, #6366f1, #8b5cf6);
-  color:#fff;
-  box-shadow:0 6px 16px rgba(99,102,241,.25);
-}
-.any-illust i{ font-size:40px; }
+/* info bar */
+.epic-info-bar{
+  width: 100%;
+  max-width: var(--container-narrow);
+  margin: 18px auto 0;
 
-.any-card h3{
-  margin-top:4px;
-  color:#5b21b6; font-weight:800; letter-spacing:.3px;
-}
+  background: linear-gradient(90deg, #fbbf24, #f59e0b);
+  color: #fff;
+  padding: 16px 18px;
+  border-radius: 16px;
 
-/* Responsive */
+  display:flex;
+  align-items:flex-start;
+  gap: 12px;
+
+  font-size: 1.02rem;
+  font-weight: 750;
+  box-shadow: 0 12px 30px rgba(2,6,23,.16);
+}
+.epic-info-bar i{
+  font-size: 1.35rem;
+  margin-top: 2px;
+}
+.epic-info-bar span{ line-height: 1.5; }
+
+/* responsive */
 @media (max-width: 980px){
-  .anytime-head{
-    grid-template-columns: 140px 1fr;
-  }
+  .anytime-head{ grid-template-columns: 140px 1fr; }
   .anytime-clock{ width:140px; height:140px; }
   .anytime-clock span{ font-size:32px; }
 }
@@ -545,98 +920,78 @@
     text-align:center;
     justify-items:center;
   }
-  .anytime-cards{
-    grid-template-columns: 1fr;
+  .epic-info-bar{
+    font-size: .95rem;
+    padding: 14px 16px;
+    border-radius: 14px;
   }
 }
 
 
-/* ===== EPIC — COURSE WAJIB (DESAIN BARU) ===== */
+/* =========================================================
+   COURSE (lebih sejajar + icon hidup)
+========================================================= */
 .epic-course{
   background: #fef3c7;
-  border-radius: 20px;
+  border-radius: 22px;
   padding: 28px 24px 26px;
-  box-shadow: 0 16px 40px rgba(0,0,0,.08);
+  box-shadow: 0 18px 46px rgba(2,6,23,.10);
   margin-top: 28px;
-  border: 1px solid #fde68a;
+  border: 1px solid rgba(253,230,138,.9);
 }
 
-/* header: judul + kartu kalender */
 .epic-course-head{
   display: grid;
-  grid-template-columns: minmax(0, 2fr) minmax(260px, 1.2fr);
+  grid-template-columns: minmax(0, 2fr) minmax(240px, 1.2fr);
   align-items: center;
-  gap: 20px;
-  margin-bottom: 22px;
-}
-
-.course-title-block h2{
-  text-transform: uppercase;
-  font-size: 1.9rem;
-  font-weight: 800;
-  letter-spacing: .06em;
-  color: #111827;
-  margin: 4px 0 6px;
+  gap: 18px;
+  margin-bottom: 20px;
 }
 
 .course-pill{
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 4px 12px;
+  padding: 6px 12px;
   border-radius: 999px;
-  background: rgba(59,130,246,.08);
+  background: rgba(59,130,246,.10);
   color: #1d4ed8;
-  font-weight: 700;
-  font-size: .8rem;
+  font-weight: 800;
+  font-size: .78rem;
   letter-spacing: .12em;
   text-transform: uppercase;
 }
 
-.course-sub{
-  margin: 0;
-  font-weight: 600;
-  color: #4b5563;
+.course-title-block h2{
+  text-transform: uppercase;
+  font-size: clamp(1.35rem, 2vw, 1.9rem);
+  font-weight: 900;
+  letter-spacing: .06em;
+  color: #111827;
+  margin: 8px 0 0;
 }
 
-/* kartu kalender kanan */
 .course-calendar{
-  display: flex;
-  justify-content: flex-end;
+  display:flex;
+  justify-content:flex-end;
 }
-
-.course-calendar-inner{
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  background: #ffffff;
-  padding: 12px 18px;
+.course-calendar-text{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  background:#fff;
+  padding: 12px 16px;
   border-radius: 18px;
-  border: 3px solid #a855f7;
-  box-shadow: 0 10px 24px rgba(168,85,247,.15);
-  min-width: 260px;
+  border: 2px solid #a855f7;
+  box-shadow: 0 12px 26px rgba(168,85,247,.16);
+  font-weight: 800;
+  color:#4b5563;
+}
+.course-calendar-text i{
+  font-size: 1.35rem;
+  color:#a855f7;
 }
 
-.course-calendar-inner i{
-  font-size: 2rem;
-  color: #a855f7;
-}
-
-.course-calendar-text span{
-  display: block;
-  font-size: .8rem;
-  text-transform: uppercase;
-  letter-spacing: .12em;
-  color: #6b7280;
-}
-
-.course-calendar-text strong{
-  display: block;
-  font-size: .95rem;
-  color: #4b5563;
-}
-
-/* daftar course */
 .course-list-grid{
   display: grid;
   grid-template-columns: repeat(2, minmax(0,1fr));
@@ -647,111 +1002,88 @@
   list-style: none;
   padding: 0;
   margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
 }
 
 .course-list-grid li{
   display: grid;
   grid-template-columns: auto minmax(0,1fr);
-  gap: 10px;
+  gap: 12px;
   align-items: flex-start;
-  padding: 10px 12px;
-  border-radius: 14px;
-  background: rgba(255,255,255,.9);
-  box-shadow: 0 4px 12px rgba(0,0,0,.06);
+
+  padding: 12px 12px;
+  border-radius: 16px;
+  background: rgba(255,255,255,.92);
+  box-shadow: 0 10px 22px rgba(2,6,23,.06);
+  border: 1px solid rgba(255,255,255,.55);
+
+  transition: transform .16s ease, box-shadow .18s ease;
+}
+.course-list-grid li:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 16px 34px rgba(2,6,23,.10);
 }
 
 .course-icon{
-  width: 36px;
-  height: 36px;
-  border-radius: 12px;
+  width: 40px;
+  height: 40px;
+  border-radius: 14px;
   display: grid;
   place-items: center;
-  background: #10b981;
+
+  background: linear-gradient(135deg, #10b981, #34d399);
   color: #ffffff;
   flex-shrink: 0;
-}
 
-.course-icon i{
-  font-size: 1.1rem;
+  box-shadow: 0 12px 26px rgba(16,185,129,.18);
 }
+.course-icon i{ font-size: 1.1rem; }
 
 .course-text strong{
-  display: block;
+  display:block;
   font-size: .98rem;
-  color: #111827;
+  color:#111827;
+  font-weight: 900;
 }
-
 .course-text span{
-  display: block;
-  font-size: .85rem;
-  color: #4b5563;
-  margin-top: 2px;
+  display:block;
+  font-size:.86rem;
+  color:#4b5563;
+  margin-top:4px;
+  line-height: 1.45;
 }
 
-/* divider & foot tetap */
 .epic-divider{
   border: 0;
-  border-top: 1px solid #facc15;
-  margin: 20px 0 6px;
+  border-top: 1px solid rgba(245,158,11,.55);
+  margin: 20px 0 8px;
 }
-.epic-foot{
-  color:#6b7280;
-  font-size:.9rem;
-}
+.epic-foot{ color:#6b7280; font-size:.92rem; }
 
-/* RESPONSIVE */
+/* responsive */
 @media (max-width: 900px){
-  .epic-course-head{
-    grid-template-columns: 1fr;
-    text-align: left;
-  }
-
-  .course-calendar{
-    justify-content: flex-start;
-  }
+  .epic-course-head{ grid-template-columns: 1fr; }
+  .course-calendar{ justify-content:flex-start; }
 }
-
 @media (max-width: 780px){
-  .course-list-grid{
-    grid-template-columns: 1fr;
-    gap: 12px;
-  }
-
-  .epic-course{
-    padding: 22px 18px 20px;
-  }
-
-  .course-title-block h2{
-    font-size: 1.6rem;
-  }
-}
-
-@media (max-width: 480px){
-  .epic-course{
-    border-radius: 16px;
-  }
-
-  .course-calendar-inner{
-    width: 100%;
-  }
+  .course-list-grid{ grid-template-columns: 1fr; gap: 12px; }
+  .epic-course{ padding: 22px 18px 20px; }
 }
 
 
-
-/* ===== EPIC — TUTORIAL MENGEKSPOR ===== */
-.epic-tutorial{
-  margin-top:30px;
-}
+/* =========================================================
+   TUTORIAL (lebih rapih, card rata, responsif)
+========================================================= */
+.epic-tutorial{ margin-top:30px; }
 
 .epic-tutorial h2{
   text-align:center;
-  font-size:1.8rem;
+  font-size: clamp(1.35rem, 2vw, 1.85rem);
   color:#5b21b6;
   margin-bottom:20px;
-  font-weight:800;
+  font-weight:900;
 }
 
 .tutorial-wrap{
@@ -763,256 +1095,580 @@
 
 .tutorial-img img{
   width:100%;
-  max-width:420px;
-  border-radius:14px;
-  display:block;
+  max-width:460px;
+  border-radius: 18px;
   margin:auto;
+  box-shadow: 0 20px 52px rgba(2,6,23,.14);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+@media (hover:hover){
+  .tutorial-img img:hover{
+    transform: translateY(-6px);
+    box-shadow: 0 30px 80px rgba(2,6,23,.18);
+  }
 }
 
 .tutorial-list{
   display:flex;
   flex-direction:column;
-  gap:10px;
+  gap:12px;
 }
 
 .tutorial-item{
   border-left:6px solid transparent;
-  padding:10px 14px;
-  border-radius:10px;
+  padding: 12px 14px;
+  border-radius: 14px;
   background:#fff;
-  box-shadow:0 4px 12px rgba(0,0,0,.08);
-  transition:.2s ease;
+  box-shadow: 0 12px 28px rgba(2,6,23,.08);
+  transition: transform .18s ease, box-shadow .18s ease;
 }
 .tutorial-item:hover{
-  transform:translateY(-2px);
-  box-shadow:0 8px 16px rgba(0,0,0,.12);
+  transform: translateY(-2px);
+  box-shadow: 0 18px 42px rgba(2,6,23,.12);
 }
 
 .tutorial-item p{
-  font-weight:600;
-  line-height:1.5;
-  color:#333;
+  font-weight:750;
+  line-height:1.55;
+  color:#111827;
+  margin: 0;
 }
 
 .tutorial-item a{
-  color:#8b5cf6;
-  font-weight:700;
-  text-decoration:none;
-}
-.tutorial-item a:hover{
-  text-decoration:underline;
-}
-
-/* warna label di sisi kiri */
-.tutorial-item.pink    { border-color:#f9a8d4; }
-.tutorial-item.rose    { border-color:#f472b6; }
-.tutorial-item.purple  { border-color:#c084fc; }
-.tutorial-item.blue    { border-color:#93c5fd; }
-.tutorial-item.sky     { border-color:#a5b4fc; }
-
-/* responsif */
-@media (max-width:780px){
-  .tutorial-wrap{
-    grid-template-columns:1fr;
-    text-align:center;
-  }
-  .tutorial-list{
-    align-items:center;
-  }
-  .tutorial-item{
-    max-width:460px;
-    width:100%;
-  }
-}
-
-
-/* ====== POLISH & AKSESIBILITAS ====== */
-
-/* 1) Fokus yang jelas untuk elemen interaktif */
-.epic-btn:focus-visible,
-.addr-btn:focus-visible,
-.tutorial-list a:focus-visible,
-.mini-nav .nav-links a:focus-visible {
-  outline: 3px solid #93c5fd;
-  outline-offset: 3px;
-  border-radius: 10px;
-}
-
-/* 2) Link lebih nyaman dibaca + wrap kalau panjang */
-.tutorial-list a,
-.epic-note a,
-.course-list a {
+  color:#7c3aed;
+  font-weight:900;
   text-decoration: underline;
-  text-underline-offset: 2px;
+  text-underline-offset: 3px;
   word-break: break-word;
 }
 
-/* 3) Kurangi “ganggu” ikon dekor di kartu akses (kalau masih terasa) */
-.epic-card .epic-decor {
-  opacity: .04;      /* semu */
-  filter: blur(0.2px);
-  transform: scale(.8);
-}
+.tutorial-item.pink   { border-color:#f9a8d4; }
+.tutorial-item.rose   { border-color:#f472b6; }
+.tutorial-item.purple { border-color:#c084fc; }
 
-/* 4) Hero radial gradient disesuaikan di layar kecil */
-@media (max-width: 560px){
-  .epic-hero{
-    background:
-      radial-gradient(900px 320px at 50% -120px, #e9d5ff, transparent 55%),
-      linear-gradient(135deg, var(--epic-primary), var(--epic-secondary));
-  }
-}
-
-/* 5) Preferensi “reduce motion”: matikan animasi / hover-translate */
-@media (prefers-reduced-motion: reduce){
-  * { transition: none !important; animation: none !important; }
-}
-
-/* 6) Jaga gambar selalu responsif & aman dari overflow */
-img { max-width: 100%; height: auto; }
-
-/* 7) Pertegas kontras tombol address bar saat hover */
-.addr-btn:hover {
-  filter: brightness(1.06);
-  transform: translateY(-1px);
-}
-
-/* 8) Spasi ekstra di daftar course pada perangkat sentuh */
-@media (hover: none) and (pointer: coarse){
-  .course-list li { margin-bottom: 12px; }
+@media (max-width:780px){
+  .tutorial-wrap{ grid-template-columns:1fr; text-align:center; }
+  .tutorial-list{ align-items:center; }
+  .tutorial-item{ max-width:520px; width:100%; text-align:left; }
 }
 
 
-/* ===== GLOBAL MOBILE FIX (≤ 480px) ===== */
-@media (max-width: 480px) {
-  body {
-    font-size: 14px;
-  }
-
-  .content,
-  .content.epic {
-    max-width: 100%;
-    margin: 20px auto;
-    padding: 0 12px;
-  }
-
-  /* Biar card nggak mepet pinggir */
-  .card,
-  section.content > div {
-    border-radius: 14px;
-  }
-}
-
-/* ===== EPIC: MOBILE (≤ 480px) ===== */
-@media (max-width: 480px) {
-  .epic-hero {
-    min-height: 260px;
-    padding: 70px 14px 40px;
-  }
-
-  .epic-hero h1 {
-    font-size: 1.7rem;
-    line-height: 1.25;
-  }
-
-  .epic-wrap {
-    padding: 0 10px;
-    margin-bottom: 24px;
-  }
-
-  .epic-card {
-    grid-template-columns: 1fr;    /* gambar atas, teks bawah */
-    padding: 18px 14px;
-    gap: 16px;
-  }
-
-  .epic-illustration {
-    justify-content: center;
-  }
-
-  .epic-illustration img {
-    max-width: 260px;
-  }
-
-  .epic-content h1 {
-    font-size: 1.5rem;
-    line-height: 1.3;
-  }
-
-  .epic-sub {
-    font-size: 0.9rem;
-  }
-
-  .epic-search-word {
-    font-size: 1.9rem;
-    margin-bottom: 10px;
-  }
-
-  .epic-address {
-    padding: 10px 10px;
-    gap: 8px;
-  }
-
-  .addr-text {
-  color: #333;        /* warna semula */
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.addr-text:hover {
-  text-decoration: underline;
-}
-
-
-  .epic-note {
-    font-size: 0.9rem;
-  }
-
-  .epic-cred {
-    padding: 10px 10px;
-  }
-}
-
-
-/* BAR INFORMASI MEMANJANG */
-.epic-info-bar {
-  width: 100%;
-  background: linear-gradient(90deg, #fbbf24, #f59e0b);
-  color: #fff;
-  padding: 18px 24px;
+/* =========================================================
+   ACCESSIBILITY + REDUCE MOTION
+========================================================= */
+.epic-btn-primary:focus-visible,
+.epic-btn-ghost:focus-visible,
+.addr-btn:focus-visible,
+.addr-text:focus-visible,
+.tutorial-list a:focus-visible,
+.mini-nav.nav-epic .pill-link:focus-visible{
+  outline: 3px solid rgba(147,197,253,.95);
+  outline-offset: 3px;
   border-radius: 14px;
+}
+
+/* lebih nyaman di device sentuh */
+@media (hover:none) and (pointer:coarse){
+  .course-list-grid li{ margin-bottom: 10px; }
+}
+
+/* reduce motion */
+@media (prefers-reduced-motion: reduce){
+  *{ transition:none !important; animation:none !important; }
+}
+
+/* ==============================
+   COURSE — 2 BANJAR (2 KOLOM)
+   Desktop/Tablet: 2 kolom
+   HP: 1 kolom
+============================== */
+
+/* Pastikan wrapper course rapih */
+.epic-course{
+  max-width: 1100px;
+  margin: 28px auto 0;
+}
+
+/* LIST GRID jadi 2 kolom */
+.course-list-grid{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 14px 18px !important;
+  align-items: start;
+}
+
+/* Kalau kamu sebelumnya pakai 2 <ul>, biar UL ikut rapih */
+.course-list-grid ul{
+  display: grid !important;
+  gap: 12px !important;
+}
+
+/* Item course dibuat lebih “card” dan sejajar */
+.course-list-grid li{
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr);
+  gap: 12px;
+  align-items: center;
+  padding: 14px 14px;
+  border-radius: 16px;
+  background: rgba(255,255,255,.95);
+  box-shadow: 0 10px 26px rgba(2,6,23,.07);
+  border: 1px solid rgba(148,163,184,.22);
+  transition: transform .16s ease, box-shadow .18s ease;
+}
+.course-list-grid li:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 16px 34px rgba(2,6,23,.10);
+}
+
+/* Icon lebih konsisten */
+.course-icon{
+  width: 48px;
+  height: 48px;
+  border-radius: 16px;
+  display: grid;
+  place-items: center;
+}
+.course-icon i{ font-size: 1.25rem; }
+
+/* Text rapih */
+.course-text strong{
+  font-size: 1rem;
+  line-height: 1.25;
+}
+.course-text span{
+  font-size: .9rem;
+  line-height: 1.35;
+}
+
+/* Tablet kecil: masih 2 kolom, tapi gap diperkecil */
+@media (max-width: 900px){
+  .course-list-grid{
+    gap: 12px 14px !important;
+  }
+}
+
+/* HP: balik 1 kolom */
+@media (max-width: 620px){
+  .course-list-grid{
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* NAVBAR PILL – KHUSUS HALAMAN SS */
+.mini-nav.nav-epic{
+  overflow-x: hidden;          /* navbar-nya sendiri tetap rapi */
+}
+
+.pill-wrap{
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  /* kunci 1 baris + bisa di-scroll */
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  max-width: 100%;
+}
+
+.pill-wrap::-webkit-scrollbar{
+  display:none;
+}
+
+/* di layar kecil, area pill-nya sedikit dipersempit supaya muat dengan logo */
+@media (max-width: 900px){
+  .pill-wrap{
+    max-width: calc(100vw - 120px);  /* kira-kira sisa dari lebar logo */
+  }
+}
+
+
+:root{
+  --ss-nav-offset: 90px;   /* tinggi kira-kira navbar + sedikit jarak */
+}
+
+/* semua section utama & hero saat discroll dari anchor */
+.hero,
+.content{
+  scroll-margin-top: var(--ss-nav-offset);
+}
+
+/* =========================================
+   NAVBAR KHUSUS HALAMAN SS
+========================================= */
+
+:root{
+  --ss-nav-offset: 90px;   /* tinggi kira-kira navbar untuk scroll anchor */
+}
+
+/* hero + konten kalau di-scroll dari anchor berhenti pas di bawah navbar */
+.hero,
+.content{
+  scroll-margin-top: var(--ss-nav-offset);
+}
+
+/* BAR UTAMA */
+.mini-nav.nav-ss{
+  --nav-bg: linear-gradient(90deg,#0ea5e9,#07c3ff,#0ea5e9);
+
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
   display: flex;
   align-items: center;
   gap: 16px;
-  font-size: 1.1rem;
-  font-weight: 600;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
-  margin: 35px auto;
-  max-width: 1200px;      /* supaya tetap elegan di layar besar */
+
+  padding: 10px 24px;
+  background: var(--nav-bg);
+  box-shadow:
+    0 6px 16px rgba(15,23,42,.18),
+    inset 0 -1px 0 rgba(255,255,255,.18);
 }
 
-.epic-info-bar i {
-  font-size: 1.5rem;
+/* LOGO PIL */
+.mini-nav.nav-ss .brand-logo{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 18px;
+  background: #fff;
+  border-radius: 999px;
+  box-shadow: 0 10px 22px rgba(15,23,42,.25);
+  border: 1px solid rgba(148,163,184,.24);
 }
 
-.epic-info-bar span {
-  line-height: 1.45;
+.mini-nav.nav-ss .brand-logo img{
+  height: 30px;
+  width: auto;
+  display: block;
 }
 
-.epic-info-bar span strong {
+/* PILL WRAP – satu baris + bisa di-scroll */
+.mini-nav.nav-ss .pill-wrap{
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-left: auto;
+
+  background: linear-gradient(90deg,#38bdf8,#22c1f1);
+  padding: 8px 18px;
+  border-radius: 999px;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.35);
+
+  max-width: 100%;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.mini-nav.nav-ss .pill-wrap::-webkit-scrollbar{
+  display:none;
+}
+
+/* LINK PILL */
+.mini-nav.nav-ss .pill-link{
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 8px 22px;
+  border-radius: 999px;
+
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: #0f172a;
+  text-decoration: none;
+
+  transition:
+    background .18s ease,
+    color .18s ease,
+    transform .18s ease;
+}
+
+.mini-nav.nav-ss .pill-link:hover{
+  transform: translateY(-1px);
+  background: rgba(255,255,255,.22);
+}
+
+.mini-nav.nav-ss .pill-link.active{
+  background: linear-gradient(135deg,#2563eb,#06b6d4);
   color: #fff;
+  box-shadow: 0 10px 24px rgba(37,99,235,.45);
 }
 
-/* Responsif HP */
-@media (max-width: 600px) {
-  .epic-info-bar {
-    font-size: 0.95rem;
-    padding: 14px 16px;
-    border-radius: 10px;
-    gap: 12px;
+/* =========================================
+   RESPONSIVE NAVBAR SS
+========================================= */
+
+/* Tablet / laptop kecil */
+@media (max-width: 1024px){
+  :root{
+    --ss-nav-offset: 80px;
   }
 
-  .epic-info-bar i {
-    font-size: 1.2rem;
+  .mini-nav.nav-ss{
+    padding: 8px 16px;
+    gap: 10px;
+  }
+
+  .mini-nav.nav-ss .brand-logo{
+    padding: 4px 12px;
+    box-shadow: 0 8px 18px rgba(15,23,42,.22);
+  }
+
+  .mini-nav.nav-ss .brand-logo img{
+    height: 26px;
+  }
+
+  .mini-nav.nav-ss .pill-wrap{
+    padding: 6px 12px;
+    gap: 10px;
+    max-width: calc(100vw - 130px); /* sisakan ruang logo */
+  }
+
+  .mini-nav.nav-ss .pill-link{
+    padding: 6px 16px;
+    font-size: 0.9rem;
+  }
+}
+
+/* HP */
+@media (max-width: 640px){
+  :root{
+    --ss-nav-offset: 70px;
+  }
+
+  .mini-nav.nav-ss{
+    padding: 6px 10px;
+  }
+
+  .mini-nav.nav-ss .brand-logo{
+    padding: 3px 10px;
+  }
+
+  .mini-nav.nav-ss .brand-logo img{
+    height: 22px;
+  }
+
+  .mini-nav.nav-ss .pill-wrap{
+    max-width: calc(100vw - 120px);
+    padding: 4px 10px;
+    gap: 8px;
+  }
+
+  .mini-nav.nav-ss .pill-link{
+    padding: 5px 14px;
+    font-size: 0.82rem;
+    white-space: nowrap;
+  }
+}
+
+/* =========================================
+   NAVBAR KHUSUS HALAMAN SS (EPIC)
+   – Responsive: desktop, tablet, HP
+   – Tampilan tetap sama, hanya diperkecil di layar kecil
+========================================= */
+
+:root{
+  --ss-nav-offset: 90px;   /* tinggi kira-kira navbar untuk offset anchor */
+}
+
+/* hero + konten saat diskroll dari anchor berhenti pas di bawah navbar */
+.epic-hero,
+.content{
+  scroll-margin-top: var(--ss-nav-offset);
+}
+
+/* BAR UTAMA NAVBAR */
+.mini-nav.nav-ss{
+  --nav-bg: linear-gradient(90deg,#0ea5e9,#07c3ff,#0ea5e9);
+
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  padding: 10px 24px;
+  background: var(--nav-bg);
+  box-shadow:
+    0 6px 16px rgba(15,23,42,.18),
+    inset 0 -1px 0 rgba(255,255,255,.18);
+}
+
+/* LOGO PIL */
+.mini-nav.nav-ss .brand-logo{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 6px 18px;
+  background: #fff;
+  border-radius: 999px;
+
+  box-shadow: 0 10px 22px rgba(15,23,42,.25);
+  border: 1px solid rgba(148,163,184,.24);
+
+  flex-shrink: 0;
+}
+
+.mini-nav.nav-ss .brand-logo img{
+  height: 30px;
+  width: auto;
+  display: block;
+}
+
+/* PILL WRAP – satu baris + bisa di-scroll */
+.mini-nav.nav-ss .pill-wrap{
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-left: auto;
+
+  background: linear-gradient(90deg,#38bdf8,#22c1f1);
+  padding: 8px 18px;
+  border-radius: 999px;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.35);
+
+  max-width: 100%;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.mini-nav.nav-ss .pill-wrap::-webkit-scrollbar{
+  display:none;
+}
+
+/* LINK PILL */
+.mini-nav.nav-ss .pill-link{
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 8px 22px;
+  border-radius: 999px;
+
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: #0f172a;
+  text-decoration: none;
+
+  white-space: nowrap;
+
+  transition:
+    background .18s ease,
+    color .18s ease,
+    transform .18s ease;
+}
+
+.mini-nav.nav-ss .pill-link:hover{
+  transform: translateY(-1px);
+  background: rgba(255,255,255,.22);
+}
+
+.mini-nav.nav-ss .pill-link.active{
+  background: linear-gradient(135deg,#2563eb,#06b6d4);
+  color: #fff;
+  box-shadow: 0 10px 24px rgba(37,99,235,.45);
+}
+
+/* FOCUS STATE (aksesibilitas) */
+.mini-nav.nav-ss .pill-link:focus-visible{
+  outline: 3px solid rgba(147,197,253,.95);
+  outline-offset: 3px;
+  border-radius: 999px;
+}
+
+/* =========================================
+   RESPONSIVE NAVBAR SS
+========================================= */
+
+/* Tablet / laptop kecil */
+@media (max-width: 1024px){
+  :root{
+    --ss-nav-offset: 80px;
+  }
+
+  .mini-nav.nav-ss{
+    padding: 8px 16px;
+    gap: 10px;
+  }
+
+  .mini-nav.nav-ss .brand-logo{
+    padding: 4px 12px;
+    box-shadow: 0 8px 18px rgba(15,23,42,.22);
+  }
+
+  .mini-nav.nav-ss .brand-logo img{
+    height: 26px;
+  }
+
+  .mini-nav.nav-ss .pill-wrap{
+    padding: 6px 12px;
+    gap: 10px;
+    max-width: calc(100vw - 130px); /* sisakan ruang untuk logo */
+  }
+
+  .mini-nav.nav-ss .pill-link{
+    padding: 6px 16px;
+    font-size: 0.9rem;
+  }
+}
+
+/* HP */
+@media (max-width: 640px){
+  :root{
+    --ss-nav-offset: 70px;
+  }
+
+  .mini-nav.nav-ss{
+    padding: 6px 10px;
+    gap: 8px;
+  }
+
+  .mini-nav.nav-ss .brand-logo{
+    padding: 3px 10px;
+  }
+
+  .mini-nav.nav-ss .brand-logo img{
+    height: 22px;
+  }
+
+  .mini-nav.nav-ss .pill-wrap{
+    max-width: calc(100vw - 120px); /* area pill mengecil di HP */
+    padding: 4px 10px;
+    gap: 8px;
+  }
+
+  .mini-nav.nav-ss .pill-link{
+    padding: 5px 14px;
+    font-size: 0.82rem;
+  }
+}
+
+/* HP sangat kecil */
+@media (max-width: 420px){
+  .mini-nav.nav-ss .brand-logo img{
+    height: 20px;
+  }
+
+  .mini-nav.nav-ss .pill-wrap{
+    max-width: calc(100vw - 110px);
+    gap: 6px;
+  }
+
+  .mini-nav.nav-ss .pill-link{
+    padding: 4px 12px;
+    font-size: 0.8rem;
   }
 }
